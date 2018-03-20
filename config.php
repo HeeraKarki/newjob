@@ -1,11 +1,11 @@
 <?php
 return [
-    'server' => 'localhost/phpmvc',
+    'server' => 'localhost/job',
     'database' => [
         'host' => 'localhost',
-        'db_name' => 't3',
+        'db_name' => 'applyjob',
         'username' => 'root',
-        'password' => 'root',
+        'password' => '',
         'options' => [
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
         ]

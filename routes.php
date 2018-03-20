@@ -1,9 +1,13 @@
 <?php
 require_once 'app/Controller/Migration/routes.php';
-$router->get('','PagesController@home');
-$router->get('About','PagesController@about');
-$router->get('Contact','PagesController@contact');
-$router->post('blogpost','PagesController@post');
+
+$router->get('','User\\HomeController@home');
+$router->get('Login','User\\HomeController@Login');
+$router->get('Register','User\\HomeController@Register');
+$router->post('Signup','User\\HomeController@Signup');
+
+
+
 $router->get('Admin/Setup','SetupController@index');
 
 

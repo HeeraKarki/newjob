@@ -23,7 +23,7 @@ class All
 
     public function call(){
         $this->seed->UserSeeder();
-        $this->seed->JobSeeder();
+        $this->seed->RoleSeeder();
 
     }
 

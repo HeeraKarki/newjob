@@ -28,7 +28,9 @@ function redirect($path=null){
     }
     return header("Location: {$_SERVER['HTTP_REFERER']}");
 }
-
+function view_require($input){
+    return require "app/view/{$input}.php";
+}
 function cleanInput($input) {
 
     $search = array(

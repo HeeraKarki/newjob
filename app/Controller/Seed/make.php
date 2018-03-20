@@ -3,9 +3,9 @@
 namespace App\Controller\Seed;
 
 
-use App\Models\Job;
-use App\Models\User;
 use Core\Helper\Hash;
+use App\Models\User\Role;
+use App\Models\User\User;
 
 class make
 {
@@ -17,9 +17,9 @@ class make
             ]);
     }
 
-    public function JobSeeder(){
-        Job::create([
-           'name'=>'MD'
-        ]);
+    public function RoleSeeder(){
+        Role::create(['name'=>'admin' ]);
+        Role::create(['name'=>'jobseeker' ]);
+        Role::create(['name'=>'employer' ]);
     }
 }
