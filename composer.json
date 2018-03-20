@@ -1,0 +1,27 @@
+{
+    "name": "BK/MVC",
+    "description": "BK Jonathan MVC Framework",
+    "license": "BK",
+    "authors": [
+        {
+            "name": "Bk Jonathan",
+            "email": "bkjonathan.mdy@gmail.com"
+        }
+    ],
+    "autoload":{
+        "files": [
+            "Core/function.php"
+        ],
+        "psr-4": {
+            "App\\": "app/",
+            "Core\\": "Core/"
+        }
+    },
+    "require": {
+        "phpmailer/phpmailer": "^6.0",
+        "illuminate/database": "^5.6",
+        "tightenco/collect": "^5.6",
+        "illuminate/events": "^5.6",
+        "nesbot/carbon": "^1.24"
+    }
+}

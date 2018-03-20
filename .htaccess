@@ -1,0 +1,16 @@
+RewriteEngine on
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule ^(.*)$ /test/3/index.php?path=$1 [NC,L,QSA]
+RewriteRule ^.*$  index.php [L,QSA]
+
+#RewriteBase /test/3/
+#RewriteEngine On
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteCond $1 !^(__files|application) [NC]
+#
+#RewriteCond %{THE_REQUEST} /public/([^\s?]*) [NC]
+#RewriteRule ^ %1 [L,NE,R=302]
+#
+#RewriteRule ^((?!public/).*)$ public/index.php [L,NC]
