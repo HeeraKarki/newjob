@@ -100,9 +100,7 @@ view_require('job_template/nav');
                 <div class="inner-login-wrap signup-form">
 
 
-
-<!--                    --><?php //if ($data=\Core\Helper\Session::flush('error')):?>
-                    <?php if ($data=flash('error','jargyi')):?>
+                    <?php if ($data=flash('error')):?>
                         <div class="alert-danger" id="facebook-fail-alert">
                             <strong style="display: flex;justify-content: center;"><?= $data['title'] ?></strong>
                             <br>

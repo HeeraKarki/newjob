@@ -6,6 +6,7 @@ use Core\Request;
 use Core\Helper\Hash;
 use Core\Helper\Auth;
 use App\Models\User\User;
+use App\Models\User\Role;
 use Illuminate\Support\Str;
 
 class HomeController
@@ -21,7 +22,8 @@ class HomeController
 
 
     public function Register(){
-        return view('job/register');
+        $data['roles']=Role::where('name','!=','admin')->get();
+        return view('job/register',$data);
     }
 
 

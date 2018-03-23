@@ -9,7 +9,7 @@ $router->post('Login_Check','User\\LoginController@Check');
 
 $router->get('Register','User\\HomeController@Register');
 
-$router->post('Signup','User\\HomeController@Signup');
+$router->post('Signup','User\\RegisterController@Signup');
 
 
 

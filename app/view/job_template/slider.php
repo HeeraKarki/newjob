@@ -151,48 +151,48 @@
                 <div id="DD" class="src-fild-two normal-DD">
                     <a href="index.html#" class="lst-icon"><i class="fa fa-list"></i></a>
                     <span class="custom-dd">
-                    <div class="select-style">
-                        <select id="ddlCategory" name="jobfunction">
-                        <option name='ddlCategory' data-symbol='0' value='0'>Job Function</option><option
-                                name="ddlCategory" data-symbol="1" value="1">Accounting/Finance</option><option
-                                name="ddlCategory" data-symbol="2" value="2">Administrative</option><option
-                                name="ddlCategory" data-symbol="4" value="4">Consulting</option><option
-                                name="ddlCategory" data-symbol="6" value="6">Customer Service/Support</option><option
-                                name="ddlCategory" data-symbol="7" value="7">Design/Architecture</option><option
-                                name="ddlCategory" data-symbol="8" value="8">Driver/Security/Cleaning</option><option
-                                name="ddlCategory" data-symbol="9" value="9">Education/Teaching/Childcare</option><option
-                                name="ddlCategory" data-symbol="10" value="10">Engineering/Technical</option><option
-                                name="ddlCategory" data-symbol="12" value="12">Fitness/Wellbeing</option><option
-                                name="ddlCategory" data-symbol="13" value="13">Food and Beverage</option><option
-                                name="ddlCategory" data-symbol="14" value="14">Hair/Nails and Beauty</option><option
-                                name="ddlCategory" data-symbol="16" value="16">HR/Training and Recruitment</option><option
-                                name="ddlCategory" data-symbol="15" value="15">Hospitality/Tourism</option><option
-                                name="ddlCategory" data-symbol="17" value="17">IT Hardware/Software</option><option
-                                name="ddlCategory" data-symbol="18" value="18">Legal</option><option
-                                name="ddlCategory" data-symbol="19" value="19">Logistics/Distribution</option><option
-                                name="ddlCategory" data-symbol="20" value="20">Management</option><option
-                                name="ddlCategory" data-symbol="21" value="21">Manufacturing/Warehouse</option><option
-                                name="ddlCategory" data-symbol="22" value="22">Marketing/Media/Creative</option><option
-                                name="ddlCategory" data-symbol="23" value="23">Medical/Doctor/Nursing</option><option
-                                name="ddlCategory" data-symbol="25" value="25">PR/Communications</option><option
-                                name="ddlCategory" data-symbol="38" value="38">Procurement/Sourcing</option><option
-                                name="ddlCategory" data-symbol="24" value="24">Project Management</option><option
-                                name="ddlCategory" data-symbol="26" value="26">Quality Assurance</option><option
-                                name="ddlCategory" data-symbol="27" value="27">Research and Development</option><option
-                                name="ddlCategory" data-symbol="30" value="30">Sales/Business Development</option><option
-                                name="ddlCategory" data-symbol="31" value="31">Science/Technology</option><option
-                                name="ddlCategory" data-symbol="32"
-                                value="32">Skilled Trades / Construction</option><option name="ddlCategory"
-                                                                                         data-symbol="33"
-                                                                                         value="33">Strategy/Planning</option><option
-                                name="ddlCategory" data-symbol="34" value="34">Translation</option><option
-                                name="ddlCategory" data-symbol="35" value="35">Voluntary work</option><option
-                                name="ddlCategory" data-symbol="36" value="36">Writing/Editing</option><option
-                                name="ddlCategory" data-symbol="37" value="37">Others</option>
-                        </select>
-                        <i class="fa fa-caret-down"></i>
-                    </div>
-                </span>
+                        <div class="select-style">
+                            <select id="ddlCategory" name="jobfunction">
+                            <option name='ddlCategory' data-symbol='0' value='0'>Job Function</option><option
+                                    name="ddlCategory" data-symbol="1" value="1">Accounting/Finance</option><option
+                                    name="ddlCategory" data-symbol="2" value="2">Administrative</option><option
+                                    name="ddlCategory" data-symbol="4" value="4">Consulting</option><option
+                                    name="ddlCategory" data-symbol="6" value="6">Customer Service/Support</option><option
+                                    name="ddlCategory" data-symbol="7" value="7">Design/Architecture</option><option
+                                    name="ddlCategory" data-symbol="8" value="8">Driver/Security/Cleaning</option><option
+                                    name="ddlCategory" data-symbol="9" value="9">Education/Teaching/Childcare</option><option
+                                    name="ddlCategory" data-symbol="10" value="10">Engineering/Technical</option><option
+                                    name="ddlCategory" data-symbol="12" value="12">Fitness/Wellbeing</option><option
+                                    name="ddlCategory" data-symbol="13" value="13">Food and Beverage</option><option
+                                    name="ddlCategory" data-symbol="14" value="14">Hair/Nails and Beauty</option><option
+                                    name="ddlCategory" data-symbol="16" value="16">HR/Training and Recruitment</option><option
+                                    name="ddlCategory" data-symbol="15" value="15">Hospitality/Tourism</option><option
+                                    name="ddlCategory" data-symbol="17" value="17">IT Hardware/Software</option><option
+                                    name="ddlCategory" data-symbol="18" value="18">Legal</option><option
+                                    name="ddlCategory" data-symbol="19" value="19">Logistics/Distribution</option><option
+                                    name="ddlCategory" data-symbol="20" value="20">Management</option><option
+                                    name="ddlCategory" data-symbol="21" value="21">Manufacturing/Warehouse</option><option
+                                    name="ddlCategory" data-symbol="22" value="22">Marketing/Media/Creative</option><option
+                                    name="ddlCategory" data-symbol="23" value="23">Medical/Doctor/Nursing</option><option
+                                    name="ddlCategory" data-symbol="25" value="25">PR/Communications</option><option
+                                    name="ddlCategory" data-symbol="38" value="38">Procurement/Sourcing</option><option
+                                    name="ddlCategory" data-symbol="24" value="24">Project Management</option><option
+                                    name="ddlCategory" data-symbol="26" value="26">Quality Assurance</option><option
+                                    name="ddlCategory" data-symbol="27" value="27">Research and Development</option><option
+                                    name="ddlCategory" data-symbol="30" value="30">Sales/Business Development</option><option
+                                    name="ddlCategory" data-symbol="31" value="31">Science/Technology</option><option
+                                    name="ddlCategory" data-symbol="32"
+                                    value="32">Skilled Trades / Construction</option><option name="ddlCategory"
+                                                                                            data-symbol="33"
+                                                                                            value="33">Strategy/Planning</option><option
+                                    name="ddlCategory" data-symbol="34" value="34">Translation</option><option
+                                    name="ddlCategory" data-symbol="35" value="35">Voluntary work</option><option
+                                    name="ddlCategory" data-symbol="36" value="36">Writing/Editing</option><option
+                                    name="ddlCategory" data-symbol="37" value="37">Others</option>
+                            </select>
+                            <i class="fa fa-caret-down"></i>
+                        </div>
+                    </span>
                 </div>
                 <div id="DDT" class="src-fild-Three normal-DD">
                     <a href="index.html#" class="place-icon"><i class="fa fa-map-marker"></i></a>

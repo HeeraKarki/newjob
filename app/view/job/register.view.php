@@ -48,7 +48,14 @@ view_require('job_template/nav');
 
 
             <form action="<?= baseurl('Signup') ?>" method="post">
-
+            <?php if ($data=flash('error')):?>
+                        <div class="alert-danger" id="facebook-fail-alert">
+                            <strong style="display: flex;justify-content: center;">
+                            <?= $data['title'] ?></strong>
+                            <br>
+                            <span><?= $data['message'] ?></span>
+                        </div>
+                    <?php endif; ?>
             <div class="wrap-input form-group">
                     <label>
                         <span id="BodyPlaceHolder_lblFirstName">Username</span>
@@ -76,6 +83,24 @@ view_require('job_template/nav');
 
                 </div>
                 
+                <div id="DD" class="col-sm-12" style="margin-bottom:  20px;">
+                    <lable style="font-weight:600;">Select User Role</label>
+                    <span class="custom-dd">
+                        <div class="select-style">
+                            <select id="ddlCategory" name="role_id" style="border: 1px solid darkgray;margin-top: 10px;">
+                            <option value="">select usertype</option>
+                            <?php foreach($roles as $role):?>
+                            <option name='ddlCategory' value="<?= $role['id']; ?>">
+                                <?= $role['name']; ?>
+                            </option>
+                            <?php endforeach;?>
+                            
+                            </select>
+                            <i class="fa fa-caret-down"></i>
+                        </div>
+                    </span>
+                </div>
+
                 
                 <div class="wrap-input">
                     <input type="submit" name="Add Data" value="Register" id="BodyPlaceHolder_btnSave" class="login-button" style="width: 100%"/>

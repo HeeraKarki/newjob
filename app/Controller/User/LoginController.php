@@ -15,10 +15,17 @@ class LoginController
         //Get User Data and init new User Object
         $userdata = User::where('email', Request::post('email'))->first();
 
+        //Check Email exists
+        if($userdata === null){
+            Session::error("Error!","Email Address doesn't exist." );
+            redirect();
+        }
+
         //Hash Password Verify
         if (Hash::verify(Request::post('password'), $userdata->password)) {
+            //Check User has role admin.
             if ($userdata->hasrole('admin')) {
-                Session::set(['isAdmin',true]);
+                Session::set(['isAdmin'=>true]);
                 Auth::login($userdata);
                 redirect('Admin');
             }else{
@@ -26,17 +33,14 @@ class LoginController
                     Auth::login($userdata);
                     redirect();
                 }else{
-                    Session::error('Error!', 'You Account Need to be activation.');
+                    Session::error('Error!', 'Your Account Need to be activation.');
                     redirect();
                 }
             }
-
-
+        }else{
+            Session::error("Check Password!","Password doesn't match." );
+            redirect();
         }
-
-//        Session::set(['error'=>"This is fuck"]);
-
-//        redirect();
     }
 
 }
