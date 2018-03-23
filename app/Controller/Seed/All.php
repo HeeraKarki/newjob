@@ -22,8 +22,8 @@ class All
     }
 
     public function call(){
-        $this->seed->UserSeeder();
         $this->seed->RoleSeeder();
+        $this->seed->UserSeeder();
 
     }
 

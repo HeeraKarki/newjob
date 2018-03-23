@@ -12,9 +12,9 @@ class All
 
     public function call(){
         $this->table->dropall();
-        $this->table->userTable();
+
         $this->table->roleTable();
-        $this->table->userRoleTable();
+        $this->table->userTable();
         $this->table->locationtable();
         $this->table->Postiontable();
         $this->table->jobfunctionstable();

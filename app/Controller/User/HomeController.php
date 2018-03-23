@@ -5,7 +5,6 @@ namespace App\Controller\User;
 use Core\Request;
 use Core\Helper\Hash;
 use Core\Helper\Auth;
-use Core\Helper\Session;
 use App\Models\User\User;
 use Illuminate\Support\Str;
 

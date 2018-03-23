@@ -1,11 +1,11 @@
 <?php
 return [
-    'server' => 'localhost/job',
+    'server' => 'localhost/project/job',
     'database' => [
         'host' => 'localhost',
         'db_name' => 'applyjob',
         'username' => 'root',
-        'password' => '',
+        'password' => 'root',
         'options' => [
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
         ]

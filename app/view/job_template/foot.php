@@ -83,7 +83,7 @@
 
 
 <script type="text/javascript" async="true" src="<?= asset('job_asset/js_New/default.min-v=1.2.36.js'); ?>"></script>
-<script type="text/javascript" src="<?= asset('asset/js_New/Script-main-v=1.2.36.js'); ?>"></script>
+<script type="text/javascript" src="<?= asset('job_asset/js_New/Script-main-v=1.2.36.js'); ?>"></script>
 
 
 </html>

@@ -22,6 +22,24 @@ function asset($file){
     return baseurl().'/public/'.$file;
 }
 
+function flash($key){
+    if ($data=\Core\Helper\Session::flush($key)){
+        return $data;
+    }else{
+        return false;
+    }
+}
+
+function url_parms($key){
+    $url_array=explode('/',\Core\Request::uri(\Core\App::get('config')['server']));
+    if (isset($url_array[$key])){
+        return $url_array[$key];
+    }else{
+        return null;
+    }
+}
+
+
 function redirect($path=null){
     if ($path!==null){
         return header("Location: ".baseurl($path));

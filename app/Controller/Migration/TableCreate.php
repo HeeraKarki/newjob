@@ -16,7 +16,9 @@ class TableCreate
             $table->string('email',50);
             $table->string('password');
             $table->string('token')->nullable();
+            $table->unsignedInteger('role_id');
             $table->boolean('isactive')->default(false);
+            $table->foreign('role_id')->references('id')->on('roles')->onDelete('CASCADE')->onUpdate('CASCADE');
             $table->timestamps();
 
         });
@@ -27,16 +29,6 @@ class TableCreate
         Make::schema()->create('roles', function ($table) {
             $table->increments('id');
             $table->string('name');
-            $table->timestamps();
-        });
-    }
-
-    public function userRoleTable(){
-        Make::schema()->create('user_roles',function ($table){
-            $table->unsignedInteger('user_id');
-            $table->unsignedInteger('role_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE')->onUpdate('CASCADE');
-            $table->foreign('role_id')->references('id')->on('roles')->onDelete('CASCADE')->onUpdate('CASCADE');
             $table->timestamps();
         });
     }

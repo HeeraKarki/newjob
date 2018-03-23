@@ -4,11 +4,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class User extends Model
 {
-    protected $fillable=['name','email','password','token','isactive'];
+    protected $fillable=['name','email','password','role_id','token','isactive'];
+    protected $hidden=['password'];
 
     public function roles()
     {
-        return $this->belongsToMany(Role::class);
+        return $this->belongsTo(Role::class,'role_id');
     }
 
+    public function hasrole($role){
+        return $this->roles()->where('name',$role)->get()->isNotEmpty();
+    }
 }

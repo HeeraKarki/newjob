@@ -31,4 +31,19 @@ class Session
         return session_destroy();
     }
 
+    public static function flush($key){
+        if (self::has($key)){
+            $data=static::get($key);
+            static::delete($key);
+            return $data;
+        }else{
+            return false;
+        }
+
+    }
+
+    public static function error($title,$message){
+        return self::set(['error'=>['title'=>$title,'message'=>$message]]);
+    }
+
 }

@@ -6,6 +6,7 @@ namespace App\Controller\Seed;
 use Core\Helper\Hash;
 use App\Models\User\Role;
 use App\Models\User\User;
+use Illuminate\Database\Capsule\Manager;
 
 class make
 {
@@ -13,8 +14,17 @@ class make
         User::create([
             'name'=>'jargyi',
             'email'=>'evokyaw@gmail.com',
-            'password'=>Hash::make('jar')
+            'role_id'=>1,
+            'isactive'=>true,
+            'password'=>Hash::make('jarjar')
             ]);
+        User::create([
+            'name'=>'heera',
+            'email'=>'heera@gmail.com',
+            'role_id'=>2,
+            'isactive'=>false,
+            'password'=>Hash::make('jarjar')
+        ]);
     }
 
     public function RoleSeeder(){
