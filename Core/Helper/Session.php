@@ -46,4 +46,7 @@ class Session
         return self::set(['error'=>['title'=>$title,'message'=>$message]]);
     }
 
+    public static function success($title,$message){
+        return self::set(['success'=>['title'=>$title,'message'=>$message]]);
+    }
 }

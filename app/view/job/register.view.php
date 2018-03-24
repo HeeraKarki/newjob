@@ -48,6 +48,17 @@ view_require('job_template/nav');
 
 
             <form action="<?= baseurl('Signup') ?>" method="post">
+
+            <?php if ($data=flash('success')):?>
+                        <div class="alert-primary" id="facebook-fail-alert">
+                            <strong style="display: flex;justify-content: center;">
+                            <?= $data['title'] ?></strong>
+                            <br>
+                            <span><?= $data['message'] ?></span>
+                        </div>
+            <?php endif; ?>
+
+
             <?php if ($data=flash('error')):?>
                         <div class="alert-danger" id="facebook-fail-alert">
                             <strong style="display: flex;justify-content: center;">
@@ -55,7 +66,7 @@ view_require('job_template/nav');
                             <br>
                             <span><?= $data['message'] ?></span>
                         </div>
-                    <?php endif; ?>
+            <?php endif; ?>
             <div class="wrap-input form-group">
                     <label>
                         <span id="BodyPlaceHolder_lblFirstName">Username</span>

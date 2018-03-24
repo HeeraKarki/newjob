@@ -30,6 +30,17 @@ function flash($key){
     }
 }
 
+function error($title,$message,$link=''){
+    Core\Helper\Session::error($title,$message); 
+    return redirect($link);
+}
+
+function success($title,$message,$link=''){
+    Core\Helper\Session::success($title,$message); 
+    return redirect($link);
+}
+
+
 function url_parms($key){
     $url_array=explode('/',\Core\Request::uri(\Core\App::get('config')['server']));
     if (isset($url_array[$key])){

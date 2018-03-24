@@ -13,24 +13,23 @@ class RegisterController
 {
     public function Signup(){
         if(Request::post('username')===""){
-            Session::error('Error','Fill user name'); 
-            return redirect();
-        } 
+            return \error("TITLE",'Required Username','Register');
+        }
         if(Request::post('email')===""){
-            Session::error('Error','Fill email'); 
-            return redirect();
-        } 
-        
+            return \error("TITLE",'Required Username','Register');
+        }
         if(Request::post('password')===""){
-            Session::error('Error','Fill password'); 
-            return redirect();
+            return \error("TITLE",'Required Username','Register');
+        }
+        if(Request::post('role_id')===""){
+            return \error("TITLE",'Required Username','Register');
         }
 
-        if(Request::post('role_id')===""){
-            Session::error('Error','Select the usertype'); 
-            return redirect();
-        };
         $token=Str::random(60);
+        $role_id=Request::post('role_id');
+        $link=Request::post('role_id')==="2"?\baseurl("Activation?for=$role_id&token=$token"):\baseurl("Activation?for=$role_id&token=$token");
+    
+        
         User::create([
             'name'=>Request::post('username'),
             'email'=>Request::post('email'),
@@ -40,15 +39,7 @@ class RegisterController
             'isactive'=>false,
         ]);
 
-        $link=Request::post('role_id')==1?basurl("Activation/Job_seeker/$token"):baseurl("Activation/Employer/$token");
-
         $mail= new Mail();
-        // $mail::send([
-        //     'to'=>'heerakarki99@gmail.com',
-        //     'subject'=>'Form Custom',
-        //     'body'=>"<h1 style='width: 100%;height: 20px; background-color: chartreuse'>This is Good</h1>",
-        //     'sender'=>'admin'
-        // ]);
 
         $mail::send([
             "to"=>Request::post('email'),
@@ -57,7 +48,38 @@ class RegisterController
             'sender'=>'admin'
         ]);
 
-        return redirect();
+    
+        return success('Completed',"Please activate the user account from email.",'Register');
 
     }
+
+    public function activation(){
+        // return \view('job/activation/jobseeker');
+        $token=Request::get("token");
+        $role_id=Request::get("for");
+        $check=User::where("token",$token)
+        ->where("role_id",$role_id)
+        ->where("isactive","!=","1")
+        ->first();
+        if($check!==null){
+            $check->update([
+                "token"=>null,
+                "isactive"=>true
+            ]);
+
+            if($role_id=="2"){
+                return \view('job/activation/jobseeker');
+            }else{
+                return \view('job/activation/employer');
+            }
+        }
+        else {
+            \error('Error','Your account is already activated','Login');
+        }
+        
+
+    }
+
+
+
 }

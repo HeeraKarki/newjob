@@ -10,8 +10,7 @@ $router->post('Login_Check','User\\LoginController@Check');
 $router->get('Register','User\\HomeController@Register');
 
 $router->post('Signup','User\\RegisterController@Signup');
-
-
+$router->get('Activation','User\\RegisterController@activation');
 
 $router->get('Admin/Setup','SetupController@index');
 
