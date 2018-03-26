@@ -121,6 +121,12 @@ class TableCreate
             $table->timestamps();
         });
     }
-
+    public function ContractTypeTable(){
+        Make::schema()->create('contract_types',function ($table){
+            $table->increments('id');
+            $table->text('name');
+            $table->timestamps();
+        });
+    }
 
 }

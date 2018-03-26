@@ -22,6 +22,7 @@ class All
         $this->table->job_seekertable();
         $this->table->SeekerQualificationtable();
         $this->table->SeekerExperiencetable();
+        $this->table->ContractTypeTable();
         
         redirect('Admin/Setup');
     }
