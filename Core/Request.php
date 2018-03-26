@@ -20,11 +20,11 @@ class Request
 
     public static function get($key){
         if ($key === ''){
-            $post=[];
-            foreach ($_POST as $key=>$value){
-                $post[$key]=sanitize($value);
+            $get=[];
+            foreach ($_GET as $key=>$value){
+                $get[$key]=sanitize($value);
             }
-            return collect($post);
+            return collect($get);
         }
         return sanitize($_GET[$key]);
     }

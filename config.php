@@ -1,6 +1,6 @@
 <?php
 return [
-    'server' => 'localhost/project/job',
+    'server' => 'localhost/job',
     'database' => [
         'host' => 'localhost',
         'db_name' => 'applyjob',
