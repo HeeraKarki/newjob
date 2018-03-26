@@ -14,4 +14,6 @@ $router->get('Activation','User\\RegisterController@activation');
 
 $router->get('Admin/Setup','SetupController@index');
 
+$router->get('Admin/Dashboard','Admin\\AdminController@index');
+
 

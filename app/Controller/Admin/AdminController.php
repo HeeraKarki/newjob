@@ -1,11 +1,15 @@
 <?php
-namespace App\Controller;
+namespace App\Controller\Admin;
 
 use Illuminate\Filesystem\Filesystem;
 
 class AdminController
 {
 
+
+    public function index(){
+        return view('admin/dashboard');
+    }
     protected function makeconfig(){
         $file= new Filesystem();
         $da=$file->getRequire('config.php');
