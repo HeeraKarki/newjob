@@ -1,14 +1,27 @@
 <?php
 namespace App\Controller\Admin;
 
+use App\Models\Setting\ContractType;
+use App\Models\Setting\Location;
 use Illuminate\Filesystem\Filesystem;
 
 class AdminController
 {
-
-
+    use HelperTrait;
     public function index(){
         return view('admin/dashboard');
+    }
+
+    public function createSeedFile(){
+        //Get Locations Data and Make a json File
+        $locations=Location::all();
+        $this->makeJson('restore','locations.json',$locations->toJson());
+
+        //Get COntract Types Data and Make a json File
+        $con_types=ContractType::all();
+        $this->makeJson('restore','contract_types.json',$con_types->toJson());
+
+        return success('Create Seeder Json','Successfully Created Seeder Json Files');
     }
     protected function makeconfig(){
         $file= new Filesystem();

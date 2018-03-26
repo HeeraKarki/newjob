@@ -24,6 +24,8 @@ class All
     public function call(){
         $this->seed->RoleSeeder();
         $this->seed->UserSeeder();
+        $this->seed->LoctionSeeder();
+        $this->seed->Contract_typeSeeder();
 
     }
 

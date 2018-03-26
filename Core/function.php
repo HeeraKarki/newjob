@@ -30,12 +30,12 @@ function flash($key){
     }
 }
 
-function error($title,$message,$link=''){
+function error($title,$message,$link=null){
     Core\Helper\Session::error($title,$message); 
     return redirect($link);
 }
 
-function success($title,$message,$link=''){
+function success($title,$message,$link=null){
     Core\Helper\Session::success($title,$message); 
     return redirect($link);
 }

@@ -3,13 +3,16 @@
 namespace App\Controller\Seed;
 
 
+use App\Controller\Admin\HelperTrait;
+use App\Models\Setting\ContractType;
+use App\Models\Setting\Location;
 use Core\Helper\Hash;
 use App\Models\User\Role;
 use App\Models\User\User;
-use Illuminate\Database\Capsule\Manager;
 
 class make
 {
+    use HelperTrait;
     public function UserSeeder(){
         User::create([
             'name'=>'jargyi',
@@ -31,5 +34,23 @@ class make
         Role::create(['name'=>'admin' ]);
         Role::create(['name'=>'jobseeker' ]);
         Role::create(['name'=>'employer' ]);
+    }
+
+    public function LoctionSeeder(){
+        $locations=$this->loadJson('restore','locations.json');
+        foreach ($locations as $location){
+            Location::create([
+                'name'=>$location->name
+            ]);
+        }
+    }
+
+    public function Contract_typeSeeder(){
+        $con_types=$this->loadJson('restore','contract_types.json');
+        foreach ($con_types as $con_type){
+            ContractType::create([
+                'name'=>$con_type->name
+            ]);
+        }
     }
 }

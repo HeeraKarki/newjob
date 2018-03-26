@@ -17,6 +17,9 @@ $router->get('Admin/Setup','SetupController@index');
 
 $router->get('Admin/Dashboard','Admin\\AdminController@index');
 
+$router->get('Admin/SeedFilesMake','Admin\\AdminController@createSeedFile');
+
+
 
 //Location CRUD
 $router->get('Admin/Location','Admin\\LocationController@index');
