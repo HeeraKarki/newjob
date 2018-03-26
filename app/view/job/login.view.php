@@ -3,23 +3,15 @@ view_require('applyjob/head');
 view_require('applyjob/nav');
 ?>
 <!-- signin-page -->
-<section class="clearfix job-bg user-page">
+<section class="clearfix job-bg user-page" style="background-size: cover !important;">
 		<div class="container">
 			<div class="row text-center">
 				<!-- user-login -->			
 				<div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
 					<div class="user-account">
 						<h2>User Login</h2>
-                        
-                        <?php if ($data=flash('error')):?>
-
-                       <div class="alert alert-danger alert-dismissible" role="alert">
-                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                            <span aria-hidden="true">&times;</span></button>
-                            <strong><?= $data['title'] ?></strong><br>
-                            <?= $data['message'] ?>
-                        </div>
-                        <?php endif; ?>
+                        <?php view_require('applyjob/error') ?>
+                        <?php view_require('applyjob/success') ?>
 						<!-- form -->
 						<form action="<?= baseurl('Login_Check');?>" method="post">
 							<div class="form-group">

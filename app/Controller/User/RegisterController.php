@@ -11,27 +11,33 @@ use Illuminate\Support\Str;
 
 class RegisterController
 {
+    protected function checkempty($data){
+        if (Request::post($data) === ''|| Request::post($data) === null){
+            Session::error('Error','Required '.ucfirst($data));
+            header("Location: {$_SERVER['HTTP_REFERER']}");
+        }
+    }
     public function Signup(){
-        if(Request::post('username')===""){
-            return \error("TITLE",'Required Username','Register');
+
+        if (checkpost('name')){
+            return error('Invalid Username','Fill the username');
         }
-        if(Request::post('email')===""){
-            return \error("TITLE",'Required Username','Register');
+        if (checkpost('email')){
+            return error('Invalid Email','Fill the Email Address');
         }
-        if(Request::post('password')===""){
-            return \error("TITLE",'Required Username','Register');
+
+        if (checkpost('password')){
+            return error('Invalid Password','Fill the Password');
         }
-        if(Request::post('role_id')===""){
-            return \error("TITLE",'Required Username','Register');
-        }
+
 
         $token=Str::random(60);
         $role_id=Request::post('role_id');
-        $link=Request::post('role_id')==="2"?\baseurl("Activation?for=$role_id&token=$token"):\baseurl("Activation?for=$role_id&token=$token");
+        $link=baseurl("Activation?token=$token");
     
         
         User::create([
-            'name'=>Request::post('username'),
+            'name'=>Request::post('name'),
             'email'=>Request::post('email'),
             'password'=> Hash::make(Request::post('password')),
             'role_id'=>Request::post('role_id'),
@@ -49,16 +55,14 @@ class RegisterController
         ]);
 
     
-        return success('Completed',"Please activate the user account from email.",'Register');
+        return success('Completed',"Please activate the user account from email.");
 
     }
 
     public function activation(){
         // return \view('job/activation/jobseeker');
         $token=Request::get("token");
-        $role_id=Request::get("for");
         $check=User::where("token",$token)
-        ->where("role_id",$role_id)
         ->where("isactive","!=","1")
         ->first();
         if($check!==null){
@@ -66,14 +70,8 @@ class RegisterController
                 "token"=>null,
                 "isactive"=>true
             ]);
-
-            if($role_id=="2"){
-                return \view('job/activation/jobseeker');
-            }else{
-                return \view('job/activation/employer');
-            }
-        }
-        else {
+            return success('Activated','Your Account '.$check->email.' has been activated. Login Now!','Login');
+        } else {
             \error('Error','Your account is already activated','Login');
         }
         

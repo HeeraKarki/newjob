@@ -2,6 +2,7 @@
 
 namespace App\Controller\User;
 
+use App\Models\Setting\Location;
 use Core\Request;
 use Core\Helper\Hash;
 use Core\Helper\Auth;
@@ -22,8 +23,7 @@ class HomeController
 
 
     public function Register(){
-        $data['roles']=Role::where('name','!=','admin')->get();
-        return view('job/register',$data);
+        return view('job/register');
     }
 
 

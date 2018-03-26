@@ -32,7 +32,7 @@ $router->post('Admin/Location_Add','Admin\\LocationController@create');
 
 $router->post('Admin/Location_update','Admin\\LocationController@update');
 
-//COntact Type CRUD
+//Contract Type CRUD
 $router->get('Admin/Contract_type','Admin\\ContractTypeController@index');
 
 $router->get('Admin/Contract_type_edit','Admin\\ContractTypeController@edit');

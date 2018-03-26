@@ -13,33 +13,25 @@ view_require('applyjob/nav');
 								<li role="presentation" class="active"><a href="signup.php#find-job" aria-controls="find-job" role="tab" data-toggle="tab">Find A Job</a></li>
 								<li role="presentation"><a href="signup.php#post-job" aria-controls="post-job" role="tab" data-toggle="tab">Post A Job</a></li>
 							</ul>
+                        <?php view_require('applyjob/error') ?>
+                        <?php view_require('applyjob/success') ?>
 
 							<div class="tab-content">
 								<div role="tabpanel" class="tab-pane active" id="find-job">
-									<form action="<?= baseurl('Signup');?>"method="post">
+									<form action="<?= baseurl('Signup');?>" method="post">
+                                        <input type="hidden" name="role_id" value="2">
 										<div class="form-group">
-											<input type="text" class="form-control" placeholder="Name" >
+											<input type="text" class="form-control" name="name" placeholder="Name" >
 										</div>
 										<div class="form-group">
-											<input type="email" class="form-control" placeholder="Email Id">
+											<input type="email" class="form-control" name="email" placeholder="Email Id">
 										</div>
 										<div class="form-group">
-											<input type="password" class="form-control" placeholder="Password">
+											<input type="password" class="form-control" name="password" placeholder="Password">
 										</div>
 										<div class="form-group">
-											<input type="password" class="form-control" placeholder="Confirm Password">
+											<input type="password" class="form-control" name="con_password" placeholder="Confirm Password">
 										</div>
-										<div class="form-group">
-											<input type="text" class="form-control" placeholder="Mobile Number">
-										</div>
-										<!-- select -->
-										<select class="form-control">
-											<option value="#">Select City</option>
-											<option value="#">London UK</option>
-											<option value="#">Newyork, USA</option>
-											<option value="#">Seoul, Korea</option>
-											<option value="#">Beijing, China</option>
-										</select><!-- select -->
 		
 										<div class="checkbox">
 											<label class="pull-left checked" for="signing"><input type="checkbox" name="signing" id="signing"> By signing up for an account you agree to our Terms and Conditions </label>
@@ -48,21 +40,19 @@ view_require('applyjob/nav');
 									</form>
 								</div>
 								<div role="tabpanel" class="tab-pane" id="post-job">
-									<form action="signup.php#">
+									<form action="<?= baseurl('Signup');?>" method="post">
+                                        <input type="hidden" name="role_id" value="3">
 										<div class="form-group">
-											<input type="text" class="form-control" placeholder="Employer Name" >
+											<input type="text" class="form-control" name="name" placeholder="Employer Name" >
 										</div>
 										<div class="form-group">
-											<input type="email" class="form-control" placeholder="Email Id">
+											<input type="email" class="form-control" name="email" placeholder="Email Id">
 										</div>
 										<div class="form-group">
-											<input type="password" class="form-control" placeholder="Password">
+											<input type="password" class="form-control" name="password" placeholder="Password">
 										</div>
 										<div class="form-group">
-											<input type="password" class="form-control" placeholder="Confirm Password">
-										</div>
-										<div class="form-group">
-											<input type="text" class="form-control" placeholder="Contact Number">
+											<input type="password" class="form-control" name="con_password" placeholder="Confirm Password">
 										</div>
 										<div class="checkbox">
 											<label class="pull-left checked" for="signing-2"><input type="checkbox" name="signing-2" id="signing-2">By signing up for an account you agree to our Terms and Conditions</label>

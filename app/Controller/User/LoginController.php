@@ -12,11 +12,11 @@ class LoginController
 {
     public function Check()
     {
-        if(Request::post('email')==""){
-            return \error("Error!",'Fill email address .','Login');
+        if (checkpost('email')){
+            return error('Invalid Email','Fill the Email Field.');
         }
-        if(Request::post('password')==""){
-            return \error("Error!",'Fill password .','Login');
+        if (checkpost('password')){
+            return error('Invalid Password','Fill the Password Field.');
         }
 
         //Get User Data and init new User Object
@@ -24,7 +24,7 @@ class LoginController
 
         //Check Email exists
         if($userdata === null){
-            return \error("Error!",'Email Address doesn\'t exist.','Login');
+            return \error("Error!",'Email Address doesn\'t exist.');
         }
 
         //Hash Password Verify
@@ -33,19 +33,17 @@ class LoginController
             if ($userdata->hasrole('admin')) {
                 Session::set(['isAdmin'=>true]);
                 Auth::login($userdata);
-                redirect('Admin');
+                redirect('Admin/Dashboard');
             }else{
-                if ($userdata->isactive !== 0){
+                if ($userdata->isactive){
                     Auth::login($userdata);
-                    redirect();
+                    redirect('User/Profile');
                 }else{
-                    Session::error('Error!', 'Your Account Need to be activation.');
-                    redirect();
+                    error('Error!', 'Your Account Need to be activation.');
                 }
             }
         }else{
-            Session::error("Check Password!","Password doesn't match." );
-            redirect();
+            error("Check Password!","Password doesn't match.");
         }
     }
 

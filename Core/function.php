@@ -41,6 +41,14 @@ function success($title,$message,$link=null){
 }
 
 
+function checkpost($key){
+    if (\Core\Request::post($key) ==='' || \Core\Request::post($key) === null || empty(\Core\Request::post($key))){
+        return true;
+    }else{
+        return false;
+    }
+}
+
 function url_parms($key){
     $url_array=explode('/',\Core\Request::uri(\Core\App::get('config')['server']));
     if (isset($url_array[$key])){
