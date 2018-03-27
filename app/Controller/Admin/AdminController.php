@@ -1,8 +1,10 @@
 <?php
 namespace App\Controller\Admin;
 
-use App\Models\Setting\ContractType;
+use App\Models\User\User;
 use App\Models\Setting\Location;
+use App\Models\Setting\JobFunction;
+use App\Models\Setting\ContractType;
 use Illuminate\Filesystem\Filesystem;
 
 class AdminController
@@ -20,6 +22,19 @@ class AdminController
         //Get COntract Types Data and Make a json File
         $con_types=ContractType::all();
         $this->makeJson('restore','contract_types.json',$con_types->toJson());
+
+
+        //Get User Data and Make a json File
+        $user=User::all();
+        $this->makeJson('restore','users.json',$user);
+
+
+        //Get Job Function Data and Make a json File
+        $jf=JobFunction::all();
+        $this->makeJson('restore','job_funs.json',$jf);
+
+
+
 
         return success('Create Seeder Json','Successfully Created Seeder Json Files');
     }

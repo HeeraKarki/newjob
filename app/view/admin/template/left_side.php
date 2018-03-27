@@ -42,6 +42,7 @@
                     <ul class="nav-second-level" aria-expanded="false">
                         <li><a href="<?= baseurl('Admin/Location'); ?>">Location</a></li>
                         <li><a href="<?= baseurl('Admin/Contract_type') ?>">Contract Type</a></li>
+                        <li><a href="<?= baseurl('Admin/JobFunction') ?>">Job Function</a></li>
                     </ul>
                 </li>
                 <li>

@@ -3,12 +3,13 @@
 namespace App\Controller\Seed;
 
 
-use App\Controller\Admin\HelperTrait;
-use App\Models\Setting\ContractType;
-use App\Models\Setting\Location;
 use Core\Helper\Hash;
 use App\Models\User\Role;
 use App\Models\User\User;
+use App\Models\Setting\Location;
+use App\Models\Setting\JobFunction;
+use App\Models\Setting\ContractType;
+use App\Controller\Admin\HelperTrait;
 
 class make
 {
@@ -50,6 +51,17 @@ class make
         foreach ($con_types as $con_type){
             ContractType::create([
                 'name'=>$con_type->name
+            ]);
+        }
+    }
+
+
+    public function Job_Function_Seeder(){
+        $jobs=$this->loadJson('restore','job_funs.json');
+
+        foreach ($jobs as $job){
+            JobFunction::create([
+                'name'=>$job->name
             ]);
         }
     }

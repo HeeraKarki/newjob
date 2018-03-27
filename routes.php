@@ -32,6 +32,7 @@ $router->post('Admin/Location_Add','Admin\\LocationController@create');
 
 $router->post('Admin/Location_update','Admin\\LocationController@update');
 
+
 //Contract Type CRUD
 $router->get('Admin/Contract_type','Admin\\ContractTypeController@index');
 
@@ -44,6 +45,17 @@ $router->post('Admin/Contract_type_Add','Admin\\ContractTypeController@create');
 $router->post('Admin/Contract_type_update','Admin\\ContractTypeController@update');
 
 
+//Job Function CRUD
 
+
+$router->get('Admin/JobFunction','Admin\\JobFunctionController@index');
+
+$router->get('Admin/Jobfunction_edit','Admin\\JobFunctionController@edit');
+
+$router->get('Admin/Jobfunction_delete','Admin\\JobFunctionController@delete');
+
+$router->post('Admin/JobFunction_Add','Admin\\JobFunctionController@create');
+
+$router->post('Admin/JobFunction_update','Admin\\JobFunctionController@update');
 
 
