@@ -32,10 +32,6 @@ class AdminController
         //Get Job Function Data and Make a json File
         $jf=JobFunction::all();
         $this->makeJson('restore','job_funs.json',$jf);
-
-
-
-
         return success('Create Seeder Json','Successfully Created Seeder Json Files');
     }
     protected function makeconfig(){

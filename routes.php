@@ -19,8 +19,6 @@ $router->get('Admin/Dashboard','Admin\\AdminController@index');
 
 $router->get('Admin/SeedFilesMake','Admin\\AdminController@createSeedFile');
 
-
-
 //Location CRUD
 $router->get('Admin/Location','Admin\\LocationController@index');
 
@@ -47,7 +45,6 @@ $router->post('Admin/Contract_type_update','Admin\\ContractTypeController@update
 
 //Job Function CRUD
 
-
 $router->get('Admin/JobFunction','Admin\\JobFunctionController@index');
 
 $router->get('Admin/Jobfunction_edit','Admin\\JobFunctionController@edit');
@@ -58,4 +55,15 @@ $router->post('Admin/JobFunction_Add','Admin\\JobFunctionController@create');
 
 $router->post('Admin/JobFunction_update','Admin\\JobFunctionController@update');
 
+//Job Industry CRUD
+
+$router->get('Admin/JobIndustry','Admin\\JobIndustryController@index');
+
+$router->get('Admin/JobIndustry_edit','Admin\\JobIndustryController@edit');
+
+$router->get('Admin/JobIndustry_delete','Admin\\JobIndustryController@delete');
+
+$router->post('Admin/JobIndustry_Add','Admin\\JobIndustryController@create');
+
+$router->post('Admin/JobIndustry_update','Admin\\JobIndustryController@update');
 

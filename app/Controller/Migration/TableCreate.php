@@ -22,6 +22,8 @@ class TableCreate
             $table->timestamps();
 
         });
+
+
     }
 
     public function roleTable()
@@ -128,5 +130,13 @@ class TableCreate
             $table->timestamps();
         });
     }
+    public function JobIndustryTable(){
+        Make::schema()->create('job_industries',function ($table){
+            $table->increments('id');
+            $table->text('name');
+            $table->timestamps();
+        });
+    }
+    
 
 }

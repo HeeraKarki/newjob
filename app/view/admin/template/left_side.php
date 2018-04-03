@@ -43,6 +43,7 @@
                         <li><a href="<?= baseurl('Admin/Location'); ?>">Location</a></li>
                         <li><a href="<?= baseurl('Admin/Contract_type') ?>">Contract Type</a></li>
                         <li><a href="<?= baseurl('Admin/JobFunction') ?>">Job Function</a></li>
+                        <li><a href="<?= baseurl('Admin/JobIndustry') ?>">Job Industry</a></li>
                     </ul>
                 </li>
                 <li>
