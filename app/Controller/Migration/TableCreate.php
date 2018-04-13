@@ -126,14 +126,15 @@ class TableCreate
     public function ContractTypeTable(){
         Make::schema()->create('contract_types',function ($table){
             $table->increments('id');
-            $table->text('name');
+            $table->string('name');
             $table->timestamps();
         });
     }
     public function JobIndustryTable(){
         Make::schema()->create('job_industries',function ($table){
             $table->increments('id');
-            $table->text('name');
+            $table->string('name');
+            $table->text('img');
             $table->timestamps();
         });
     }

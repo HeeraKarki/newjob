@@ -2,6 +2,7 @@
 
 namespace App\Controller\User;
 
+use App\Models\Setting\JobIndustry;
 use App\Models\Setting\Location;
 use Core\Request;
 use Core\Helper\Hash;
@@ -13,7 +14,8 @@ use Illuminate\Support\Str;
 class HomeController
 {
     public function home(){
-        return view('job/home');
+        $data['job_industries']=JobIndustry::all();
+        return view('job/home',$data);
     }
 
 

@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class JobIndustry extends Model
 {
     protected $fillable= [
-        'name'
+        'name','img'
     ];
 }

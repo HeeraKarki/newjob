@@ -2,229 +2,281 @@
   {
     "id": 1,
     "name": "Computer IT",
-    "created_at": "2018-04-14 01:37:46",
-    "updated_at": "2018-04-14 01:39:02"
+    "img": "applyjob\/images\/icon\/7.png",
+    "created_at": "2018-04-14 01:53:08",
+    "updated_at": "2018-04-14 01:53:08"
   },
   {
     "id": 2,
     "name": "Telecommunications Services",
-    "created_at": "2018-04-14 01:39:23",
-    "updated_at": "2018-04-14 01:39:23"
+    "img": "applyjob\/images\/icon\/9.png",
+    "created_at": "2018-04-14 01:53:08",
+    "updated_at": "2018-04-14 01:53:08"
   },
   {
     "id": 3,
     "name": "Other",
-    "created_at": "2018-04-14 01:39:29",
-    "updated_at": "2018-04-14 01:39:29"
+    "img": "applyjob\/images\/icon\/1.png",
+    "created_at": "2018-04-14 01:53:08",
+    "updated_at": "2018-04-14 01:53:08"
   },
   {
     "id": 4,
     "name": "Import Export Trade",
-    "created_at": "2018-04-14 01:39:47",
-    "updated_at": "2018-04-14 01:39:47"
+    "img": "applyjob\/images\/icon\/6.png",
+    "created_at": "2018-04-14 01:53:08",
+    "updated_at": "2018-04-14 01:53:08"
   },
   {
     "id": 5,
     "name": "Distribution Logistics",
-    "created_at": "2018-04-14 01:40:04",
-    "updated_at": "2018-04-14 01:40:04"
+    "img": "applyjob\/images\/icon\/3.png",
+    "created_at": "2018-04-14 01:53:08",
+    "updated_at": "2018-04-14 01:53:08"
   },
   {
     "id": 6,
     "name": "Construction",
-    "created_at": "2018-04-14 01:40:10",
-    "updated_at": "2018-04-14 01:40:10"
+    "img": "applyjob\/images\/icon\/3.png",
+    "created_at": "2018-04-14 01:53:08",
+    "updated_at": "2018-04-14 01:53:08"
   },
   {
     "id": 7,
     "name": "Financial Services",
-    "created_at": "2018-04-14 01:40:22",
-    "updated_at": "2018-04-14 01:40:22"
+    "img": "applyjob\/images\/icon\/1.png",
+    "created_at": "2018-04-14 01:53:08",
+    "updated_at": "2018-04-14 01:53:08"
   },
   {
     "id": 8,
     "name": "Education",
-    "created_at": "2018-04-14 01:40:33",
-    "updated_at": "2018-04-14 01:40:33"
+    "img": "applyjob\/images\/icon\/2.png",
+    "created_at": "2018-04-14 01:53:08",
+    "updated_at": "2018-04-14 01:53:08"
   },
   {
     "id": 9,
     "name": "Engineering",
-    "created_at": "2018-04-14 01:40:38",
-    "updated_at": "2018-04-14 01:40:38"
+    "img": "applyjob\/images\/icon\/3.png",
+    "created_at": "2018-04-14 01:53:08",
+    "updated_at": "2018-04-14 01:53:08"
   },
   {
     "id": 10,
     "name": "Manufacturing",
-    "created_at": "2018-04-14 01:40:43",
-    "updated_at": "2018-04-14 01:40:43"
+    "img": "applyjob\/images\/icon\/1.png",
+    "created_at": "2018-04-14 01:53:08",
+    "updated_at": "2018-04-14 01:53:08"
   },
   {
     "id": 11,
     "name": "Food Beverage Production",
-    "created_at": "2018-04-14 01:40:58",
-    "updated_at": "2018-04-14 01:40:58"
+    "img": "applyjob\/images\/icon\/2.png",
+    "created_at": "2018-04-14 01:53:08",
+    "updated_at": "2018-04-14 01:53:08"
   },
   {
     "id": 12,
     "name": "Agriculture Forestry Fishing",
-    "created_at": "2018-04-14 01:41:14",
-    "updated_at": "2018-04-14 01:41:14"
+    "img": "applyjob\/images\/icon\/2.png",
+    "created_at": "2018-04-14 01:53:08",
+    "updated_at": "2018-04-14 01:53:08"
   },
   {
     "id": 13,
     "name": "Hotels Lodging",
-    "created_at": "2018-04-14 01:41:28",
-    "updated_at": "2018-04-14 01:41:28"
+    "img": "applyjob\/images\/icon\/9.png",
+    "created_at": "2018-04-14 01:53:08",
+    "updated_at": "2018-04-14 01:53:08"
   },
   {
     "id": 14,
     "name": "Advertising And Public Relations",
-    "created_at": "2018-04-14 01:42:04",
-    "updated_at": "2018-04-14 01:42:04"
+    "img": "applyjob\/images\/icon\/1.png",
+    "created_at": "2018-04-14 01:53:08",
+    "updated_at": "2018-04-14 01:53:08"
   },
   {
     "id": 15,
     "name": "Consulting",
-    "created_at": "2018-04-14 01:42:12",
-    "updated_at": "2018-04-14 01:42:12"
+    "img": "applyjob\/images\/icon\/3.png",
+    "created_at": "2018-04-14 01:53:08",
+    "updated_at": "2018-04-14 01:53:08"
   },
   {
     "id": 16,
     "name": "Biotechnology Pharmaceuticals",
-    "created_at": "2018-04-14 01:42:21",
-    "updated_at": "2018-04-14 01:42:21"
+    "img": "applyjob\/images\/icon\/8.png",
+    "created_at": "2018-04-14 01:53:08",
+    "updated_at": "2018-04-14 01:53:08"
   },
   {
     "id": 17,
     "name": "Healthcare Services",
-    "created_at": "2018-04-14 01:42:34",
-    "updated_at": "2018-04-14 01:42:34"
+    "img": "applyjob\/images\/icon\/6.png",
+    "created_at": "2018-04-14 01:53:08",
+    "updated_at": "2018-04-14 01:53:08"
   },
   {
     "id": 18,
     "name": "Retail",
-    "created_at": "2018-04-14 01:42:40",
-    "updated_at": "2018-04-14 01:42:40"
+    "img": "applyjob\/images\/icon\/5.png",
+    "created_at": "2018-04-14 01:53:08",
+    "updated_at": "2018-04-14 01:53:08"
   },
   {
     "id": 19,
     "name": "Automotive",
-    "created_at": "2018-04-14 01:42:45",
-    "updated_at": "2018-04-14 01:42:45"
+    "img": "applyjob\/images\/icon\/7.png",
+    "created_at": "2018-04-14 01:53:08",
+    "updated_at": "2018-04-14 01:53:08"
   },
   {
     "id": 20,
     "name": "Internet Services",
-    "created_at": "2018-04-14 01:42:58",
-    "updated_at": "2018-04-14 01:42:58"
+    "img": "applyjob\/images\/icon\/9.png",
+    "created_at": "2018-04-14 01:53:08",
+    "updated_at": "2018-04-14 01:53:08"
   },
   {
     "id": 21,
     "name": "Medical Hospital",
-    "created_at": "2018-04-14 01:43:11",
-    "updated_at": "2018-04-14 01:43:11"
+    "img": "applyjob\/images\/icon\/8.png",
+    "created_at": "2018-04-14 01:53:08",
+    "updated_at": "2018-04-14 01:53:08"
   },
   {
     "id": 22,
     "name": "Restaurant Food Services",
-    "created_at": "2018-04-14 01:43:26",
-    "updated_at": "2018-04-14 01:43:26"
+    "img": "applyjob\/images\/icon\/8.png",
+    "created_at": "2018-04-14 01:53:08",
+    "updated_at": "2018-04-14 01:53:08"
   },
   {
     "id": 23,
     "name": "Banking",
-    "created_at": "2018-04-14 01:43:31",
-    "updated_at": "2018-04-14 01:43:31"
+    "img": "applyjob\/images\/icon\/9.png",
+    "created_at": "2018-04-14 01:53:08",
+    "updated_at": "2018-04-14 01:53:08"
   },
   {
     "id": 24,
     "name": "Design",
-    "created_at": "2018-04-14 01:43:40",
-    "updated_at": "2018-04-14 01:43:40"
+    "img": "applyjob\/images\/icon\/6.png",
+    "created_at": "2018-04-14 01:53:08",
+    "updated_at": "2018-04-14 01:53:08"
   },
   {
     "id": 25,
     "name": "Clothing And Textile Manufacturing",
-    "created_at": "2018-04-14 01:44:00",
-    "updated_at": "2018-04-14 01:44:00"
+    "img": "applyjob\/images\/icon\/4.png",
+    "created_at": "2018-04-14 01:53:08",
+    "updated_at": "2018-04-14 01:53:08"
   },
   {
     "id": 26,
     "name": "Energy Utilities",
-    "created_at": "2018-04-14 01:44:14",
-    "updated_at": "2018-04-14 01:44:14"
+    "img": "applyjob\/images\/icon\/1.png",
+    "created_at": "2018-04-14 01:53:08",
+    "updated_at": "2018-04-14 01:53:08"
   },
   {
     "id": 27,
     "name": "Real Estate Property",
-    "created_at": "2018-04-14 01:44:30",
-    "updated_at": "2018-04-14 01:44:30"
+    "img": "applyjob\/images\/icon\/1.png",
+    "created_at": "2018-04-14 01:53:08",
+    "updated_at": "2018-04-14 01:53:08"
   },
   {
     "id": 28,
     "name": "Tourism Travel Services",
-    "created_at": "2018-04-14 01:44:44",
-    "updated_at": "2018-04-14 01:44:44"
+    "img": "applyjob\/images\/icon\/8.png",
+    "created_at": "2018-04-14 01:53:08",
+    "updated_at": "2018-04-14 01:53:08"
   },
   {
     "id": 29,
     "name": "Insurance",
-    "created_at": "2018-04-14 01:44:50",
-    "updated_at": "2018-04-14 01:44:50"
+    "img": "applyjob\/images\/icon\/7.png",
+    "created_at": "2018-04-14 01:53:08",
+    "updated_at": "2018-04-14 01:53:08"
   },
   {
     "id": 30,
     "name": "Performing Arts Fine Arts",
-    "created_at": "2018-04-14 01:45:05",
-    "updated_at": "2018-04-14 01:45:05"
+    "img": "applyjob\/images\/icon\/7.png",
+    "created_at": "2018-04-14 01:53:08",
+    "updated_at": "2018-04-14 01:53:08"
   },
   {
     "id": 31,
     "name": "Chemicals Petro Chemicals",
-    "created_at": "2018-04-14 01:45:22",
-    "updated_at": "2018-04-14 01:45:22"
+    "img": "applyjob\/images\/icon\/10.png",
+    "created_at": "2018-04-14 01:53:08",
+    "updated_at": "2018-04-14 01:53:08"
   },
   {
     "id": 32,
     "name": "Legal Services",
-    "created_at": "2018-04-14 01:45:38",
-    "updated_at": "2018-04-14 01:45:38"
+    "img": "applyjob\/images\/icon\/10.png",
+    "created_at": "2018-04-14 01:53:08",
+    "updated_at": "2018-04-14 01:53:08"
   },
   {
     "id": 33,
     "name": "Social Services",
-    "created_at": "2018-04-14 01:45:53",
-    "updated_at": "2018-04-14 01:45:53"
+    "img": "applyjob\/images\/icon\/5.png",
+    "created_at": "2018-04-14 01:53:08",
+    "updated_at": "2018-04-14 01:53:08"
   },
   {
     "id": 34,
     "name": "Transportation Storage",
-    "created_at": "2018-04-14 01:46:05",
-    "updated_at": "2018-04-14 01:46:05"
+    "img": "applyjob\/images\/icon\/4.png",
+    "created_at": "2018-04-14 01:53:08",
+    "updated_at": "2018-04-14 01:53:08"
   },
   {
     "id": 35,
     "name": "Beauty Cosmetics ",
-    "created_at": "2018-04-14 01:46:18",
-    "updated_at": "2018-04-14 01:46:18"
+    "img": "applyjob\/images\/icon\/6.png",
+    "created_at": "2018-04-14 01:53:08",
+    "updated_at": "2018-04-14 01:53:08"
   },
   {
     "id": 36,
     "name": "Architecture",
-    "created_at": "2018-04-14 01:46:24",
-    "updated_at": "2018-04-14 01:46:24"
+    "img": "applyjob\/images\/icon\/16.png",
+    "created_at": "2018-04-14 01:53:08",
+    "updated_at": "2018-04-14 01:53:08"
   },
   {
     "id": 37,
     "name": "Broadcasting Music Film",
-    "created_at": "2018-04-14 01:46:43",
-    "updated_at": "2018-04-14 01:46:43"
+    "img": "applyjob\/images\/icon\/9.png",
+    "created_at": "2018-04-14 01:53:08",
+    "updated_at": "2018-04-14 01:53:08"
   },
   {
     "id": 38,
     "name": "Sports Physical Recreation",
-    "created_at": "2018-04-14 01:47:14",
-    "updated_at": "2018-04-14 01:47:14"
+    "img": "applyjob\/images\/icon\/3.png",
+    "created_at": "2018-04-14 01:53:08",
+    "updated_at": "2018-04-14 01:53:08"
+  },
+  {
+    "id": 39,
+    "name": "HR Development",
+    "img": "applyjob\/images\/icon\/5.png",
+    "created_at": "2018-04-14 05:00:00",
+    "updated_at": "2018-04-14 05:00:00"
+  },
+  {
+    "id": 40,
+    "name": "Marketing and Sales",
+    "img": "applyjob\/images\/icon\/10.png",
+    "created_at": "2018-04-14 10:00:00",
+    "updated_at": "2018-04-14 09:00:00"
   }
 ]

@@ -73,7 +73,8 @@ class make
 
         foreach ($jobs as $job){
             JobIndustry::create([
-                'name'=>$job->name
+                'name'=>$job->name,
+                'img'=>$job->img
             ]);
         }
     }
