@@ -17,7 +17,7 @@ class JobFunctionController
             return error('Error','Please fill the jobfunction name','Admin/jobfunction');
         }
         Jobfunction::create([
-            'name'=>Request::post('name')
+            'name'=>ucfirst(Request::post('name'))
         ]);
 
         return success('Successful',"jobfunction ".Request::post('name').' was added','Admin/JobFunction');
@@ -65,4 +65,6 @@ class JobFunctionController
         ]);
         return success('Edit Success','jobfunction '.Request::post('name').' has been updated.','Admin/JobFunction');
     }
+
+
 }

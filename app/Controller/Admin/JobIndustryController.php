@@ -17,7 +17,7 @@ class JobIndustryController
             return error('Error','Please fill the jobindustry name','Admin/JobIndustry');
         }
         JobIndustry::create([
-            'name'=>Request::post('name')
+            'name'=>ucfirst(Request::post('name'))
         ]);
 
         return success('Successful',"jobindustry ".Request::post('name').' was added','Admin/JobIndustry');
@@ -42,7 +42,7 @@ class JobIndustryController
 
         $id=Request::get('id');
         $data['edit_data']=jobindustry::find($id);
-        $data['jobindustry']=jobindustry::all();
+        $data['jobindustries']=jobindustry::all();
 
         if($data['edit_data'] !== null){
             view('admin/jobindustry/edit',$data);

@@ -1,0 +1,230 @@
+[
+  {
+    "id": 1,
+    "name": "Computer IT",
+    "created_at": "2018-04-14 01:37:46",
+    "updated_at": "2018-04-14 01:39:02"
+  },
+  {
+    "id": 2,
+    "name": "Telecommunications Services",
+    "created_at": "2018-04-14 01:39:23",
+    "updated_at": "2018-04-14 01:39:23"
+  },
+  {
+    "id": 3,
+    "name": "Other",
+    "created_at": "2018-04-14 01:39:29",
+    "updated_at": "2018-04-14 01:39:29"
+  },
+  {
+    "id": 4,
+    "name": "Import Export Trade",
+    "created_at": "2018-04-14 01:39:47",
+    "updated_at": "2018-04-14 01:39:47"
+  },
+  {
+    "id": 5,
+    "name": "Distribution Logistics",
+    "created_at": "2018-04-14 01:40:04",
+    "updated_at": "2018-04-14 01:40:04"
+  },
+  {
+    "id": 6,
+    "name": "Construction",
+    "created_at": "2018-04-14 01:40:10",
+    "updated_at": "2018-04-14 01:40:10"
+  },
+  {
+    "id": 7,
+    "name": "Financial Services",
+    "created_at": "2018-04-14 01:40:22",
+    "updated_at": "2018-04-14 01:40:22"
+  },
+  {
+    "id": 8,
+    "name": "Education",
+    "created_at": "2018-04-14 01:40:33",
+    "updated_at": "2018-04-14 01:40:33"
+  },
+  {
+    "id": 9,
+    "name": "Engineering",
+    "created_at": "2018-04-14 01:40:38",
+    "updated_at": "2018-04-14 01:40:38"
+  },
+  {
+    "id": 10,
+    "name": "Manufacturing",
+    "created_at": "2018-04-14 01:40:43",
+    "updated_at": "2018-04-14 01:40:43"
+  },
+  {
+    "id": 11,
+    "name": "Food Beverage Production",
+    "created_at": "2018-04-14 01:40:58",
+    "updated_at": "2018-04-14 01:40:58"
+  },
+  {
+    "id": 12,
+    "name": "Agriculture Forestry Fishing",
+    "created_at": "2018-04-14 01:41:14",
+    "updated_at": "2018-04-14 01:41:14"
+  },
+  {
+    "id": 13,
+    "name": "Hotels Lodging",
+    "created_at": "2018-04-14 01:41:28",
+    "updated_at": "2018-04-14 01:41:28"
+  },
+  {
+    "id": 14,
+    "name": "Advertising And Public Relations",
+    "created_at": "2018-04-14 01:42:04",
+    "updated_at": "2018-04-14 01:42:04"
+  },
+  {
+    "id": 15,
+    "name": "Consulting",
+    "created_at": "2018-04-14 01:42:12",
+    "updated_at": "2018-04-14 01:42:12"
+  },
+  {
+    "id": 16,
+    "name": "Biotechnology Pharmaceuticals",
+    "created_at": "2018-04-14 01:42:21",
+    "updated_at": "2018-04-14 01:42:21"
+  },
+  {
+    "id": 17,
+    "name": "Healthcare Services",
+    "created_at": "2018-04-14 01:42:34",
+    "updated_at": "2018-04-14 01:42:34"
+  },
+  {
+    "id": 18,
+    "name": "Retail",
+    "created_at": "2018-04-14 01:42:40",
+    "updated_at": "2018-04-14 01:42:40"
+  },
+  {
+    "id": 19,
+    "name": "Automotive",
+    "created_at": "2018-04-14 01:42:45",
+    "updated_at": "2018-04-14 01:42:45"
+  },
+  {
+    "id": 20,
+    "name": "Internet Services",
+    "created_at": "2018-04-14 01:42:58",
+    "updated_at": "2018-04-14 01:42:58"
+  },
+  {
+    "id": 21,
+    "name": "Medical Hospital",
+    "created_at": "2018-04-14 01:43:11",
+    "updated_at": "2018-04-14 01:43:11"
+  },
+  {
+    "id": 22,
+    "name": "Restaurant Food Services",
+    "created_at": "2018-04-14 01:43:26",
+    "updated_at": "2018-04-14 01:43:26"
+  },
+  {
+    "id": 23,
+    "name": "Banking",
+    "created_at": "2018-04-14 01:43:31",
+    "updated_at": "2018-04-14 01:43:31"
+  },
+  {
+    "id": 24,
+    "name": "Design",
+    "created_at": "2018-04-14 01:43:40",
+    "updated_at": "2018-04-14 01:43:40"
+  },
+  {
+    "id": 25,
+    "name": "Clothing And Textile Manufacturing",
+    "created_at": "2018-04-14 01:44:00",
+    "updated_at": "2018-04-14 01:44:00"
+  },
+  {
+    "id": 26,
+    "name": "Energy Utilities",
+    "created_at": "2018-04-14 01:44:14",
+    "updated_at": "2018-04-14 01:44:14"
+  },
+  {
+    "id": 27,
+    "name": "Real Estate Property",
+    "created_at": "2018-04-14 01:44:30",
+    "updated_at": "2018-04-14 01:44:30"
+  },
+  {
+    "id": 28,
+    "name": "Tourism Travel Services",
+    "created_at": "2018-04-14 01:44:44",
+    "updated_at": "2018-04-14 01:44:44"
+  },
+  {
+    "id": 29,
+    "name": "Insurance",
+    "created_at": "2018-04-14 01:44:50",
+    "updated_at": "2018-04-14 01:44:50"
+  },
+  {
+    "id": 30,
+    "name": "Performing Arts Fine Arts",
+    "created_at": "2018-04-14 01:45:05",
+    "updated_at": "2018-04-14 01:45:05"
+  },
+  {
+    "id": 31,
+    "name": "Chemicals Petro Chemicals",
+    "created_at": "2018-04-14 01:45:22",
+    "updated_at": "2018-04-14 01:45:22"
+  },
+  {
+    "id": 32,
+    "name": "Legal Services",
+    "created_at": "2018-04-14 01:45:38",
+    "updated_at": "2018-04-14 01:45:38"
+  },
+  {
+    "id": 33,
+    "name": "Social Services",
+    "created_at": "2018-04-14 01:45:53",
+    "updated_at": "2018-04-14 01:45:53"
+  },
+  {
+    "id": 34,
+    "name": "Transportation Storage",
+    "created_at": "2018-04-14 01:46:05",
+    "updated_at": "2018-04-14 01:46:05"
+  },
+  {
+    "id": 35,
+    "name": "Beauty Cosmetics ",
+    "created_at": "2018-04-14 01:46:18",
+    "updated_at": "2018-04-14 01:46:18"
+  },
+  {
+    "id": 36,
+    "name": "Architecture",
+    "created_at": "2018-04-14 01:46:24",
+    "updated_at": "2018-04-14 01:46:24"
+  },
+  {
+    "id": 37,
+    "name": "Broadcasting Music Film",
+    "created_at": "2018-04-14 01:46:43",
+    "updated_at": "2018-04-14 01:46:43"
+  },
+  {
+    "id": 38,
+    "name": "Sports Physical Recreation",
+    "created_at": "2018-04-14 01:47:14",
+    "updated_at": "2018-04-14 01:47:14"
+  }
+]

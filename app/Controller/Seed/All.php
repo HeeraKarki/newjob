@@ -27,6 +27,7 @@ class All
         $this->seed->LoctionSeeder();
         $this->seed->Contract_typeSeeder();
         $this->seed->Job_Function_Seeder();
+        $this->seed->Job_Industry_Seeder();
 
     }
 

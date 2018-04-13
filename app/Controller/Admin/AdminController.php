@@ -1,6 +1,7 @@
 <?php
 namespace App\Controller\Admin;
 
+use App\Models\Setting\JobIndustry;
 use App\Models\User\User;
 use App\Models\Setting\Location;
 use App\Models\Setting\JobFunction;
@@ -32,6 +33,12 @@ class AdminController
         //Get Job Function Data and Make a json File
         $jf=JobFunction::all();
         $this->makeJson('restore','job_funs.json',$jf);
+
+        //Get Job Industry Data and Make a json File
+        $jd=JobIndustry::all();
+        $this->makeJson('restore','job_ind.json',$jd);
+
+
         return success('Create Seeder Json','Successfully Created Seeder Json Files');
     }
     protected function makeconfig(){

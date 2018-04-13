@@ -3,6 +3,7 @@
 namespace App\Controller\Seed;
 
 
+use App\Models\Setting\JobIndustry;
 use Core\Helper\Hash;
 use App\Models\User\Role;
 use App\Models\User\User;
@@ -65,4 +66,16 @@ class make
             ]);
         }
     }
+
+
+    public function Job_Industry_Seeder(){
+        $jobs=$this->loadJson('restore','job_ind.json');
+
+        foreach ($jobs as $job){
+            JobIndustry::create([
+                'name'=>$job->name
+            ]);
+        }
+    }
+
 }
