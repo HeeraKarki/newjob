@@ -1,18 +1,28 @@
 <?php
 require_once 'app/Controller/Migration/routes.php';
 
+
+//Home Page
 $router->get('','User\\HomeController@home');
 
+//Login Page
 $router->get('Login','User\\HomeController@Login');
 
+//Login Check with post method
 $router->post('Login_Check','User\\LoginController@Check');
 
+//Register Page
 $router->get('Register','User\\HomeController@Register');
 
+//Register or Signup Check with Post Method
 $router->post('Signup','User\\RegisterController@Signup');
 
+//User Activation Link
 $router->get('Activation','User\\RegisterController@activation');
 
+
+
+//System Route Needs
 $router->get('Admin/Setup','SetupController@index');
 
 $router->get('Admin/Dashboard','Admin\\AdminController@index');

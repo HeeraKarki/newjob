@@ -50,7 +50,7 @@ class RegisterController
         $mail::send([
             "to"=>Request::post('email'),
             "subject"=>"Click to activate the user account",
-            "body"=>"<a href='".$link."'>Click the link</a>",
+            "body"=>"<a href='".$link."' style='background-color: #00a651;height: 50px;padding-top: 20px; color: #fff; display: block; width: 100%; font-size: 14px;white-space: nowrap;vertical-align: middle; text-align: center;'>Click the link</a>",
             'sender'=>'admin'
         ]);
 

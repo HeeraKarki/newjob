@@ -8,9 +8,9 @@ return [
         'password' => 'root'
     ],
    'mail'=>[
-       'host'=>'mail.sinphyukyun.com',  // smtp.gmail.com for gmail
-       'port'=>'26', // 587 for gmail
-       'username'=>'support@sinphyukyun.com',
-       'password'=>'spk@123456',
+       'host'=>'smtp.gmail.com',  // smtp.gmail.com for gmail
+       'port'=>'587', // 587 for gmail
+       'username'=>'evokyaw@gmail.com',
+       'password'=>'man31153',
    ]
 ];

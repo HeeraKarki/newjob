@@ -28,19 +28,4 @@ class HomeController
     public function Register(){
         return view('job/register');
     }
-
-
-    public function Signup(){
-        $data=[
-            'name'=>Request::post('username'),
-            'email'=>Request::post('email'),
-            'password'=>Hash::make(Request::post('username')),
-            'token'=>Str::random(30),
-            'isactive'=>false
-        ];
-        $user=User::create($data);
-        Auth::login($user);
-        \redirect();
-
-    }
 }

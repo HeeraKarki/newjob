@@ -37,7 +37,11 @@ class LoginController
             }else{
                 if ($userdata->isactive){
                     Auth::login($userdata);
-                    redirect('User/Profile');
+                    if($userdata->role_id==2){
+                        redirect('User/Job_Seeker');
+                    }else if($userdata->role_id == 3){
+                        redirect('User/Employer');
+                    }
                 }else{
                     error('Error!', 'Your Account Need to be activation.');
                 }
