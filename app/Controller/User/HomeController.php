@@ -15,6 +15,7 @@ class HomeController
 {
     public function home(){
         $data['job_industries']=JobIndustry::all();
+        $data['locations']=Location::all();
         return view('job/home',$data);
     }
 

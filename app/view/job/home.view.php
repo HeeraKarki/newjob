@@ -12,10 +12,11 @@ view_require('applyjob/nav');
 					<input type="text" class="form-control" placeholder="Type your key word">
 					<div class="dropdown category-dropdown">						
 						<a data-toggle="dropdown" href="index.php#"><span class="change-text">Job Location</span> <i class="fa fa-angle-down"></i></a>
-						<ul class="dropdown-menu category-change">
-							<li><a href="index.php#">Location 1</a></li>
-							<li><a href="index.php#">Location 2</a></li>
-							<li><a href="index.php#">Location 3</a></li>
+                        <ul class="dropdown-menu category-change">
+
+                            <?php foreach ($locations as $location): ?>
+                                <li><a><?= $location->name; ?></a></li>
+                            <?php endforeach; ?>
 						</ul>								
 					</div><!-- category-change -->
 					<button type="submit" class="btn btn-primary" value="Search">Search</button>
