@@ -65,6 +65,8 @@ $router->post('Admin/JobFunction_Add','Admin\\JobFunctionController@create');
 
 $router->post('Admin/JobFunction_update','Admin\\JobFunctionController@update');
 
+
+
 //Job Industry CRUD
 
 $router->get('Admin/JobIndustry','Admin\\JobIndustryController@index');
@@ -76,4 +78,17 @@ $router->get('Admin/JobIndustry_delete','Admin\\JobIndustryController@delete');
 $router->post('Admin/JobIndustry_Add','Admin\\JobIndustryController@create');
 
 $router->post('Admin/JobIndustry_update','Admin\\JobIndustryController@update');
+
+
+
+//Job_Seeker
+
+$router->get('User/Job_Seeker','User\\JobSeekerController@index');
+
+$router->get('User/Delete','User\\JobSeekerController@delete');
+$router->get('User/Resume','User\\JobSeekerController@resume');
+$router->get('User/Edit_Resume','User\\JobSeekerController@edit_resume');
+$router->get('User/Profile_Detail','User\\JobSeekerController@profile_detail');
+$router->get('User/Applied_Job','User\\JobSeekerController@applied_job');
+$router->post('User/Del','User\\JobSeekerController@del');
 
