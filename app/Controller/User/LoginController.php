@@ -51,4 +51,10 @@ class LoginController
         }
     }
 
+
+
+    public function logout(){
+        Auth::logout();
+    }
+
 }

@@ -42,16 +42,26 @@
                 </div>
             </div><!-- navbar-left -->
 
-            <!-- nav-right -->
-            <div class="nav-right">
-                <ul class="sign-in">
-                    <li><i class="fa fa-user"></i></li>
-                    <li><a href="<?= baseurl('Register');?>">Register</a></li>
-                    <li><a href="<?= baseurl('Login');?>">LogIn</a></li>
-                </ul><!-- sign-in -->
+            <?php if (auth_check()): ?>
+                <div class="nav-right">
 
-                <a href="<?= baseurl('Post_job');?>" class="btn">Post Your Job</a>
-            </div>
+                    <a href="<?= baseurl('Logout');?>" class="btn">Logout</a>
+                </div>
+
+
+            <?php else: ?>
+                <div class="nav-right">
+                    <ul class="sign-in">
+                        <li><i class="fa fa-user"></i></li>
+                        <li><a href="<?= baseurl('Register');?>">Register</a></li>
+                        <li><a href="<?= baseurl('Login');?>">LogIn</a></li>
+                    </ul><!-- sign-in -->
+
+                    <a href="<?= baseurl('Post_job');?>" class="btn">Post Your Job</a>
+                </div>
+            <?php endif; ?>
+            <!-- nav-right -->
+
             <!-- nav-right -->
         </div><!-- container -->
     </nav><!-- navbar -->

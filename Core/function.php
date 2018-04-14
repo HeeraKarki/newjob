@@ -58,6 +58,9 @@ function url_parms($key){
     }
 }
 
+function auth_check(){
+    return \Core\Helper\Auth::check();
+}
 
 function redirect($path=null){
     if ($path!==null){

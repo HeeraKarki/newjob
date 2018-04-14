@@ -8,6 +8,9 @@ $router->get('','User\\HomeController@home');
 //Login Page
 $router->get('Login','User\\HomeController@Login');
 
+//Logout
+$router->get('Logout','User\\LoginController@logout');
+
 //Login Check with post method
 $router->post('Login_Check','User\\LoginController@Check');
 
@@ -91,4 +94,8 @@ $router->get('User/Edit_Resume','User\\JobSeekerController@edit_resume');
 $router->get('User/Profile_Detail','User\\JobSeekerController@profile_detail');
 $router->get('User/Applied_Job','User\\JobSeekerController@applied_job');
 $router->post('User/Del','User\\JobSeekerController@del');
+
+
+//Employer
+$router->get('User/Employer','User\\EmployerController@index');
 

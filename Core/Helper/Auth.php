@@ -9,7 +9,8 @@ class Auth
 
     public static function check(){
         if(!Session::has('islogin')){
-            throw new \Exception('User is not Loging');
+            return false;
+//            throw new \Exception('User is not Loging');
         }else{
             return true;
         }

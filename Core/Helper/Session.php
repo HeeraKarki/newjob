@@ -28,7 +28,9 @@ class Session
     }
 
     public static function destroy(){
+        unset($_SESSION);
         return session_destroy();
+
     }
 
     public static function flush($key){
