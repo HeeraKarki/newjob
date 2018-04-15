@@ -16,7 +16,8 @@ view_require('applyjob/nav');
         <div class="job-profile section">
             <div class="user-profile">
                 <div class="user-images">
-                    <img src="<?= asset('applyjob/')?>images/user.jpg" alt="User Images" class="img-responsive">
+<!--                    <img src="--><?//= asset('applyjob/')?><!--images/user.jpg" alt="User Images" class="img-responsive">-->
+                    <img width="100" src="<?= isset($user_details->job_seeker->photo)?$user_details->job_seeker->photo!==NULL?asset($user_details->job_seeker->photo):'':asset('applyjob/images/user.jpg') ?>" alt="User Images" class="img-responsive">
                 </div>
                 <div class="user">
                     <h2 class="text-capitalize">Hello, <a href=""><?= auth()['name'] ?></a></h2>
@@ -48,12 +49,13 @@ view_require('applyjob/nav');
         <div class="resume-content">
             <div class="profile section clearfix">
                 <div class="profile-logo">
-                    <img class="img-responsive" src="<?= asset('applyjob/')?>images/job/resume.jpg" alt="Image">
+<!--                    <img class="img-responsive" src="--><?//= asset('applyjob/')?><!--images/job/resume.jpg" alt="Image">-->
+                    <img width="200" class="img-responsive" src="<?= isset($user_details->job_seeker->photo)?$user_details->job_seeker->photo!==NULL?asset($user_details->job_seeker->photo):'':asset('applyjob/images/job/resume.jpg') ?>" alt="Image">
                 </div>
                 <div class="profile-info">
                     <h1 class="text-capitalize"><?= auth()['name']?></h1>
                     <address>
-                        <p>Address: 123 West 12th Street, Suite 456 New York, NY 123456 <br> Phone: +012 345 678 910 <br>
+                        <p>Address: <?= isset($user_details->job_seeker->address)?$user_details->job_seeker->address:'Please Update Detail' ?> <br>
                             Email:<a href=""> <?= auth()['email']?></a>
                         </p>
                     </address>

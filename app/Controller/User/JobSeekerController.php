@@ -20,7 +20,8 @@ class JobSeekerController
 
 
     public function resume(){
-        return view('user/resume');
+        $data['user_details']=User::where('id',auth()['id'])->first();
+        return view('user/resume',$data);
     }
 
     public function edit_resume(){
