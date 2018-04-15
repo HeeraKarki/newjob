@@ -96,6 +96,15 @@ $router->get('User/Applied_Job','User\\JobSeekerController@applied_job');
 $router->post('User/Del','User\\JobSeekerController@del');
 
 
+
+//Career Object
+$router->post('User/Career','User\\SeekerDetail@career');
+$router->post('User/Work_experience','User\\SeekerDetail@work_experience');
+$router->post('User/Education','User\\SeekerDetail@education');
+$router->post('User/Qualification','User\\SeekerDetail@qualification');
+$router->post('User/Language','User\\SeekerDetail@language');
+$router->post('User/Seeker_Detail','User\\SeekerDetail@detail');
+
 //Employer
 $router->get('User/Employer','User\\EmployerController@index');
 

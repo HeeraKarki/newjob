@@ -2,11 +2,15 @@
 namespace App\Controller\User;
 
 
+use App\Models\User\CareerObjective;
+use App\Models\User\User;
+
 class JobSeekerController
 {
 
     public function index(){
-        return view('user/jobseeker');
+        $data['user_details']=User::where('id',auth()['id'])->first();
+        return view('user/jobseeker',$data);
     }
 
 

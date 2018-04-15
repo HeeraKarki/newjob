@@ -40,7 +40,31 @@ function success($title,$message,$link=null){
     return redirect($link);
 }
 
-
+function upload($path,$key,$expensions= ["jpeg","jpg","png"],$withsession=false){
+    if (!is_dir('public/'.$path)){
+        mkdir('public/'.$path, 0777, true);
+    }
+    $target_file = 'public/'.$path . basename($_FILES[$key]["name"]);
+    $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+    if(in_array($imageFileType,$expensions)=== false){
+        return error('Extension Not Allowed', implode(',',$expensions).' Only allowed, you extension not allowed.');
+    }
+    if (move_uploaded_file($_FILES[$key]["tmp_name"], $target_file)) {
+            $message= "The file ". basename( $_FILES[$key]["name"]). " has been uploaded.";
+            if ($withsession){
+                return success('Completed',$message);
+            }else{
+                return $path . basename($_FILES[$key]["name"]);
+            }
+        } else {
+            $message= "Sorry, there was an error uploading your file.";
+            if ($withsession){
+                return error('Error!',$message);
+            }else{
+                return false;
+            }
+        }
+}
 function checkpost($key){
     if (\Core\Request::post($key) ==='' || \Core\Request::post($key) === null || empty(\Core\Request::post($key))){
         return true;
@@ -60,6 +84,10 @@ function url_parms($key){
 
 function auth_check(){
     return \Core\Helper\Auth::check();
+}
+
+function auth(){
+    return \Core\Helper\Auth::data();
 }
 
 function redirect($path=null){

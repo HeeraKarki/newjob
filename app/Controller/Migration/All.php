@@ -20,10 +20,14 @@ class All
         $this->table->jobfunctionstable();
         $this->table->employertable();
         $this->table->job_seekertable();
-        $this->table->SeekerQualificationtable();
+        $this->table->SeekerEducationtable();
         $this->table->SeekerExperiencetable();
+        $this->table->SeekerQualificationsTable();
+        $this->table->SeekerLanguagesTable();
         $this->table->ContractTypeTable();
         $this->table->JobIndustryTable();
+        $this->table->CareerObjectTable();
+
 
         
         redirect('Admin/Setup');

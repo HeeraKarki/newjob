@@ -84,45 +84,73 @@ class TableCreate
         });
     }
     public function job_seekertable(){
-        Make::schema()->create('job_seeker',function ($table){
+        Make::schema()->create('job_seekers',function ($table){
             $table->increments('id');
+            $table->string('fullname');
+            $table->string('father_name');
+            $table->string('mother_name');
+            $table->date('date_of_birth');
+            $table->string('birth_place');
+            $table->string('nationality');
+            $table->string('nrc_no');
             $table->text('address');
             $table->string('phone_no');
-            $table->string('date_of_birth');
             $table->boolean('gender');
-            $table->string('Nationality');
-            $table->string('nrc_no',30);
-            $table->string('workexperience');
-            $table->text('photo');
+            $table->text('photo')->nullable();
             $table->unsignedInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE')->onUpdate('CASCADE');
             $table->timestamps();
         });
     }
-    public function SeekerQualificationtable(){
-        Make::schema()->create('seeker_qualification',function ($table){
+    public function SeekerEducationtable(){
+        Make::schema()->create('seeker_educations',function ($table){
             $table->increments('id');
-            $table->text('name3');
-            $table->date('qualification_date');
-            $table->text('qualification_image_front');
-            $table->text('qualification_image_back');
-            $table->unsignedInteger('job_seeker_id');
-            $table->foreign('job_seeker_id')->references('id')->on('job_seeker')->onDelete('CASCADE')->onUpdate('CASCADE');
+            $table->string('institute_name');
+            $table->string('degree');
+            $table->date('form');
+            $table->date('to');
+            $table->text('description');
+            $table->unsignedInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE')->onUpdate('CASCADE');
             $table->timestamps();
         });
     }
     public function SeekerExperiencetable(){
-        Make::schema()->create('seeker_experience',function ($table){
+        Make::schema()->create('seeker_experiences',function ($table){
             $table->increments('id');
-            $table->text('position');
-            $table->string('description');
+            $table->text('company_name');
+            $table->string('designation');
             $table->date('post_from_date');
             $table->date('post_to_date');
-            $table->unsignedInteger('job_seeker_id');
-            $table->foreign('job_seeker_id')->references('id')->on('job_seeker')->onDelete('CASCADE')->onUpdate('CASCADE');
+            $table->text('description');
+            $table->unsignedInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE')->onUpdate('CASCADE');
             $table->timestamps();
         });
     }
+
+    public function SeekerQualificationsTable(){
+        Make::schema()->create('seeker_qualifications',function ($table){
+            $table->increments('id');
+            $table->text('txt');
+            $table->unsignedInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE')->onUpdate('CASCADE');
+            $table->timestamps();
+        });
+    }
+
+    public function SeekerLanguagesTable(){
+        Make::schema()->create('seeker_languages',function ($table){
+            $table->increments('id');
+            $table->text('name');
+            $table->float('rating');
+            $table->unsignedInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE')->onUpdate('CASCADE');
+            $table->timestamps();
+        });
+    }
+
+
     public function ContractTypeTable(){
         Make::schema()->create('contract_types',function ($table){
             $table->increments('id');
@@ -130,6 +158,18 @@ class TableCreate
             $table->timestamps();
         });
     }
+
+    public function CareerObjectTable(){
+        Make::schema()->create('career_objectives',function ($table){
+            $table->increments('id');
+            $table->text('txt');
+            $table->unsignedInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE')->onUpdate('CASCADE');
+            $table->timestamps();
+        });
+    }
+
+
     public function JobIndustryTable(){
         Make::schema()->create('job_industries',function ($table){
             $table->increments('id');

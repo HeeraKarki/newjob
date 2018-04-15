@@ -21,7 +21,11 @@ class HomeController
 
 
     public function Login(){
-        return view('job/login');
+        if(!auth_check()){
+            return view('job/login');
+        }else{
+            return redirect('/');
+        }
     }
 
 

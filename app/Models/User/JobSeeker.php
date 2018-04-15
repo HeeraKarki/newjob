@@ -7,7 +7,10 @@ use Illuminate\Database\Eloquent\Model;
 class JobSeeker extends Model
 {
     protected $fillable=[
-        'address','phone_no','date_of_birth','gender','nationality','nrc_no',
-        'workexperience','photo'
+        'fullname','father_name','mother_name','date_of_birth','birth_place','nationality','nrc_no','address','phone_no','gender','photo','user_id'
     ];
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }

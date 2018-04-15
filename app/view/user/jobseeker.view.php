@@ -16,11 +16,11 @@ view_require('applyjob/nav');
         <div class="job-profile section">
             <div class="user-profile">
                 <div class="user-images">
-                    <img src="asset/images/user.jpg" alt="User Images" class="img-responsive">
+                    <img src="<?= asset('applyjob/')?>images/user.jpg" alt="User Images" class="img-responsive">
                 </div>
                 <div class="user">
-                    <h2>Hello, <a href="profile.php#">Jhon Doe</a></h2>
-                    <h5>You last logged in at: 10-01-2017 6:40 AM [ USA time (GMT + 6:00hrs)]</h5>
+                    <h2 class="text-capitalize">Hello, <a href=""><?= auth()['name'] ?></a></h2>
+                    <h5><?= auth()['email'] ?></h5>
                 </div>
 
                 <div class="favorites-user">
@@ -43,167 +43,115 @@ view_require('applyjob/nav');
             </ul>
         </div><!-- ad-profile -->
 
+        <?php view_require('applyjob/success');?>
+        <?php view_require('applyjob/error');?>
         <div class="resume-content">
             <div class="profile section clearfix">
                 <div class="profile-logo">
-                    <img class="img-responsive" src="asset/images/job/resume.jpg" alt="Image">
+                    <img class="img-responsive" src="<?= asset('applyjob/')?>images/job/resume.jpg" alt="Image">
                 </div>
                 <div class="profile-info">
-                    <h1>Jhon Doe</h1>
+                    <h1 class="text-capitalize"><?= auth()['name']?></h1>
                     <address>
-                        <p>Address: 123 West 12th Street, Suite 456 New York, NY 123456 <br> Phone: +012 345 678 910 <br> Email:<a href="profile.php#"> itsme@surzilegeek.com</a></p>
+                        <p>Address: 123 West 12th Street, Suite 456 New York, NY 123456 <br> Phone: +012 345 678 910 <br>
+                            Email:<a href=""> <?= auth()['email']?></a>
+                        </p>
                     </address>
                 </div>
             </div><!-- profile -->
 
-            <div class="career-objective section">
-                <div class="icons">
-                    <i class="fa fa-black-tie" aria-hidden="true"></i>
-                </div>
-                <div class="career-info">
-                    <h3>Career Objective</h3>
-                    <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></p>
-                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni।</p>
-                </div>
-            </div><!-- career-objective -->
 
-            <div class="work-history section">
-                <div class="icons">
-                    <i class="fa fa-briefcase" aria-hidden="true"></i>
-                </div>
-                <div class="work-info">
-                    <h3>Work History</h3>
-                    <ul>
-                        <li>
-                            <h4>Senior Graphic Designer @ Buildomo <span>2012 - Present</span></h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        </li>
-                        <li>
-                            <h4>Former Graphic Designer @ Ideame <span>2011 - 2012</span></h4>
-                            <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        </li>
-                        <li>
-                            <h4>Head of Design @ Titan Compnay <span>2005 - 2011</span></h4>
-                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
-                        </li>
-                        <li>
-                            <h4>Graphic Designer @ Precision <span>2004 - 2005</span></h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        </li>
-                        <li>
-                            <h4>Graphic Designer (Intern) @ Costa Rica Fruit Compnay <span>2002 - 2004</span></h4>
-                            <p>Incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        </li>
-                    </ul>
-                </div>
-            </div><!-- work-history -->
 
-            <div class="educational-background section">
-                <div class="icons">
-                    <i class="fa fa-graduation-cap" aria-hidden="true"></i>
-                </div>
-                <div class="educational-info">
-                    <h3>Education Background</h3>
-                    <ul>
-                        <li>
-                            <h4>Masters of Arts @ Montana Satet University</h4>
-                            <ul>
-                                <li>Year: <span>1999 - 2001</span> </li>
-                                <li>Concentration/Major: <span>Major in Accounting</span></li>
-                                <li>Course Duration: <span>2 Years</span></li>
-                                <li>Result: <span>4.00</span></li>
-                            </ul>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        </li>
-                        <li>
-                            <h4>Bachalor of Arts @ Universty of Bristol</h4>
-                            <ul>
-                                <li>Year: <span>1999 - 2001</span> </li>
-                                <li>Concentration/Major: <span>Major in Accounting</span></li>
-                                <li>Course Duration: <span>2 Years</span></li>
-                                <li>Result: <span>4.00</span></li>
-                            </ul>
-                            <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                        </li>
-                        <li>
-                            <h4>Diploma in Graphics Design @ Cincinnati Christian University</h4>
-                            <ul>
-                                <li>Year: <span>1999 - 2001</span> </li>
-                                <li>Concentration/Major: <span>Major in Accounting</span></li>
-                                <li>Course Duration: <span>2 Years</span></li>
-                                <li>Result: <span>4.00</span></li>
-                            </ul>
-                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</p>
-                        </li>
-                    </ul>
-                </div>
-            </div><!-- educational-background -->
+            <!-- Large modal -->
+            <button type="button" data-toggle="modal" data-target=".personal" class="btn btn-info" style="float: right;margin-top: -10px;"><i class="fa fa-plus"></i> </button>
+            <div class="modal fade personal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <form action="<?= baseurl('User/Seeker_Detail') ?>" method="post" enctype="multipart/form-data">
+                            <div class="section company-information">
+                                <h4>Personal Deatils</h4>
+                                <div class="row form-group">
+                                    <label class="col-sm-3 label-title">Full Name</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="fullname" class="form-control" placeholder="Jhon Doe" value="<?= isset($user_details->job_seeker->fullname)?$user_details->job_seeker->fullname:'' ?>">
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <label class="col-sm-3 label-title">Father's Name</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="father_name" class="form-control" placeholder="Robert Doe" value="<?= isset($user_details->job_seeker->father_name)?$user_details->job_seeker->father_name:'' ?>">
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <label class="col-sm-3 label-title">Mother's Name</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="mother_name" class="form-control" placeholder="Ismatic Roderos Doe" value="<?= isset($user_details->job_seeker->mother_name)?$user_details->job_seeker->mother_name:'' ?>">
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <label class="col-sm-3 label-title">Date of Birth</label>
+                                    <div class="col-sm-9">
+                                        <input type="date" name="date_of_birth" class="form-control" placeholder="26/01/1982" value="<?= isset($user_details->job_seeker->date_of_birth)?$user_details->job_seeker->date_of_birth:'' ?>">
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <label class="col-sm-3 label-title">Birth Place</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="birth_place" class="form-control" placeholder="United State of America" value="<?= isset($user_details->job_seeker->birth_place)?$user_details->job_seeker->birth_place:'' ?>">
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <label class="col-sm-3 label-title">Nationality</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="nationality" class="form-control" placeholder="Nationality" value="<?= isset($user_details->job_seeker->nationality)?$user_details->job_seeker->nationality:'' ?>">
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <label class="col-sm-3 label-title">NRC No.</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="nrc_no" class="form-control" placeholder="NRC No." value="<?= isset($user_details->job_seeker->nrc_no)?$user_details->job_seeker->nrc_no:'' ?>">
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <label class="col-sm-3 label-title">Phone No.</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="phone_no" class="form-control" placeholder="Phone No." value="<?= isset($user_details->job_seeker->phone_no)?$user_details->job_seeker->phone_no:'' ?>">
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <label class="col-sm-3 label-title">Gender</label>
+                                    <div class="col-sm-9">
+                                        <input type="radio" name="gender" id="male" value="1" style="margin-right: 10px;" <?= isset($user_details->job_seeker->gender)?$user_details->job_seeker->gender==0?'checked':'':'' ?>>
+                                        <label for="male">Male</label>
+                                        <input type="radio" name="gender" id="female" value="0" style="margin-right: 10px;" <?= isset($user_details->job_seeker->gender)?$user_details->job_seeker->gender==0?'checked':'':'' ?>>
+                                        <label for="female">Female</label>
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <label class="col-sm-3 label-title">Address</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="address" class="form-control" placeholder="121 King Street, Melbourne Victoria, 1200 USA" value="<?= isset($user_details->job_seeker->fullname)?$user_details->job_seeker->fullname:'' ?>">
+                                    </div>
+                                </div>
 
-            <div class="special-qualification: section">
-                <div class="icons">
-                    <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
-                </div>
-                <div class="qualification">
-                    <h3>Special Qualification:</h3>
-                    <ul>
-                        <li><span>1.</span> 5 years+ experience designing and building products In the Design & IT industry.</li>
-                        <li><span>2.</span> Passion for people-centered design, solid intuition.</li>
-                        <li><span>3.</span> Skilled at any Kind Design Tools. </li>
-                        <li><span>4.</span> Hard Worker & Quick Lerner.</li>
-                    </ul>
-                </div>
-            </div><!-- educational-background -->
+                                <div class="row form-group photos-resume">
+                                    <label class="col-sm-4 label-title">Photos for your Resume</label>
+                                    <div class="col-sm-8 ">
+                                        <label class="upload-image left" for="upload-image-one">
+                                            <input type="file" name="photo" id="upload-image-one">
+                                            Type: JPG, PNG  Size: 3.5 x 4.5 cm
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="buttons pull-right">
+                                    <button type="submit" class="btn">Add New Feild</button>
+                                </div>
+                            </div>
+                        </form>
 
-            <div class="language-proficiency section">
-                <div class="icons">
-                    <i class="fa fa-language" aria-hidden="true"></i>
+                    </div>
                 </div>
-                <div class="proficiency">
-                    <h3>Language Proficiency</h3>
-                    <ul class="list-inline">
-                        <li>
-                            <h5>English</h5>
-                            <ul>
-                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <h5>German</h5>
-                            <ul>
-                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <h5>Spanish</h5>
-                            <ul>
-                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <h5>Latin</h5>
-                            <ul>
-                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                <li><i class="fa fa-star" aria-hidden="true"></i></li>
-                                <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                                <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div>
-            </div><!-- language-proficiency -->
+            </div>
 
             <div class="personal-deatils section">
                 <div class="icons">
@@ -212,32 +160,302 @@ view_require('applyjob/nav');
                 <div class="personal-info">
                     <h3>Personal Deatils</h3>
                     <ul class="address">
-                        <li><h5>Full Name </h5> <span>:</span>Jhon Doe</li>
-                        <li><h5>Father's Name </h5> <span>:</span>Robert Doe</li>
-                        <li><h5>Mother's Name </h5> <span>:</span>Ismatic Roderos Doe</li>
-                        <li><h5>Date of Birth </h5> <span>:</span>26/01/1982</li>
-                        <li><h5>Birth Place </h5> <span>:</span>United State of America</li>
-                        <li><h5>Nationality </h5> <span>:</span>Canadian</li>
-                        <li><h5>Sex </h5> <span>:</span>Male</li>
-                        <li><h5>Address </h5> <span>:</span>121 King Street, Melbourne Victoria, 1200 USA</li>
+                        <li><h5>Full Name </h5> <span>:</span><?= isset($user_details->job_seeker->fullname)?$user_details->job_seeker->fullname:'' ?></li>
+                        <li><h5>Father's Name </h5> <span>:</span><?= isset($user_details->job_seeker->father_name)? $user_details->job_seeker->father_name:'' ?></li>
+                        <li><h5>Mother's Name </h5> <span>:</span><?= isset($user_details->job_seeker->mother_name)? $user_details->job_seeker->mother_name:'' ?></li>
+                        <li><h5>Date of Birth </h5> <span>:</span><?= isset($user_details->job_seeker->date_of_birth)? $user_details->job_seeker->date_of_birth:'' ?></li>
+                        <li><h5>Birth Place </h5> <span>:</span><?= isset($user_details->job_seeker->birth_place)? $user_details->job_seeker->birth_place:'' ?></li>
+                        <li><h5>Nationality </h5> <span>:</span><?= isset($user_details->job_seeker->nationality)? $user_details->job_seeker->nationality:'' ?></li>
+                        <li><h5>Sex </h5> <span>:</span><?= isset($user_details->job_seeker->gender )?$user_details->job_seeker->gender === "1" ? "Male": "Female":''?></li>
+                        <li><h5>Address </h5> <span>:</span><?= isset($user_details->job_seeker->address)? $user_details->job_seeker->address:'' ?></li>
                     </ul>
                 </div>
             </div><!-- personal-deatils -->
+            <!-- Large modal -->
 
-            <div class="declaration section">
-                <div class="icons">
-                    <i class="fa fa-hand-peace-o" aria-hidden="true"></i>
+            <button type="button" data-toggle="modal" data-target=".career" class="btn btn-info" style="float: right;margin-top: -10px;"><i class="fa fa-plus"></i> </button>
+            <div class="modal fade career" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="section career-objective">
+                            <h4>Career Objective</h4>
+                            <form action="<?= baseurl('User/Career') ?>" method="post">
+                                <div class="form-group">
+                                    <textarea class="form-control" name="txt" placeholder="Write few lines about your career objective" rows="8"><?= isset($user_details->career->txt)?$user_details->career->txt:'' ?></textarea>
+                                </div>
+                                <input type="hidden" value="<?= auth()['id']?>" name="user_id">
+                                <span>5000 characters left</span>
+                                <button type="submit" class="btn btn-primary" style="display: block;margin: 0 auto;">Update Career Objective</button>
+                            </form>
+
+                        </div>
+                    </div>
                 </div>
-                <div class="declaration-info">
-                    <h3>Declaration</h3>
-                    <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></p>
-                    <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni। dolores eos qui ratione voluptatem sequi nesciunt.</p>
+            </div>
+
+
+            <div class="career-objective section">
+                <div class="icons">
+                    <i class="fa fa-black-tie" aria-hidden="true"></i>
+                </div>
+                <div class="career-info">
+                    <?= isset($user_details->career->txt)?$user_details->career->txt:'Write few lines about your career objective' ?>
                 </div>
             </div><!-- career-objective -->
-            <div class="buttons">
-                <a href="profile.php#" class="btn">Update Profile</a>
-                <a href="profile.php#" class="btn cancle">Cancle</a>
+
+            <!-- Large modal -->
+            <button type="button" data-toggle="modal" data-target=".work_history" class="btn btn-info" style="float: right;margin-top: -10px;"><i class="fa fa-plus"></i> </button>
+            <div class="modal fade work_history" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <form action="<?= baseurl('User/Work_experience'); ?>" method="post">
+                            <div class="section">
+                                <h4>Work History</h4>
+                                <div class="row form-group">
+                                    <label class="col-sm-3 label-title">Compnay Name</label>
+                                    <div class="col-sm-9">
+                                        <input name="company_name" class="form-control" placeholder="Name" type="text">
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <label class="col-sm-3 label-title">Designation</label>
+                                    <div class="col-sm-9">
+                                        <input name="designation" class="form-control" placeholder="Human Resource Manager" type="text">
+                                    </div>
+                                </div>
+                                <div class="row form-group time-period">
+                                    <label class="col-sm-3 label-title">Time Period</label>
+                                    <div class="col-sm-9">
+                                        <input name="post_from_date" class="form-control" placeholder="dd/mm/yy" type="date"><span>-</span>
+                                        <input name="post_to_date" class="form-control pull-right" placeholder="dd/mm/yy" type="date">
+                                    </div>
+                                </div>
+                                <div class="row form-group job-description">
+                                    <label class="col-sm-3 label-title">Job Description</label>
+                                    <div class="col-sm-9">
+                                        <textarea name="description" class="form-control" placeholder="" rows="8"></textarea>
+                                    </div>
+                                </div>
+                                <div class="buttons pull-right">
+                                    <button type="submit" class="btn">Add New Exprience</button>
+                                    <!-- <a href="post-resume.html#" class="btn delete">Delete</a>-->
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
             </div>
+            <div class="work-history section">
+                <div class="icons">
+                    <i class="fa fa-briefcase" aria-hidden="true"></i>
+                </div>
+                <div class="work-info">
+                    <h3>Work History</h3>
+                    <ul>
+                        <?php foreach ($user_details->experiences as $experience): ?>
+                            <li>
+                                <h4>
+                                    <?= $experience->designation ?> @ <?= $experience->company_name ?>
+                                    <span>
+                                        <?= date('d-M-Y',strtotime($experience->post_from_date)) ?>  To  <?= date('d-M-Y',strtotime($experience->post_to_date))  ?>
+                                    </span></h4>
+                                <p><?= $experience->description ?></p>
+                            </li>
+                        <?php endforeach; ?>
+
+                    </ul>
+                </div>
+            </div><!-- work-history -->
+
+            <!-- Large modal -->
+            <button type="button" data-toggle="modal" data-target=".edcation" class="btn btn-info" style="float: right;margin-top: -10px;"><i class="fa fa-plus"></i> </button>
+            <div class="modal fade edcation" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <form action="<?= baseurl('User/Education') ?>" method="post">
+                            <div class="section education-background">
+                                <h4>Education Background</h4>
+                                <div class="row form-group">
+                                    <label class="col-sm-3 label-title">Institute Name</label>
+                                    <div class="col-sm-9">
+                                        <input name="institute_name" class="form-control" placeholder="ropbox" type="text">
+                                    </div>
+                                </div>
+                                <div class="row form-group">
+                                    <label class="col-sm-3 label-title">Degree</label>
+                                    <div class="col-sm-9">
+                                        <input name="degree" class="form-control" placeholder="Human Resource Manager" type="text">
+                                    </div>
+                                </div>
+                                <div class="row form-group time-period">
+                                    <label class="col-sm-3 label-title">Time Period</label>
+                                    <div class="col-sm-9">
+                                        <input name="form" class="form-control" placeholder="dd/mm/yy" type="date"><span>-</span>
+                                        <input name="to" class="form-control pull-right" placeholder="dd/mm/yy" type="date">
+                                    </div>
+                                </div>
+                                <div class="row form-group job-description">
+                                    <label class="col-sm-3 label-title">Description</label>
+                                    <div class="col-sm-9">
+                                        <textarea name="description" class="form-control" placeholder="" rows="8"></textarea>
+                                    </div>
+                                </div>
+                                <div class="buttons pull-right">
+                                    <button type="submit" class="btn btn-primary">Add New Education</button>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="educational-background section">
+                <div class="icons">
+                    <i class="fa fa-graduation-cap" aria-hidden="true"></i>
+                </div>
+                <div class="educational-info">
+                    <h3>Education Background</h3>
+                    <ul>
+                        <?php foreach ($user_details->educations as $education): ?>
+                            <li>
+                                <h4>
+                                    <?= $education->degree ?> @ <?= $education->institute_name ?>
+                                </h4>
+                                    <ul>
+                                        <li>Year: <span><?= date('Y',strtotime($education->from)) ?> - <?= date('Y',strtotime($education->to)) ?></span> </li>
+                                        <li>Concentration/Major: <span><?= $education->degree ?></span></li>
+                                    </ul>
+                                <p><?= $education->description ?></p>
+                            </li>
+                        <?php endforeach; ?>
+
+                    </ul>
+                </div>
+            </div><!-- educational-background -->
+
+            <!-- Large modal -->
+            <button type="button" data-toggle="modal" data-target=".spq" class="btn btn-info" style="float: right;margin-top: -10px;"><i class="fa fa-plus"></i> </button>
+            <div class="modal fade spq" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <div class="section career-objective">
+                            <h4>Special Qualification</h4>
+                            <form action="<?= baseurl('User/Qualification') ?>" method="post">
+                                <div class="form-group">
+                                    <textarea class="form-control" name="txt" placeholder="Write few lines about your special qualification" rows="8"><?= isset($user_details->career->txt)?$user_details->career->txt:'' ?></textarea>
+                                </div>
+                                <input type="hidden" value="<?= auth()['id']?>" name="user_id">
+                                <span>5000 characters left</span>
+                                <button type="submit" class="btn btn-primary" style="display: block;margin: 0 auto;">Update Special Qualification</button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="special-qualification: section">
+                <div class="icons">
+                    <i class="fa fa-thumbs-o-up" aria-hidden="true"></i>
+                </div>
+                <div class="qualification">
+                    <h3>Special Qualification:</h3>
+                    <ul>
+                        <?php foreach ($user_details->qualifications as $k=>$qualification): ?>
+                            <li><span><?= $k+1 .' . '?></span><?= $qualification->txt ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+            </div><!-- educational-background -->
+
+
+            <!-- Large modal -->
+            <button type="button" data-toggle="modal" data-target=".language" class="btn btn-info" style="float: right;margin-top: -10px;"><i class="fa fa-plus"></i> </button>
+            <div class="modal fade language" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+                <div class="modal-dialog modal-lg" role="document">
+                    <div class="modal-content">
+                        <form action="<?= baseurl('User/Language')?>" method="post">
+                            <div class="section language-proficiency">
+                                <h4>Language Proficiency:</h4>
+                                <div class="row form-group">
+                                    <label class="col-sm-3 label-title">Language Name</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="name" class="form-control" placeholder="English">
+                                    </div>
+                                </div>
+                                <div class="row form-group rating">
+                                    <label class="col-sm-3 label-title">Rating</label>
+                                    <div class="col-sm-9">
+                                        <div class="rating-star">
+                                            <div class="rating">
+                                                <input type="radio" id="star1" name="rating" value="5"><label class="full" for="star1"></label>
+
+                                                <input type="radio" id="star2" name="rating" value="4.5"><label class="half" for="star2"></label>
+
+                                                <input type="radio" id="star3" name="rating" value="4"><label class="full" for="star3"></label>
+
+                                                <input type="radio" id="star4" name="rating" value="3.5"><label class="half" for="star4"></label>
+
+                                                <input type="radio" id="star5" name="rating" value="3"><label class="full" for="star5"></label>
+
+                                                <input type="radio" id="star6" name="rating" value="2.5"><label class="half" for="star6"></label>
+
+                                                <input type="radio" id="star7" name="rating" value="2"><label class="full" for="star7"></label>
+
+                                                <input type="radio" id="star8" name="rating" value="1.5"><label class="half" for="star8"></label>
+
+                                                <input type="radio" id="star9" name="rating" value="1"><label class="full" for="star9"></label>
+
+                                                <input type="radio" id="star10" name="rating" value="0.5"><label class="half" for="star10"></label>
+                                            </div>
+                                        </div><!-- rating-star -->
+                                    </div>
+                                </div>
+                                <div class="buttons pull-right">
+                                    <button type="submit" class="btn btn-primary">Add New Language</button>
+                                </div>
+                            </div>
+                            <!-- language-proficiency -->
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="language-proficiency section">
+                <div class="icons">
+                    <i class="fa fa-language" aria-hidden="true"></i>
+                </div>
+                <div class="proficiency">
+                    <h3>Language Proficiency</h3>
+                    <ul class="list-inline">
+
+                        <?php foreach ($user_details->languages as $k=>$language): ?>
+                            <li>
+                                <h5><?= $language->name ?></h5>
+                                <ul>
+
+                                    <li><i class="fa <?= $language->rating >1 ? 'fa-star' : 'fa-star-o' ?> <?= $language->rating ===0.50?'fa-star-half-empty':''?>" aria-hidden="true"></i></li>
+                                    <li><i class="fa <?= $language->rating >2 ? 'fa-star' : 'fa-star-o'?> <?= $language->rating ===1.50?'fa-star-half-empty':''?>" aria-hidden="true"></i></li>
+                                    <li><i class="fa <?= $language->rating >3 ? 'fa-star' : 'fa-star-o'?> <?= $language->rating ===2.50?'fa-star-half-empty':''?>" aria-hidden="true"></i></li>
+                                    <li><i class="fa <?= $language->rating >4 ? 'fa-star' : 'fa-star-o'?> <?= $language->rating ===3.50?'fa-star-half-empty':''?>" aria-hidden="true"></i></li>
+                                    <li><i class="fa <?= $language->rating >=5 ? 'fa-star' : 'fa-star-o'?> <?= $language->rating ===4.50?'fa-star-half-empty':''?>" aria-hidden="true"></i></li>
+
+
+                                </ul>
+                            </li>
+                        <?php endforeach; ?>
+
+                    </ul>
+                </div>
+            </div><!-- language-proficiency -->
+
+
+
+
             <div class="download-button resume">
                 <a href="profile.php#" class="btn">Download Resume as doc</a>
             </div>

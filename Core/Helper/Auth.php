@@ -35,7 +35,8 @@ class Auth
     public static function login($data){
         Session::set([
             'islogin'=>true,
-            'userdata'=>collect($data)
+            'userdata'=>$data
+//            'userdata'=>collect($data)
         ]);
     }
 

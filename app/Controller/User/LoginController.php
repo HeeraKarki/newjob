@@ -32,11 +32,11 @@ class LoginController
             //Check User has role admin.
             if ($userdata->hasrole('admin')) {
                 Session::set(['isAdmin'=>true]);
-                Auth::login($userdata);
+                Auth::login($userdata->toArray());
                 redirect('Admin/Dashboard');
             }else{
                 if ($userdata->isactive){
-                    Auth::login($userdata);
+                    Auth::login($userdata->toArray());
                     if($userdata->role_id==2){
                         redirect('User/Job_Seeker');
                     }else if($userdata->role_id == 3){

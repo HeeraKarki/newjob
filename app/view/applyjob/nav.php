@@ -40,12 +40,29 @@
                         </li>
                     </ul>
                 </div>
-            </div><!-- navbar-left -->
+            </div>
 
             <?php if (auth_check()): ?>
-                <div class="nav-right">
+                <div class="navbar-right">
+                    <div class="collapse navbar-collapse" id="navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li class="dropdown"><a href="javascript:void(0);" class="dropdown-toggle text-uppercase" data-toggle="dropdown">
+                                    <i class="fa fa-user"></i>
+                                    <?= auth()['name'] ?><span class="caret"></span>
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <?php if (auth()['role_id'] === 2 ): ?>
+                                        <li><a href="<?= baseurl('User/Job_Seeker');?>">Profile</a></li>
+                                    <?php elseif (auth()['role_id']===3): ?>
+                                        <li><a href="<?= baseurl('User/Employer');?>">Profile</a></li>
+                                    <?php endif; ?>
 
-                    <a href="<?= baseurl('Logout');?>" class="btn">Logout</a>
+                                    <li><a href="<?= baseurl('Logout');?>">Logout</a></li>
+
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
 
 
