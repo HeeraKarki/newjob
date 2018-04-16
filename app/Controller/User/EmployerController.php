@@ -2,6 +2,10 @@
 namespace App\Controller\User;
 
 
+use App\Models\Job\JobPost;
+use App\Models\Setting\ContractType;
+use App\Models\Setting\JobFunction;
+use App\Models\Setting\JobIndustry;
 use App\Models\Setting\Location;
 use App\Models\User\Employer;
 use App\Models\User\User;
@@ -41,5 +45,33 @@ class EmployerController
 
         Employer::updateOrCreate(['user_id'=>auth()['id']],$data);
         return success('Add Company Detail','Succesful Add Detial');
+    }
+
+
+    public function post_job(){
+        $data['job_functions']=JobFunction::all();
+        $data['job_industries']=JobIndustry::all();
+        $data['locations']=Location::all();
+        $data['contract_types']=ContractType::all();
+
+        return view('user/empolyer/postjob',$data);
+    }
+
+    public function post_job_add(){
+        $data=[
+            'title'=>Request::post('title'),
+            'salary_min'=>Request::post('salary_min'),
+            'salary_max'=>Request::post('salary_max'),
+            'salary_type'=>Request::post('salary_type'),
+            'experience'=>Request::post('experience'),
+            'description'=>Request::post('description'),
+            'location_id'=>Request::post('location_id'),
+            'contract_type_id'=>Request::post('contract_type_id'),
+            'user_id'=>auth()['id'],
+            'job_function_id'=>Request::post('job_function_id'),
+            'job_industry_id'=>Request::post('job_industry_id')
+        ];
+        JobPost::create($data);
+        return success('Add New Job','Successfully created a post.');
     }
 }

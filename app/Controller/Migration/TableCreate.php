@@ -171,6 +171,29 @@ class TableCreate
             $table->timestamps();
         });
     }
-    
+
+
+    public function JobPostTable(){
+        Make::schema()->create('job_posts',function ($table){
+            $table->increments('id');
+            $table->string('title');
+            $table->float('salary_min');
+            $table->float('salary_max');
+            $table->enum('salary_type',['per_hour','daily','monthly','yearly']);
+            $table->enum('experience',['entry','mid','mid-senior','top']);
+            $table->text('description')->nullable();
+            $table->unsignedInteger('location_id');
+            $table->unsignedInteger('contract_type_id');
+            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('job_function_id');
+            $table->unsignedInteger('job_industry_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE')->onUpdate('CASCADE');
+            $table->foreign('location_id')->references('id')->on('locations')->onDelete('CASCADE')->onUpdate('CASCADE');
+            $table->foreign('contract_type_id')->references('id')->on('contract_types')->onDelete('CASCADE')->onUpdate('CASCADE');
+            $table->foreign('job_function_id')->references('id')->on('job_functions')->onDelete('CASCADE')->onUpdate('CASCADE');
+            $table->foreign('job_industry_id')->references('id')->on('job_industries')->onDelete('CASCADE')->onUpdate('CASCADE');
+            $table->timestamps();
+        });
+    }
 
 }

@@ -108,4 +108,6 @@ $router->post('User/Seeker_Detail','User\\SeekerDetail@detail');
 //Employer
 $router->get('User/Employer','User\\EmployerController@index');
 $router->post('User/Employer_Add','User\\EmployerController@add');
+$router->get('Employer/Post_Job','User\\EmployerController@post_job');
+$router->post('Employer/Job_a_post','User\\EmployerController@post_job_add');
 

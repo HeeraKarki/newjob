@@ -26,6 +26,7 @@ class All
         $this->table->ContractTypeTable();
         $this->table->JobIndustryTable();
         $this->table->CareerObjectTable();
+        $this->table->JobPostTable();
 
 
         
