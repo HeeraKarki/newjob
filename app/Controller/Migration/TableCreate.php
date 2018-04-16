@@ -39,13 +39,16 @@ class TableCreate
         Make::schema()->create('employers',function ($table){
             $table->increments('id');
             $table->string('company_name');
-            $table->text('address_1');
-            $table->text('address_2');
+            $table->text('address');
             $table->string('phone_no');
             $table->text('description');
             $table->integer('no_of_employee');
             $table->string('website');
-            $table->text('logo');
+            $table->text('logo')->nullable();
+            $table->string('facebook')->nullable();
+            $table->string('twitter')->nullable();
+            $table->string('googleplus')->nullable();
+            $table->text('avatar')->nullable();
             $table->unsignedInteger('location_id');
             $table->unsignedInteger('user_id');
             $table->foreign('location_id')->references('id')->on('locations')->onDelete('CASCADE')->onUpdate('CASCADE');
@@ -62,17 +65,7 @@ class TableCreate
 
         });
     }
-    
 
-    public function Postiontable()
-    {
-        Make:: schema()->create('positions',function($table){
-            $table->increments('id');
-            $table->string('name');
-            $table->timestamps();
-
-        });
-    }
 
     public function jobfunctionstable()
     {

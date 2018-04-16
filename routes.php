@@ -107,4 +107,5 @@ $router->post('User/Seeker_Detail','User\\SeekerDetail@detail');
 
 //Employer
 $router->get('User/Employer','User\\EmployerController@index');
+$router->post('User/Employer_Add','User\\EmployerController@add');
 

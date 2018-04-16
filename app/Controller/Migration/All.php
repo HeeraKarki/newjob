@@ -16,7 +16,6 @@ class All
         $this->table->roleTable();
         $this->table->userTable();
         $this->table->locationtable();
-        $this->table->Postiontable();
         $this->table->jobfunctionstable();
         $this->table->employertable();
         $this->table->job_seekertable();
