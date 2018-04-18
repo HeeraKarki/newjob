@@ -178,7 +178,7 @@ view_require('applyjob/nav');
                         <li><h5>No Of Employee </h5> <span>:</span><?= isset($user_details->employer->no_of_employee)? $user_details->employer->no_of_employee:'' ?></li>
                         <li><h5>Website </h5> <span>:</span><?= isset($user_details->employer->website)? $user_details->employer->website:'' ?></li>
                         <li><h5>Facebook </h5> <span>:</span><?= isset($user_details->employer->facebook)? $user_details->employer->facebook:'' ?></li>
-                        <li><h5>Tweeter </h5> <span>:</span><?= isset($user_details->employer->tweeter)? $user_details->employer->tweeter:'' ?></li>
+                        <li><h5>Twitter </h5> <span>:</span><?= isset($user_details->employer->twitter)? $user_details->employer->twitter:'' ?></li>
                         <li><h5>Googleplus </h5> <span>:</span><?= isset($user_details->employer->googleplus)? $user_details->employer->googleplus:'' ?></li>
                         <li><h5>Description. </h5> <span>:</span><?= isset($user_details->employer->description)? $user_details->employer->description:'' ?></li>
                     </ul>

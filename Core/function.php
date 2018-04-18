@@ -86,6 +86,14 @@ function auth_check(){
     return \Core\Helper\Auth::check();
 }
 
+function get_set($key){
+    if (isset($_GET[$key])){
+        return true;
+    }else{
+        return false;
+    }
+}
+
 function auth(){
     return \Core\Helper\Auth::data();
 }

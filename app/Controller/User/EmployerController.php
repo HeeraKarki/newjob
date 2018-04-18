@@ -9,10 +9,18 @@ use App\Models\Setting\JobIndustry;
 use App\Models\Setting\Location;
 use App\Models\User\Employer;
 use App\Models\User\User;
+use Core\Helper\Auth;
 use Core\Request;
 
 class EmployerController
 {
+    public function __construct()
+    {
+        if (!Auth::check()){
+            return error('Error! ','User is not Login...Please Login','Login');
+        }
+    }
+
     public function index(){
         $data['locations']=Location::all();
         $data['user_details']=User::where('id',auth()['id'])->first();
@@ -63,6 +71,7 @@ class EmployerController
             'salary_min'=>Request::post('salary_min'),
             'salary_max'=>Request::post('salary_max'),
             'salary_type'=>Request::post('salary_type'),
+            'deathline'=>Request::post('deathline'),
             'experience'=>Request::post('experience'),
             'description'=>Request::post('description'),
             'location_id'=>Request::post('location_id'),

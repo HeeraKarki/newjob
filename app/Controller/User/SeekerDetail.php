@@ -15,6 +15,13 @@ use Illuminate\Filesystem\Filesystem;
 class SeekerDetail
 {
 
+    public function __construct()
+    {
+        if (!Auth::check()){
+            return error('Error! ','User is not Login...Please Login','Login');
+        }
+    }
+
     public function career(){
         CareerObjective::updateOrCreate(
             ['user_id'=>Request::post('user_id')],

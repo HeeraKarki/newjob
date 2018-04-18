@@ -25,9 +25,6 @@
                         <li class="active"><a href="<?= baseurl(); ?>">Home</a></li>
                         <li><a href="<?= baseurl('Job_list'); ?>">Job list</a></li>
                         <li><a href="<?= baseurl('Job_Details'); ?>">Job Details</a></li>
-                        <?php if (auth()['role_id'] === 3): ?>
-                            <li><a href="<?= baseurl('Job_Details'); ?>">Post a Job</a></li>
-                        <?php endif; ?>
                         <li class="dropdown"><a href="javascript:void(0);" class="dropdown-toggle"
                                                 data-toggle="dropdown">Pages<span class="caret"></span></a>
                             <ul class="dropdown-menu">

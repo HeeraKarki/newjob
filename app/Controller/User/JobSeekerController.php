@@ -4,9 +4,17 @@ namespace App\Controller\User;
 
 use App\Models\User\CareerObjective;
 use App\Models\User\User;
+use Core\Helper\Auth;
 
 class JobSeekerController
 {
+
+    public function __construct()
+    {
+        if (!Auth::check()){
+            return error('Error! ','User is not Login...Please Login','Login');
+        }
+    }
 
     public function index(){
         $data['user_details']=User::where('id',auth()['id'])->first();

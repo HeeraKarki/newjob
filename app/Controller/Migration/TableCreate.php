@@ -182,6 +182,7 @@ class TableCreate
             $table->enum('salary_type',['per_hour','daily','monthly','yearly']);
             $table->enum('experience',['entry','mid','mid-senior','top']);
             $table->text('description')->nullable();
+            $table->date('deathline')->nullable();
             $table->unsignedInteger('location_id');
             $table->unsignedInteger('contract_type_id');
             $table->unsignedInteger('user_id');

@@ -12,7 +12,7 @@ class JobPost extends Model
 {
 
     protected $fillable=[
-        'title','salary_min','salary_max','salary_type','experience','description','location_id','contract_type_id','user_id','job_function_id','job_industry_id'
+        'title','salary_min','salary_max','salary_type','experience','deathline','description','location_id','contract_type_id','user_id','job_function_id','job_industry_id'
     ];
 
     public function location(){

@@ -25,7 +25,7 @@ view_require('applyjob/nav');
                             <div class="section postdetails">
                                 <h4>Post Your Job<span class="pull-right">* Mandatory Fields</span></h4>
                                 <div class="row form-group">
-                                    <label class="col-sm-3 label-title">Title for your jonb<span class="required">*</span></label>
+                                    <label class="col-sm-3 label-title">Title for your jon<span class="required">*</span></label>
                                     <div class="col-sm-9">
                                         <input type="text" name="title"  required class="form-control" placeholder="ex, Human Resource Manager">
                                     </div>
@@ -114,7 +114,12 @@ view_require('applyjob/nav');
                                     </div>
                                 </div>
 
-
+                                <div class="row form-group">
+                                    <label class="col-sm-3 label-title">DeadLine Date<span class="required">*</span></label>
+                                    <div class="col-sm-9">
+                                        <input type="date" name="deathline"  required class="form-control" placeholder="01/Jan/2018">
+                                    </div>
+                                </div>
                                 <div class="row form-group item-description">
                                     <label class="col-sm-3 label-title">Description<span class="required">*</span></label>
                                     <div class="col-sm-9">

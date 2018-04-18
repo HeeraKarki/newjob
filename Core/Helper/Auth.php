@@ -28,7 +28,8 @@ class Auth
         if (static::check()){
             return static::$userdata=Session::get(static::$userkey);
         }else{
-            throw new \Exception('User is not Login.');
+            error('Error!','User is not Login','Login');
+//            throw new \Exception('User is not Login.');
         }
     }
 
