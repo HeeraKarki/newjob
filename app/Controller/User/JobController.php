@@ -1,10 +1,13 @@
 <?php
 namespace App\Controller\User;
 
+use App\Models\Job\JobApplicant;
+use App\Models\Job\JobBookmark;
 use
     App\Models\Job\JobPost;
 use App\Models\Setting\JobIndustry;
 use App\Models\Setting\Location;
+use App\Models\User\User;
 use Core\Request;
 
 class JobController
@@ -32,7 +35,36 @@ class JobController
         $data['detail']=JobPost::find(Request::get('job_id'));
         $data['job_industries']=JobIndustry::all();
         $data['locations']=Location::all();
+        $data['user']=User::find(auth()['id']);
         return view('job/list/detail',$data);
+    }
+
+    public function apply(){
+        if (Request::post('job_seeker_id')===''){
+            return error('Error! Fill the Job Seeker Requirement','Your Account Need to be Complete Setup.','User/Job_Seeker');
+        }
+        $data=JobApplicant::firstOrCreate(
+            ['job_seeker_id'=>Request::post('job_seeker_id')],
+            ['job_post_id'=>Request::post('job_post_id'),]);
+        if (!$data->wasRecentlyCreated){
+            return error('Already Applied','This job is already applied.please wait for interview acceptant for Employer.');
+        }else{
+            return success('Successfully Applied','Job was applied.please wait for interview acceptant for Employer');
+        }
+    }
+
+    public function bookmark(){
+        if (Request::post('job_seeker_id')===''){
+            return error('Error! Fill the Job Seeker Requirement','Your Account Need to be Complete Setup.','User/Job_Seeker');
+        }
+        $data=JobBookmark::firstOrCreate(
+            ['job_seeker_id'=>Request::post('job_seeker_id')],
+            ['job_post_id'=>Request::post('job_post_id'),]);
+        if (!$data->wasRecentlyCreated){
+            return error('Already add to bookmark','This job is already in bookmark list.');
+        }else{
+            return success('Successfully Added','This job is added to your bookmark.');
+        }
     }
 
 }

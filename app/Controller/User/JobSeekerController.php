@@ -3,8 +3,10 @@ namespace App\Controller\User;
 
 
 use App\Models\User\CareerObjective;
+use App\Models\User\JobSeeker;
 use App\Models\User\User;
 use Core\Helper\Auth;
+use Core\Request;
 
 class JobSeekerController
 {
@@ -43,5 +45,12 @@ class JobSeekerController
 
     public function applied_job(){
         return view('user/applied_job');
+    }
+
+    public function profile(){
+        $name=Request::get('name');
+        $name=str_replace('-',' ',$name);
+        $data['job_seeker']=JobSeeker::where('fullname',$name)->first();
+        return view('user/seekerprofile',$data);
     }
 }

@@ -34,4 +34,8 @@ class JobPost extends Model
     public function job_industry(){
         return $this->belongsTo(JobIndustry::class);
     }
+
+    public function job_applicant(){
+        return $this->hasMany(JobApplicant::class);
+    }
 }

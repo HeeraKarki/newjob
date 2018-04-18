@@ -204,16 +204,16 @@ class TableCreate
         Make::schema()->create('job_applicants',function ($table){
             $table->increments('id');
             $table->unsignedInteger('job_seeker_id');
-            $table->unsignedInteger('employer_id');
+            $table->unsignedInteger('job_post_id');
             $table->enum('status',['pending','interview','reject']);
             $table->foreign('job_seeker_id')->references('id')->on('job_seekers')->onDelete('CASCADE')->onUpdate('CASCADE');
-            $table->foreign('employer_id')->references('id')->on('employers')->onDelete('CASCADE')->onUpdate('CASCADE');
+            $table->foreign('job_post_id')->references('id')->on('job_posts')->onDelete('CASCADE')->onUpdate('CASCADE');
             $table->timestamps();
         });
     }
 
     public function JobBookMarkTable(){
-        Make::schema()->create('job_bookmark',function ($table){
+        Make::schema()->create('job_bookmarks',function ($table){
             $table->increments('id');
             $table->unsignedInteger('job_seeker_id');
             $table->unsignedInteger('job_post_id');

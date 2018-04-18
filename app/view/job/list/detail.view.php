@@ -2,6 +2,20 @@
 view_require('applyjob/head');
 view_require('applyjob/nav');
 ?>
+<style>
+    .jargyi{
+        display: flex;
+        justify-content: space-between;
+    }
+    @media screen and (max-width: 700px) {
+        .jargyi{
+            flex-direction: column !important;
+        }
+        #bookm{
+            margin-top: 15px;
+        }
+    }
+</style>
 <section class="job-bg page job-details-page">
     <div class="container">
         <div class="breadcrumb-section">
@@ -39,6 +53,10 @@ view_require('applyjob/nav');
             </form>
         </div><!-- banner-form -->
 
+
+        <?php view_require('applyjob/success');?>
+        <?php view_require('applyjob/error');?>
+
         <div class="job-details">
             <div class="section job-ad-item">
                 <div class="item-info">
@@ -74,16 +92,26 @@ view_require('applyjob/nav');
                     </div><!-- ad-info -->
                 </div><!-- item-info -->
                 <div class="social-media">
-                    <div class="button">
-                        <a href="job-details.html#" class="btn btn-primary"><i class="fa fa-briefcase" aria-hidden="true"></i>Apply For This Job</a>
-                        <a href="job-details.html#" class="btn btn-primary bookmark"><i class="fa fa-bookmark-o" aria-hidden="true"></i>Bookmark</a>
+                    <div class="jargyi" >
+                        <form action="<?= baseurl('Apply_Job')?>" method="post">
+                            <input name="job_seeker_id" type="hidden" value="<?=  isset($user->job_seeker->id)?$user->job_seeker->id:null ?>">
+                            <input name="job_post_id" type="hidden" value="<?=  isset($detail->id)?$detail->id:null ?>">
+                            <button class="btn btn-primary"><i class="fa fa-briefcase" aria-hidden="true"></i>Apply For This Job</button>
+                        </form>
+
+                        <form action="<?= baseurl('Bookmark')?>" method="post" id="bookm">
+                            <input name="job_seeker_id" type="hidden" value="<?=  isset($user->job_seeker->id)?$user->job_seeker->id:null ?>">
+                            <input name="job_post_id" type="hidden" value="<?=  isset($detail->id)?$detail->employer->id:null ?>">
+                            <button class="btn btn-primary bookmark"><i class="fa fa-bookmark-o" aria-hidden="true"></i>Bookmark</button>
+                        </form>
+                        <ul class="share-social">
+                            <li>Share this ad</li>
+                            <li><a href="<?= $detail->employer->facebook ?>"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+                            <li><a href="<?= $detail->employer->twitter ?>"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+                            <li><a href="<?= $detail->employer->googleplus ?>"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a></li>
+                        </ul>
                     </div>
-                    <ul class="share-social">
-                        <li>Share this ad</li>
-                        <li><a href="<?= $detail->employer->facebook ?>"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
-                        <li><a href="<?= $detail->employer->twitter ?>"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
-                        <li><a href="<?= $detail->employer->googleplus ?>"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a></li>
-                    </ul>
+
                 </div>
             </div><!-- job-ad-item -->
 

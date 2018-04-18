@@ -2,19 +2,16 @@
 
 namespace App\Models\Job;
 
-
-use App\Models\User\Employer;
-use App\Models\User\JobSeeker;
 use Illuminate\Database\Eloquent\Model;
 
 class JobApplicant extends Model
 {
-    protected $fillable=['job_seeker_id','employer_id','pending'];
+    protected $fillable=['job_seeker_id','job_post_id','pending'];
 
     public function job_seeker(){
-        $this->belongsTo(JobSeeker::class);
+        return $this->belongsTo('App\Models\User\JobSeeker');
     }
-    public function employer(){
-        $this->belongsTo(Employer::class);
+    public function job_post(){
+        return $this->belongsTo(JobPost::class);
     }
 }

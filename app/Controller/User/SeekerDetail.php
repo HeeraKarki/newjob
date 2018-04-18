@@ -9,6 +9,7 @@ use App\Models\User\SeekerEducation;
 use App\Models\User\SeekerExperience;
 use App\Models\User\SeekerLanguage;
 use App\Models\User\SeekerQualification;
+use Core\Helper\Auth;
 use Core\Request;
 use Illuminate\Filesystem\Filesystem;
 

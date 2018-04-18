@@ -62,7 +62,11 @@
                                     <li><a href="<?= baseurl('Logout'); ?>">Logout</a></li>
                                 </ul>
                             </li>
-                            <li><a href="<?= baseurl('Employer/Post_Job'); ?>" style="background-color: #0072bc;font-weight: 400;font-size: 14px;color: #fff;box-shadow: 2px 3px 6px black;">Post a Job</a></li>
+
+                            <?php if (auth()['role_id'] === 3): ?>
+                                <li><a href="<?= baseurl('Employer/Post_Job'); ?>" style="background-color: #0072bc;font-weight: 400;font-size: 14px;color: #fff;box-shadow: 2px 3px 6px black;">Post a Job</a></li>
+                            <?php endif; ?>
+
                         </ul>
                     </div>
                 </div>

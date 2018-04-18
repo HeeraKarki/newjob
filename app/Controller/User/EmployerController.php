@@ -2,6 +2,7 @@
 namespace App\Controller\User;
 
 
+use App\Models\Job\JobApplicant;
 use App\Models\Job\JobPost;
 use App\Models\Setting\ContractType;
 use App\Models\Setting\JobFunction;
@@ -88,5 +89,28 @@ class EmployerController
         ];
         JobPost::create($data);
         return success('Add New Job','Successfully created a post.');
+    }
+
+    public function joblist(){
+        $user=User::find(\auth()['id']);
+        $employer_id=$user->employer->id;
+        $data['job_posts']=JobPost::where('employer_id',$employer_id)->get();
+        return view('user/empolyer/joblist',$data);
+    }
+
+    public function interview(){
+        $id=Request::get('applicant_id');
+        $applicant=JobApplicant::find($id);
+        $applicant->status='interview';
+        $applicant->save();
+        return success('Make Interview','Accept to interview');
+    }
+
+    public function reject(){
+        $id=Request::get('applicant_id');
+        $applicant=JobApplicant::find($id);
+        $applicant->status='reject';
+        $applicant->save();
+        return success('Make Interview','Accept to interview');
     }
 }

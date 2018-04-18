@@ -27,6 +27,8 @@ class All
         $this->table->JobIndustryTable();
         $this->table->CareerObjectTable();
         $this->table->JobPostTable();
+        $this->table->JobApplicantTable();
+        $this->table->JobBookMarkTable();
 
 
         

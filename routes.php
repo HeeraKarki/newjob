@@ -94,6 +94,7 @@ $router->get('User/Edit_Resume','User\\JobSeekerController@edit_resume');
 $router->get('User/Profile_Detail','User\\JobSeekerController@profile_detail');
 $router->get('User/Applied_Job','User\\JobSeekerController@applied_job');
 $router->post('User/Del','User\\JobSeekerController@del');
+$router->get('Seeker_Profile','User\\JobSeekerController@profile');
 
 
 
@@ -110,8 +111,15 @@ $router->get('User/Employer','User\\EmployerController@index');
 $router->post('User/Employer_Add','User\\EmployerController@add');
 $router->get('Employer/Post_Job','User\\EmployerController@post_job');
 $router->post('Employer/Job_a_post','User\\EmployerController@post_job_add');
+$router->get('Employer/Job_List','User\\EmployerController@joblist');
+$router->get('Employer/Interview','User\\EmployerController@interview');
+$router->get('Employer/Reject','User\\EmployerController@reject');
 
 //Job List
 
 $router->get('Job_list','User\\JobController@list');
 $router->get('Job_Detail','User\\JobController@detail');
+
+
+$router->post('Apply_Job','User\\JobController@apply');
+$router->post('Bookmark','User\\JobController@bookmark');
