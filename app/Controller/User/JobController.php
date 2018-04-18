@@ -30,6 +30,8 @@ class JobController
 
     public function detail(){
         $data['detail']=JobPost::find(Request::get('job_id'));
+        $data['job_industries']=JobIndustry::all();
+        $data['locations']=Location::all();
         return view('job/list/detail',$data);
     }
 

@@ -7,37 +7,34 @@ view_require('applyjob/nav');
         <div class="breadcrumb-section">
             <ol class="breadcrumb">
                 <li><a href="index.html">Home</a></li>
-                <li><a href="job-list.html">Engineer/Architects</a></li>
-                <li>UI & UX Designer</li>
+                <li><a href="job-list.html"><?= $detail->job_industry->name ?></a></li>
+                <li><?= $detail->job_function->name ?></li>
             </ol><!-- breadcrumb -->
-            <h2 class="title">Creative & Design</h2>
+            <h2 class="title"><?= $detail->title ?></h2>
         </div><!-- breadcrumb -->
 
         <div class="banner-form banner-form-full job-list-form">
-            <form action="job-details.html#">
+            <form action="<?= baseurl('Job_list') ?>">
                 <!-- category-change -->
-                <div class="dropdown category-dropdown">
-                    <a data-toggle="dropdown" href="job-details.html#"><span class="change-text">Job Category</span> <i class="fa fa-angle-down"></i></a>
-                    <ul class="dropdown-menu category-change">
-                        <li><a href="job-details.html#">Customer Service</a></li>
-                        <li><a href="job-details.html#">Software Engineer</a></li>
-                        <li><a href="job-details.html#">Program Development</a></li>
-                        <li><a href="job-details.html#">Project Manager</a></li>
-                        <li><a href="job-details.html#">Graphics Designer</a></li>
-                    </ul>
-                </div><!-- category-change -->
+                <select name="job_industry" class="form-control" required style="margin-right: 15px;">
+                    <option value="">Select Job Industry</option>
+                    <?php foreach ($job_industries as $job_industry): ?>
+                        <option value="<?= $job_industry->id?>" ><?= $job_industry->name?></option>
+                    <?php endforeach; ?>
+                </select>
+                <!-- category-change -->
 
                 <!-- language-dropdown -->
-                <div class="dropdown category-dropdown language-dropdown">
-                    <a data-toggle="dropdown" href="job-details.html#"><span class="change-text">Job Location</span> <i class="fa fa-angle-down"></i></a>
-                    <ul class="dropdown-menu category-change language-change">
-                        <li><a href="job-details.html#">Location 1</a></li>
-                        <li><a href="job-details.html#">Location 2</a></li>
-                        <li><a href="job-details.html#">Location 3</a></li>
-                    </ul>
-                </div><!-- language-dropdown -->
+                <select name="location_id" class="form-control" required>
+                    <option value="">Select Location</option>
+                    <?php foreach ($locations as $location): ?>
+                        <option value="<?= $location->id?>" ><?= $location->name?></option>
+                    <?php endforeach; ?>
+                </select>
+                <!-- language-dropdown -->
 
-                <input type="text" class="form-control" placeholder="Type your key word">
+                <input type="hidden" value="1" name="search">
+                <input type="text" class="form-control" name="keyword" placeholder="Type your key word">
                 <button type="submit" class="btn btn-primary" value="Search">Search</button>
             </form>
         </div><!-- banner-form -->
@@ -47,7 +44,7 @@ view_require('applyjob/nav');
                 <div class="item-info">
                     <div class="item-image-box">
                         <div class="item-image">
-                            <img src="<?= asset($detail->user->employer->logo) ?>" alt="Image" class="img-responsive">
+                            <img src="<?= asset($detail->employer->logo) ?>" alt="Image" class="img-responsive">
                         </div><!-- item-image -->
                     </div>
 
@@ -60,7 +57,7 @@ view_require('applyjob/nav');
                             </span>
                             @
                             <a href="#">
-                                  <?= $detail->user->employer->company_name ?>
+                                  <?= $detail->employer->company_name ?>
                             </a>
                         </span>
                         <div class="ad-meta">
@@ -83,12 +80,9 @@ view_require('applyjob/nav');
                     </div>
                     <ul class="share-social">
                         <li>Share this ad</li>
-                        <li><a href="job-details.html#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
-                        <li><a href="job-details.html#"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
-                        <li><a href="job-details.html#"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a></li>
-                        <li><a href="job-details.html#"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
-                        <li><a href="job-details.html#"><i class="fa fa-pinterest-square" aria-hidden="true"></i></a></li>
-                        <li><a href="job-details.html#"><i class="fa fa-tumblr-square" aria-hidden="true"></i></a></li>
+                        <li><a href="<?= $detail->employer->facebook ?>"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+                        <li><a href="<?= $detail->employer->twitter ?>"><i class="fa fa-twitter-square" aria-hidden="true"></i></a></li>
+                        <li><a href="<?= $detail->employer->googleplus ?>"><i class="fa fa-google-plus-square" aria-hidden="true"></i></a></li>
                     </ul>
                 </div>
             </div><!-- job-ad-item -->
@@ -99,25 +93,15 @@ view_require('applyjob/nav');
                         <div class="section job-description">
                             <div class="description-info">
                                 <h1>Description</h1>
-                                <p><span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</span></p>
-                                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni।</p>
+                                <p><?= $detail->description ?></p>
                             </div>
                             <div class="responsibilities">
                                 <h1>Key Responsibilities:</h1>
-                                <p>-Execute all visual design stages of website design from concept to final hand-off to development-Create print advertisements, social media advertisements, client collateral & digital resizes according to Client demands With direction of the Creative team, input into new design ideas for client branding-Update & keep all agency collateral materials, including keeping records of Client's logos, fonts, images, etc.  </p>
+                                <p><?= $detail->responsibilities ?></p>
                             </div>
                             <div class="requirements">
                                 <h1>Minimum Requirements</h1>
-                                <ul>
-                                    <li>Bachelor's Degree</li>
-                                    <li>2-5 years of relevant experience ( or equivalent educational experience)</li>
-                                    <li>Experience developing in Wordpress and other web design platforms</li>
-                                    <li>HTML, CSS and JavaScript experience a plus</li>
-                                    <li>In depth knowledge & technical experience of Photoshop, Illustrator, InDesign, Adobe PDF, Keynote, PowerPoint, Microsoft Word & Excel</li>
-                                    <li>Exceptional eye for design, deep understanding of creativity and ability to recognize fresh approaches to Advertising </li>
-                                    <li>Must be fluent in Spanish; working written and spoken proficiency</li>
-                                    <li>**All applicants must be eligible to work in the U.S. without sponsorship</li>
-                                </ul>
+                                <p><?= $detail->requirement ?></p>
                             </div>
                         </div>
                     </div>
@@ -126,7 +110,7 @@ view_require('applyjob/nav');
                             <h1>Short Info</h1>
                             <ul>
                                 <li><span class="icon"><i class="fa fa-bolt" aria-hidden="true"></i></span>Posted: <?= date('F jS, Y', strtotime($detail->created_at)) ?></li>
-                                <li class="text-capitalize"><span class="icon"><i class="fa fa-user-plus" aria-hidden="true"></i></span> Job poster: <a href="job-details.html#"><?= $detail->user->name ?></a></li>
+                                <li class="text-capitalize"><span class="icon"><i class="fa fa-user-plus" aria-hidden="true"></i></span> Job poster: <a href="job-details.html#"><?= $detail->name ?></a></li>
                                 <li><span class="icon"><i class="fa fa-industry" aria-hidden="true"></i></span>Industry: <a href="job-details.html#"><?= $detail->job_industry->name ?></a></li>
                                 <li class="text-capitalize"><span class="icon"><i class="fa fa-line-chart" aria-hidden="true"></i></span>Experience: <a href="job-details.html#"><?= $detail->experience ?></a></li>
                                 <li><span class="icon"><i class="fa fa-key" aria-hidden="true"></i></span>Job function: <?= $detail->job_function->name ?></li>
@@ -135,13 +119,13 @@ view_require('applyjob/nav');
                         <div class="section company-info">
                             <h1>Company Info</h1>
                             <ul>
-                                <li>Compnay Name: <a href="job-details.html#"><?= $detail->user->employer->company_name ?></a></li>
-                                <li>Address: <?= $detail->user->employer->address ?></li>
-                                <li>Compnay SIze:  <?= $detail->user->employer->no_of_employee ?></li>
+                                <li>Compnay Name: <a href="job-details.html#"><?= $detail->employer->company_name ?></a></li>
+                                <li>Address: <?= $detail->employer->address ?></li>
+                                <li>Compnay SIze:  <?= $detail->employer->no_of_employee ?></li>
                                 <li>Industry: <a href="job-details.html#">Technology</a></li>
-                                <li>Phone: <?= $detail->user->employer->phone_no ?></li>
-                                <li>Email: <a href="job-details.html#"><?= $detail->user->email ?></a></li>
-                                <li>Website: <a href="job-details.html#"><?= $detail->user->employer->website ?></a></li>
+                                <li>Phone: <?= $detail->employer->phone_no ?></li>
+                                <li>Email: <a href="job-details.html#"><?= $detail->email ?></a></li>
+                                <li>Website: <a href="job-details.html#"><?= $detail->employer->website ?></a></li>
                             </ul>
                             <ul class="share-social">
                                 <li><a href="job-details.html#"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>

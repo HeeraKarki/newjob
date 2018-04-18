@@ -27,7 +27,7 @@ class make
             'name'=>'heera',
             'email'=>'heera@gmail.com',
             'role_id'=>2,
-            'isactive'=>false,
+            'isactive'=>true,
             'password'=>Hash::make('jarjar')
         ]);
     }

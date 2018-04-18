@@ -57,6 +57,10 @@ class EmployerController
 
 
     public function post_job(){
+        $data['user']=User::find(\auth()['id']);
+        if ( $data['user']->employer->id === null){
+            return error('Job Post Error!','Your account profile is not completed.First Fill requirement.','User/Employer');
+        };
         $data['job_functions']=JobFunction::all();
         $data['job_industries']=JobIndustry::all();
         $data['locations']=Location::all();
@@ -72,11 +76,13 @@ class EmployerController
             'salary_max'=>Request::post('salary_max'),
             'salary_type'=>Request::post('salary_type'),
             'deathline'=>Request::post('deathline'),
+            'responsibilities'=>Request::post('responsibilities'),
+            'requirement'=>Request::post('requirement'),
             'experience'=>Request::post('experience'),
             'description'=>Request::post('description'),
             'location_id'=>Request::post('location_id'),
             'contract_type_id'=>Request::post('contract_type_id'),
-            'user_id'=>auth()['id'],
+            'employer_id'=>Request::post('employer_id'),
             'job_function_id'=>Request::post('job_function_id'),
             'job_industry_id'=>Request::post('job_industry_id')
         ];

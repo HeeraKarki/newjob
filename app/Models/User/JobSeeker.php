@@ -2,6 +2,8 @@
 
 namespace App\Models\User;
 
+use App\Models\Job\JobApplicant;
+use App\Models\Job\JobBookmark;
 use Illuminate\Database\Eloquent\Model;
 
 class JobSeeker extends Model
@@ -12,5 +14,13 @@ class JobSeeker extends Model
 
     public function user(){
         return $this->belongsTo(User::class);
+    }
+
+    public function job_applicants(){
+        return $this->hasMany(JobApplicant::class);
+    }
+
+    public function job_bookmarks(){
+        return $this->hasMany(JobBookmark::class);
     }
 }

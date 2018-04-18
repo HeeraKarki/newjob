@@ -68,6 +68,7 @@ view_require('applyjob/nav');
                                     </div>
                                 </div>
 
+                                <input type="hidden" name="employer_id" value="<?=  $user->employer->id ?>">
                                 <div class="row form-group add-title">
                                     <label class="col-sm-3 label-title">Job Function<span class="required">*</span></label>
                                     <div class="col-sm-9">
@@ -115,11 +116,24 @@ view_require('applyjob/nav');
                                 </div>
 
                                 <div class="row form-group">
-                                    <label class="col-sm-3 label-title">DeadLine Date<span class="required">*</span></label>
+                                    <label class="col-sm-3 label-title">DeadLine Date</label>
                                     <div class="col-sm-9">
                                         <input type="date" name="deathline"  required class="form-control" placeholder="01/Jan/2018">
                                     </div>
                                 </div>
+                                <div class="row form-group item-description">
+                                    <label class="col-sm-3 label-title">Key Responsibilities</label>
+                                    <div class="col-sm-9">
+                                        <textarea class="form-control" name="responsibilities" id="responsibilities" rows="2" placeholder="Write few lines about your Key Responsibilities"></textarea>
+                                    </div>
+                                </div>
+                                <div class="row form-group item-description">
+                                    <label class="col-sm-3 label-title">Minimum Requirement</label>
+                                    <div class="col-sm-9">
+                                        <textarea class="form-control" name="requirement" id="requirement" rows="2" placeholder="Write few lines about your Minimum Requirement"></textarea>
+                                    </div>
+                                </div>
+
                                 <div class="row form-group item-description">
                                     <label class="col-sm-3 label-title">Description<span class="required">*</span></label>
                                     <div class="col-sm-9">

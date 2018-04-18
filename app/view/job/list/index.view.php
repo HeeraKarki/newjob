@@ -19,7 +19,7 @@ view_require('applyjob/nav');
             <form>
                 <!-- category-change -->
                 <select name="job_industry" class="form-control" required style="margin-right: 15px;">
-                    <option value="">Select Job Fuction</option>
+                    <option value="">Select Job Industry</option>
                     <?php foreach ($job_industries as $job_industry): ?>
                         <option value="<?= $job_industry->id?>" ><?= $job_industry->name?></option>
                     <?php endforeach; ?>
@@ -284,7 +284,7 @@ view_require('applyjob/nav');
                                 <div class="item-info">
                                     <div class="item-image-box">
                                         <div class="item-image">
-                                            <a href="<?= baseurl('Job_Detail')."?job_id=".$job_post->id ?>"><img src="<?= asset($job_post->user->employer->logo) ?>" alt="Image" class="img-responsive"></a>
+                                            <a href="<?= baseurl('Job_Detail')."?job_id=".$job_post->id ?>"><img src="<?= asset($job_post->employer->logo) ?>" alt="Image" class="img-responsive"></a>
                                         </div><!-- item-image -->
                                     </div>
 
@@ -295,7 +295,7 @@ view_require('applyjob/nav');
                                             </a>
                                             @
                                             <a href="<?= baseurl('Job_Detail')."?job_id=".$job_post->id ?>">
-                                                <?= $job_post->user->employer->company_name ?>
+                                                <?= $job_post->employer->company_name ?>
                                             </a>
                                         </span>
                                         <div class="ad-meta">

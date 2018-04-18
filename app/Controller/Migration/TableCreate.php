@@ -183,16 +183,42 @@ class TableCreate
             $table->enum('experience',['entry','mid','mid-senior','top']);
             $table->text('description')->nullable();
             $table->date('deathline')->nullable();
+            $table->text('responsibilities')->nullable();
+            $table->text('requirement')->nullable();
             $table->unsignedInteger('location_id');
             $table->unsignedInteger('contract_type_id');
-            $table->unsignedInteger('user_id');
+            $table->unsignedInteger('employer_id');
             $table->unsignedInteger('job_function_id');
             $table->unsignedInteger('job_industry_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE')->onUpdate('CASCADE');
+            $table->foreign('employer_id')->references('id')->on('employers')->onDelete('CASCADE')->onUpdate('CASCADE');
             $table->foreign('location_id')->references('id')->on('locations')->onDelete('CASCADE')->onUpdate('CASCADE');
             $table->foreign('contract_type_id')->references('id')->on('contract_types')->onDelete('CASCADE')->onUpdate('CASCADE');
             $table->foreign('job_function_id')->references('id')->on('job_functions')->onDelete('CASCADE')->onUpdate('CASCADE');
             $table->foreign('job_industry_id')->references('id')->on('job_industries')->onDelete('CASCADE')->onUpdate('CASCADE');
+            $table->timestamps();
+        });
+    }
+
+
+    public function JobApplicantTable(){
+        Make::schema()->create('job_applicants',function ($table){
+            $table->increments('id');
+            $table->unsignedInteger('job_seeker_id');
+            $table->unsignedInteger('employer_id');
+            $table->enum('status',['pending','interview','reject']);
+            $table->foreign('job_seeker_id')->references('id')->on('job_seekers')->onDelete('CASCADE')->onUpdate('CASCADE');
+            $table->foreign('employer_id')->references('id')->on('employers')->onDelete('CASCADE')->onUpdate('CASCADE');
+            $table->timestamps();
+        });
+    }
+
+    public function JobBookMarkTable(){
+        Make::schema()->create('job_bookmark',function ($table){
+            $table->increments('id');
+            $table->unsignedInteger('job_seeker_id');
+            $table->unsignedInteger('job_post_id');
+            $table->foreign('job_seeker_id')->references('id')->on('job_seekers')->onDelete('CASCADE')->onUpdate('CASCADE');
+            $table->foreign('job_post_id')->references('id')->on('job_posts')->onDelete('CASCADE')->onUpdate('CASCADE');
             $table->timestamps();
         });
     }
