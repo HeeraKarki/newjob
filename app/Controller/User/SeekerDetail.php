@@ -44,6 +44,26 @@ class SeekerDetail
         return success('Add New Work Experience','Succesful add new experience');
     }
 
+    public function work_experience_delete(){
+        SeekerExperience::destroy((int)Request::post('id'));
+        return success('Successful','Delete Work Experience Complete');
+    }
+
+    public function education_delete(){
+        SeekerEducation::destroy(Request::post('id'));
+        return success('Successful','Delete Education Complete');
+    }
+
+    public function qualification_delete(){
+        SeekerQualification::destroy(Request::post('id'));
+        return success('Successful','Delete Seeker Qualification Complete');
+    }
+
+    public function language_delete(){
+        SeekerLanguage::destroy(Request::post('id'));
+        return success('Successful','Delete Seeker Language Complete');
+    }
+
     public function education(){
         SeekerEducation::create([
             'institute_name' => Request::post('institute_name'),

@@ -114,10 +114,22 @@ $router->get('Seeker_Profile','User\\JobSeekerController@profile');
 
 //Career Object
 $router->post('User/Career','User\\SeekerDetail@career');
+
+//Job Seeker  Work Experience
 $router->post('User/Work_experience','User\\SeekerDetail@work_experience');
+$router->post('User/Work_experience_Delete','User\\SeekerDetail@work_experience_delete');
+//Job Seeker Education
 $router->post('User/Education','User\\SeekerDetail@education');
+$router->post('User/Education_Delete','User\\SeekerDetail@education_delete');
+
+//Job Seeker Qualification
 $router->post('User/Qualification','User\\SeekerDetail@qualification');
+$router->post('User/Qualification_Delete','User\\SeekerDetail@qualification_delete');
+
+//Job Seeker Language
 $router->post('User/Language','User\\SeekerDetail@language');
+$router->post('User/Language_Delete','User\\SeekerDetail@language_delete');
+
 $router->post('User/Seeker_Detail','User\\SeekerDetail@detail');
 
 //Employer

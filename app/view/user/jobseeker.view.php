@@ -259,6 +259,11 @@ view_require('applyjob/nav');
                     <ul>
                         <?php foreach ($user_details->job_seeker->experiences as $experience): ?>
                             <li>
+                                <form action="<?= baseurl('User/Work_experience_Delete')?>" method="post">
+                                    <input type="hidden" name="id" value="<?= $experience->id ?>">
+                                    <button type="submit"  style="float: right;border: navajowhite;background: white;"><i class="fa fa-trash" style="font-size: 25px;color: red;"></i></button>
+                                </form>
+<!--                                <a href="--><?//= baseurl('User') ?><!--" style="float: right;"><i class="fa fa-trash" style="font-size: 25px;color: red;"></i> </a>-->
                                 <h4>
                                     <?= $experience->designation ?> @ <?= $experience->company_name ?>
                                     <span>
@@ -325,6 +330,10 @@ view_require('applyjob/nav');
                     <ul>
                         <?php foreach ($user_details->job_seeker->educations as $education): ?>
                             <li>
+                                <form action="<?= baseurl('User/Education_Delete')?>" method="post">
+                                    <input type="hidden" name="id" value="<?= $education->id ?>">
+                                    <button type="submit"  style="float: right;border: navajowhite;background: white;"><i class="fa fa-trash" style="font-size: 25px;color: red;"></i></button>
+                                </form>
                                 <h4>
                                     <?= $education->degree ?> @ <?= $education->institute_name ?>
                                 </h4>
@@ -372,7 +381,13 @@ view_require('applyjob/nav');
                     <ul>
                         <?php if ($user_details->job_seeker->qualifications !== null): ?>
                             <?php foreach ($user_details->job_seeker->qualifications as $k=>$qualification): ?>
-                                <li><span><?= $k+1 .' . '?></span><?= $qualification->txt ?></li>
+                                <li>
+                                    <form action="<?= baseurl('User/Qualification_Delete')?>" method="post">
+                                        <input type="hidden" name="id" value="<?= $qualification->id ?>">
+                                        <button type="submit"  style="float: right;border: navajowhite;background: white;"><i class="fa fa-trash" style="font-size: 25px;color: red;"></i></button>
+                                    </form>
+                                    <span><?= $k+1 .' . '?></span><?= $qualification->txt ?>
+                                </li>
                             <?php endforeach; ?>
                         <?php endif; ?>
 
@@ -446,6 +461,10 @@ view_require('applyjob/nav');
                         <?php foreach ($user_details->job_seeker->languages as $k=>$language): ?>
                             <li>
                                 <h5><?= $language->name ?></h5>
+                                <form action="<?= baseurl('User/Language_Delete')?>" method="post">
+                                    <input type="hidden" name="id" value="<?= $language->id ?>">
+                                    <button type="submit"  style="float: right;border: navajowhite;background: white;"><i class="fa fa-trash" style="font-size: 25px;color: red;"></i></button>
+                                </form>
                                 <ul>
 
                                     <li><i class="fa <?= $language->rating >1 ? 'fa-star' : 'fa-star-o' ?> <?= $language->rating ===0.50?'fa-star-half-empty':''?>" aria-hidden="true"></i></li>
