@@ -16,25 +16,11 @@ class User extends Model
         return $this->roles()->where('name',$role)->get()->isNotEmpty();
     }
 
-    public function career(){
-        return $this->hasOne(CareerObjective::class,'user_id','id');
-    }
 
-    public function experiences(){
-        return $this->hasMany(SeekerExperience::class,'user_id','id');
-    }
 
-    public function educations(){
-        return $this->hasMany(SeekerEducation::class);
-    }
 
-    public function qualifications(){
-        return $this->hasMany(SeekerQualification::class);
-    }
 
-    public function languages(){
-        return $this->hasMany(SeekerLanguage::class);
-    }
+
 
     public function job_seeker(){
         return $this->hasOne(JobSeeker::class);

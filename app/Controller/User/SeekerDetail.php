@@ -25,7 +25,7 @@ class SeekerDetail
 
     public function career(){
         CareerObjective::updateOrCreate(
-            ['user_id'=>Request::post('user_id')],
+            ['job_seeker_id'=>Request::post('job_seeker_id')],
             ['txt'=>Request::post('txt')]
         );
         return success('Update Successful',' User Career Objective Updated!.');
@@ -39,7 +39,7 @@ class SeekerDetail
            'description' => Request::post('description'),
            'post_from_date' => Request::post('post_from_date'),
            'post_to_date' => Request::post('post_to_date'),
-           'user_id' => auth()['id'],
+            'job_seeker_id'=>Request::post('job_seeker_id')
         ]);
         return success('Add New Work Experience','Succesful add new experience');
     }
@@ -51,7 +51,7 @@ class SeekerDetail
             'form' => Request::post('form'),
             'to' => Request::post('to'),
             'description' => Request::post('description'),
-            'user_id' => auth()['id'],
+            'job_seeker_id' => Request::post('job_seeker_id'),
         ]);
         return success('Add New Education','Succesful add new education');
     }
@@ -59,7 +59,7 @@ class SeekerDetail
     public function qualification(){
         SeekerQualification::create([
             'txt' => Request::post('txt'),
-            'user_id' => auth()['id'],
+            'job_seeker_id' => Request::post('job_seeker_id'),
         ]);
         return success('Add New Qualification','Succesful add new Qualification');
     }
@@ -68,7 +68,7 @@ class SeekerDetail
         SeekerLanguage::create([
             'name' => Request::post('name'),
             'rating' => Request::post('rating'),
-            'user_id' => auth()['id'],
+            'job_seeker_id' => Request::post('job_seeker_id'),
         ]);
         return success('Add New Language','Succesful add new Language');
     }

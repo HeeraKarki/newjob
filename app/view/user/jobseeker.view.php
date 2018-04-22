@@ -182,6 +182,7 @@ view_require('applyjob/nav');
                         <div class="section career-objective">
                             <h4>Career Objective</h4>
                             <form action="<?= baseurl('User/Career') ?>" method="post">
+                                <input type="hidden" name="job_seeker_id" value="<?= $user_details->job_seeker->id ?>">
                                 <div class="form-group">
                                     <textarea class="form-control" name="txt" placeholder="Write few lines about your career objective" rows="8"><?= isset($user_details->career->txt)?$user_details->career->txt:'' ?></textarea>
                                 </div>
@@ -201,7 +202,7 @@ view_require('applyjob/nav');
                     <i class="fa fa-black-tie" aria-hidden="true"></i>
                 </div>
                 <div class="career-info">
-                    <?= isset($user_details->career->txt)?$user_details->career->txt:'Write few lines about your career objective' ?>
+                    <?= isset($user_details->job_seeker->career->txt)?$user_details->job_seeker->career->txt:'Write few lines about your career objective' ?>
                 </div>
             </div><!-- career-objective -->
 
@@ -211,6 +212,7 @@ view_require('applyjob/nav');
                 <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
                         <form action="<?= baseurl('User/Work_experience'); ?>" method="post">
+                            <input type="hidden" name="job_seeker_id" value="<?= $user_details->job_seeker->id ?>">
                             <div class="section">
                                 <h4>Work History</h4>
                                 <div class="row form-group">
@@ -255,7 +257,7 @@ view_require('applyjob/nav');
                 <div class="work-info">
                     <h3>Work History</h3>
                     <ul>
-                        <?php foreach ($user_details->experiences as $experience): ?>
+                        <?php foreach ($user_details->job_seeker->experiences as $experience): ?>
                             <li>
                                 <h4>
                                     <?= $experience->designation ?> @ <?= $experience->company_name ?>
@@ -276,6 +278,7 @@ view_require('applyjob/nav');
                 <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
                         <form action="<?= baseurl('User/Education') ?>" method="post">
+                            <input type="hidden" name="job_seeker_id" value="<?= $user_details->job_seeker->id ?>">
                             <div class="section education-background">
                                 <h4>Education Background</h4>
                                 <div class="row form-group">
@@ -320,7 +323,7 @@ view_require('applyjob/nav');
                 <div class="educational-info">
                     <h3>Education Background</h3>
                     <ul>
-                        <?php foreach ($user_details->educations as $education): ?>
+                        <?php foreach ($user_details->job_seeker->educations as $education): ?>
                             <li>
                                 <h4>
                                     <?= $education->degree ?> @ <?= $education->institute_name ?>
@@ -346,8 +349,9 @@ view_require('applyjob/nav');
                         <div class="section career-objective">
                             <h4>Special Qualification</h4>
                             <form action="<?= baseurl('User/Qualification') ?>" method="post">
+                                <input type="hidden" name="job_seeker_id" value="<?= $user_details->job_seeker->id ?>">
                                 <div class="form-group">
-                                    <textarea class="form-control" name="txt" placeholder="Write few lines about your special qualification" rows="8"><?= isset($user_details->career->txt)?$user_details->career->txt:'' ?></textarea>
+                                    <textarea class="form-control" name="txt" placeholder="Write few lines about your special qualification" rows="8"><?= isset($user_details->job_seeker->qualifications->txt)?$user_details->qualifications->txt:'' ?></textarea>
                                 </div>
                                 <input type="hidden" value="<?= auth()['id']?>" name="user_id">
                                 <span>5000 characters left</span>
@@ -366,9 +370,12 @@ view_require('applyjob/nav');
                 <div class="qualification">
                     <h3>Special Qualification:</h3>
                     <ul>
-                        <?php foreach ($user_details->qualifications as $k=>$qualification): ?>
-                            <li><span><?= $k+1 .' . '?></span><?= $qualification->txt ?></li>
-                        <?php endforeach; ?>
+                        <?php if ($user_details->job_seeker->qualifications !== null): ?>
+                            <?php foreach ($user_details->job_seeker->qualifications as $k=>$qualification): ?>
+                                <li><span><?= $k+1 .' . '?></span><?= $qualification->txt ?></li>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
+
                     </ul>
                 </div>
             </div><!-- educational-background -->
@@ -380,6 +387,7 @@ view_require('applyjob/nav');
                 <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
                         <form action="<?= baseurl('User/Language')?>" method="post">
+                            <input type="hidden" name="job_seeker_id" value="<?= $user_details->job_seeker->id ?>">
                             <div class="section language-proficiency">
                                 <h4>Language Proficiency:</h4>
                                 <div class="row form-group">
@@ -435,7 +443,7 @@ view_require('applyjob/nav');
                     <h3>Language Proficiency</h3>
                     <ul class="list-inline">
 
-                        <?php foreach ($user_details->languages as $k=>$language): ?>
+                        <?php foreach ($user_details->job_seeker->languages as $k=>$language): ?>
                             <li>
                                 <h5><?= $language->name ?></h5>
                                 <ul>

@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class SeekerLanguage extends Model
 {
-    protected $fillable=['name','rating','user_id'];
+    protected $fillable=['name','rating','job_seeker_id'];
 
     public function users(){
-        return $this->belongsTo(User::class);
+        return $this->belongsTo(JobSeeker::class);
     }
 }

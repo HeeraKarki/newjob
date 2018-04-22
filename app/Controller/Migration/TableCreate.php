@@ -103,8 +103,8 @@ class TableCreate
             $table->date('form');
             $table->date('to');
             $table->text('description');
-            $table->unsignedInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE')->onUpdate('CASCADE');
+            $table->unsignedInteger('job_seeker_id');
+            $table->foreign('job_seeker_id')->references('id')->on('job_seekers')->onDelete('CASCADE')->onUpdate('CASCADE');
             $table->timestamps();
         });
     }
@@ -116,8 +116,8 @@ class TableCreate
             $table->date('post_from_date');
             $table->date('post_to_date');
             $table->text('description');
-            $table->unsignedInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE')->onUpdate('CASCADE');
+            $table->unsignedInteger('job_seeker_id');
+            $table->foreign('job_seeker_id')->references('id')->on('job_seekers')->onDelete('CASCADE')->onUpdate('CASCADE');
             $table->timestamps();
         });
     }
@@ -126,8 +126,8 @@ class TableCreate
         Make::schema()->create('seeker_qualifications',function ($table){
             $table->increments('id');
             $table->text('txt');
-            $table->unsignedInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE')->onUpdate('CASCADE');
+            $table->unsignedInteger('job_seeker_id');
+            $table->foreign('job_seeker_id')->references('id')->on('job_seekers')->onDelete('CASCADE')->onUpdate('CASCADE');
             $table->timestamps();
         });
     }
@@ -137,8 +137,8 @@ class TableCreate
             $table->increments('id');
             $table->text('name');
             $table->float('rating');
-            $table->unsignedInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE')->onUpdate('CASCADE');
+            $table->unsignedInteger('job_seeker_id');
+            $table->foreign('job_seeker_id')->references('id')->on('job_seekers')->onDelete('CASCADE')->onUpdate('CASCADE');
             $table->timestamps();
         });
     }
@@ -156,8 +156,8 @@ class TableCreate
         Make::schema()->create('career_objectives',function ($table){
             $table->increments('id');
             $table->text('txt');
-            $table->unsignedInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('CASCADE')->onUpdate('CASCADE');
+            $table->unsignedInteger('job_seeker_id');
+            $table->foreign('job_seeker_id')->references('id')->on('job_seekers')->onDelete('CASCADE')->onUpdate('CASCADE');
             $table->timestamps();
         });
     }

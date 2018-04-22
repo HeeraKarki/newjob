@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class SeekerExperience extends Model
 {
     protected $fillable=[
-        'company_name','designation','description','post_from_date','post_to_date','user_id'
+        'company_name','designation','description','post_from_date','post_to_date','job_seeker_id'
     ];
 }

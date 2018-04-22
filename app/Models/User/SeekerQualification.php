@@ -14,10 +14,10 @@ use Illuminate\Database\Eloquent\Model;
 class SeekerQualification extends Model
 
 {
-    protected $fillable=['txt','user_id'];
+    protected $fillable=['txt','job_seeker_id'];
 
 
-    public function users(){
-        return $this->belongsTo(User::class);
+    public function job_seeker(){
+        return $this->belongsTo(JobSeeker::class);
     }
 }

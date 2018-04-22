@@ -13,9 +13,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class CareerObjective extends Model
 {
-    protected $fillable=['txt','user_id'];
+    protected $fillable=['txt','job_seeker_id'];
 
-    public function user (){
-        return $this->belongsTo(User::class);
+    public function job_seeker (){
+        return $this->belongsTo(JobSeeker::class);
     }
 }
