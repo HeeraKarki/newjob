@@ -2,6 +2,8 @@
 namespace App\Controller\Admin;
 
 use App\Models\Setting\JobIndustry;
+use App\Models\User\Employer;
+use App\Models\User\JobSeeker;
 use App\Models\User\User;
 use App\Models\Setting\Location;
 use App\Models\Setting\JobFunction;
@@ -37,6 +39,19 @@ class AdminController
         //Get Job Industry Data and Make a json File
         $jd=JobIndustry::all();
         $this->makeJson('restore','job_ind.json',$jd);
+
+        //Get User Data and Make a Json File
+        $user=User::all();
+        $this->makeJson('restore','users.json',$user);
+
+
+        //Get User Data and Make a Json File
+        $jobseeker=JobSeeker::all();
+        $this->makeJson('restore','jobseekers.json',$jobseeker);
+
+        //Get User Data and Make a Json File
+        $employer=Employer::all();
+        $this->makeJson('restore','employers.json',$employer);
 
 
         return success('Create Seeder Json','Successfully Created Seeder Json Files');

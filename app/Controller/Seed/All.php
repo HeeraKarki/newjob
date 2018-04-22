@@ -23,11 +23,13 @@ class All
 
     public function call(){
         $this->seed->RoleSeeder();
-        $this->seed->UserSeeder();
         $this->seed->LoctionSeeder();
         $this->seed->Contract_typeSeeder();
         $this->seed->Job_Function_Seeder();
         $this->seed->Job_Industry_Seeder();
+        $this->seed->UserSeeder();
+        $this->seed->Employer_Seeder();
+        $this->seed->Job_Seekers_Seeder();
 
     }
 

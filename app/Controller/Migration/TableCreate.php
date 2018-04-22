@@ -190,6 +190,7 @@ class TableCreate
             $table->unsignedInteger('employer_id');
             $table->unsignedInteger('job_function_id');
             $table->unsignedInteger('job_industry_id');
+            $table->enum('status',['pending','pass','reject','complete']);
             $table->foreign('employer_id')->references('id')->on('employers')->onDelete('CASCADE')->onUpdate('CASCADE');
             $table->foreign('location_id')->references('id')->on('locations')->onDelete('CASCADE')->onUpdate('CASCADE');
             $table->foreign('contract_type_id')->references('id')->on('contract_types')->onDelete('CASCADE')->onUpdate('CASCADE');
