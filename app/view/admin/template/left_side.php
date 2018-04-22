@@ -47,6 +47,12 @@
                     </ul>
                 </li>
                 <li>
+                    <a href="javascript: void(0);"><i class="fa fa-user"></i> <span> Admin Account </span> <span class="menu-arrow"></span></a>
+                    <ul class="nav-second-level" aria-expanded="false">
+                        <li><a href="<?= baseurl('Admin/Account'); ?>">View</a></li>
+                    </ul>
+                </li>
+                <li>
                     <a href="javascript: void(0);"><i class="fi-paper"></i> <span> Database Settings </span> <span class="menu-arrow"></span></a>
                     <ul class="nav-second-level" aria-expanded="false">
                         <li><a href="<?= baseurl('Admin/Setup'); ?>">Base Setting</a></li>

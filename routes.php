@@ -56,6 +56,20 @@ $router->post('Admin/Contract_type_Add','Admin\\ContractTypeController@create');
 $router->post('Admin/Contract_type_update','Admin\\ContractTypeController@update');
 
 
+
+//Admin User Type CRUD
+$router->get('Admin/Account','Admin\\AdminUserController@index');
+
+$router->get('Admin/Account_edit','Admin\\AdminUserController@edit');
+
+$router->get('Admin/Account_delete','Admin\\AdminUserController@delete');
+
+$router->post('Admin/Account_Add','Admin\\AdminUserController@create');
+
+$router->post('Admin/Account_update','Admin\\AdminUserController@update');
+
+
+
 //Job Function CRUD
 
 $router->get('Admin/JobFunction','Admin\\JobFunctionController@index');

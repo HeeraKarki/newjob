@@ -13,7 +13,7 @@ class TableCreate
         Make::schema()->create('users',function ($table){
             $table->increments('id');
             $table->string('name');
-            $table->string('email',50);
+            $table->string('email',50)->unique();
             $table->string('password');
             $table->string('token')->nullable();
             $table->unsignedInteger('role_id');

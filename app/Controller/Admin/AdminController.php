@@ -41,6 +41,7 @@ class AdminController
 
         return success('Create Seeder Json','Successfully Created Seeder Json Files');
     }
+
     protected function makeconfig(){
         $file= new Filesystem();
         $da=$file->getRequire('config.php');
@@ -58,4 +59,7 @@ class AdminController
         $fds=$file->put('public/upload/1.php',$php);
 //        $fds=$file->append($da);
     }
+
+
+
 }
