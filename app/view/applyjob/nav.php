@@ -24,21 +24,7 @@
                     <ul class="nav navbar-nav">
                         <li class="active"><a href="<?= baseurl(); ?>">Home</a></li>
                         <li><a href="<?= baseurl('Job_list'); ?>">Job list</a></li>
-                        <li><a href="<?= baseurl('Job_Details'); ?>">Job Details</a></li>
-                        <li class="dropdown"><a href="javascript:void(0);" class="dropdown-toggle"
-                                                data-toggle="dropdown">Pages<span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="<?= baseurl('Profile'); ?>">Profile</a></li>
-                                <li><a href="<?= baseurl('Post_Resume'); ?>">Post Resume</a></li>
-                                <li><a href="<?= baseurl('Job_Post'); ?>">Job Post</a></li>
-                                <li><a href="<?= baseurl('Edit_Resume'); ?>">Edit Resume</a></li>
-                                <li><a href="<?= baseurl('Profile_Details'); ?>">profile Details</a></li>
-                                <li><a href="<?= baseurl('Applicant_Job'); ?>">Applied Job</a></li>
-                                <li><a href="<?= baseurl('Delete_Account'); ?>">Close Account</a></li>
-                                <li><a href="<?= baseurl('Register'); ?>">Job Signup</a></li>
-                                <li><a href="<?= baseurl('Login'); ?>">Job Signin</a></li>
-                            </ul>
-                        </li>
+
                     </ul>
                 </div>
             </div>
@@ -79,8 +65,6 @@
                         <li><a href="<?= baseurl('Register'); ?>">Register</a></li>
                         <li><a href="<?= baseurl('Login'); ?>">LogIn</a></li>
                     </ul><!-- sign-in -->
-
-                    <a href="<?= baseurl('Post_job'); ?>" class="btn">Post Your Job</a>
                 </div>
             <?php endif; ?>
             <!-- nav-right -->

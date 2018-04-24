@@ -28,6 +28,17 @@ class JobController
                 ->get();
         }
 
+        if (get_set('homesearch')){
+            $data['job_posts']=JobPost::where('location_id',Request::get('location'))
+                ->where('title','like','%%'.Request::get('keyword')."%%")
+                ->get();
+        }
+
+        if (get_set('industry_serach')){
+            $data['job_posts']=JobPost::where('job_industry_id',Request::get('id'))
+                ->get();
+        }
+
         return view('job/list/index',$data);
     }
 

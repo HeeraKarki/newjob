@@ -2,6 +2,7 @@
 
 namespace App\Controller\User;
 
+use App\Models\Job\JobPost;
 use App\Models\Setting\JobIndustry;
 use App\Models\Setting\Location;
 use Core\Request;
@@ -16,6 +17,7 @@ class HomeController
     public function home(){
         $data['job_industries']=JobIndustry::all();
         $data['locations']=Location::all();
+        $data['job_posts']=JobPost::inRandomOrder()->take(10)->get();
         return view('job/home',$data);
     }
 
