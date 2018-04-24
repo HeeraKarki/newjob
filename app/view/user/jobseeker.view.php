@@ -26,20 +26,19 @@ view_require('applyjob/nav');
 
                 <div class="favorites-user">
                     <div class="my-ads">
-                        <a href="applied-job.php">29<small>Apply Job</small></a>
+                        <a href="applied-job.php"><?= $user_details->job_seeker->job_applicants->count() ?><small>Apply Job</small></a>
                     </div>
                     <div class="favorites">
-                        <a href="bookmark.php">18<small>Favorites</small></a>
+                        <a href="bookmark.php"><?= $user_details->job_seeker->job_bookmarks->count() ?><small>Favorites</small></a>
                     </div>
                 </div>
             </div><!-- user-profile -->
 
             <ul class="user-menu">
                 <li class="active"><a href="<?= baseurl('User/Job_Seeker') ?>">Account Info </a></li>
-                <li><a href="<?= baseurl('User/Resume') ?>" >View Resume</a></li>
-                <li><a href="<?= baseurl('User/Edit_Resume')?>">Edit Resume</a></li>
+                <li><a href="<?= baseurl('Seeker_Profile?name='.str_slug($user_details->job_seeker->fullname)) ?>" >View Resume</a></li>
                 <li><a href="<?= baseurl('User/Profile_Detail') ?>">Profile Details</a></li>
-                <li><a href="<?= asset('User/Applied_Job')?>">applied job</a></li>
+                <li><a href="<?= baseurl('User/Applied_Job')?>">applied job</a></li>
                 <li><a href="<?= baseurl('User/Delete') ?>">Close account</a></li>
             </ul>
         </div><!-- ad-profile -->

@@ -2,6 +2,7 @@
 namespace App\Controller\User;
 
 
+use App\Models\Job\JobApplicant;
 use App\Models\User\CareerObjective;
 use App\Models\User\JobSeeker;
 use App\Models\User\User;
@@ -45,7 +46,10 @@ class JobSeekerController
 
 
     public function applied_job(){
-        return view('user/applied_job');
+        $data['user']=User::find(\auth()['id']);
+        $employer_id=$data['user']->job_seeker->id;
+        $data['job_posts']=JobApplicant::where('job_seeker_id',$employer_id)->get();
+        return view('user/applied_job',$data);
     }
 
     public function profile(){

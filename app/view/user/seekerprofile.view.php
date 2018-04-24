@@ -22,12 +22,19 @@ view_require('applyjob/nav');
                     <h2 class="text-capitalize"><a href=""><?= $job_seeker->fullname ?></a></h2>
                     <h5><?= $job_seeker->user->email ?></h5>
                 </div>
+                <div class="favorites-user">
+                    <div class="my-ads">
+                        <a href="applied-job.php"><?= $job_seeker->job_applicants->count() ?><small>Apply Job</small></a>
+                    </div>
+                    <div class="favorites">
+                        <a href="bookmark.php"><?= $job_seeker->job_bookmarks->count() ?><small>Favorites</small></a>
+                    </div>
+                </div>
             </div>
 
             <ul class="user-menu">
                 <li><a href="<?= baseurl('User/Job_Seeker') ?>">Account Info </a></li>
-                <li class="active"><a href="<?= baseurl('User/Resume') ?>" >View Resume</a></li>
-                <li><a href="<?= baseurl('User/Edit_Resume')?>">Edit Resume</a></li>
+                <li class="active"><a href="<?= baseurl('Seeker_Profile?name='.str_slug($user_details->job_seeker->fullname)) ?>" >View Resume</a></li>
                 <li><a href="<?= baseurl('User/Profile_Detail') ?>">Profile Details</a></li>
                 <li><a href="<?= baseurl('User/Applied_Job') ?>">applied job</a></li>
                 <li><a href="<?= baseurl('User/Delete') ?>">Close account</a></li>
@@ -86,7 +93,7 @@ view_require('applyjob/nav');
                 <div class="work-info">
                     <h3>Work History</h3>
                     <ul>
-                        <?php foreach ($job_seeker->user->experiences as $experience): ?>
+                        <?php foreach ($job_seeker->experiences as $experience): ?>
                             <li>
                                 <h4>
                                     <?= $experience->designation ?> @ <?= $experience->company_name ?>
@@ -108,7 +115,7 @@ view_require('applyjob/nav');
                 <div class="educational-info">
                     <h3>Education Background</h3>
                     <ul>
-                        <?php foreach ($job_seeker->user->educations as $education): ?>
+                        <?php foreach ($job_seeker->educations as $education): ?>
                             <li>
                                 <h4>
                                     <?= $education->degree ?> @ <?= $education->institute_name ?>
@@ -132,7 +139,7 @@ view_require('applyjob/nav');
                 <div class="qualification">
                     <h3>Special Qualification:</h3>
                     <ul>
-                        <?php foreach ($job_seeker->user->qualifications as $k=>$qualification): ?>
+                        <?php foreach ($job_seeker->qualifications as $k=>$qualification): ?>
                             <li><span><?= $k+1 .' . '?></span><?= $qualification->txt ?></li>
                         <?php endforeach; ?>
                     </ul>
@@ -147,7 +154,7 @@ view_require('applyjob/nav');
                     <h3>Language Proficiency</h3>
                     <ul class="list-inline">
 
-                        <?php foreach ($job_seeker->user->languages as $k=>$language): ?>
+                        <?php foreach ($job_seeker->languages as $k=>$language): ?>
                             <li>
                                 <h5><?= $language->name ?></h5>
                                 <ul>
