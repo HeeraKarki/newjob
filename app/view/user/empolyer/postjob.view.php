@@ -145,43 +145,8 @@ view_require('applyjob/nav');
                                         <p>5000 characters left</p>
                                     </div>
                                 </div>
-
+                                <button type="submit" style="display: block;margin: auto;" class="btn btn-primary">Post Your Job</button>
                             </div><!-- postdetails -->
-
-                            <div class="section">
-                                <h4>Make Your Post Premium</h4>
-                                <p>More replies means more interested buyers. With lots of interested buyers, you have a better chance of selling for the price that you want.<a href="post.html#">Learn more</a></p>
-                                <ul class="premium-options">
-                                    <li class="premium">
-                                        <input type="radio" name="premiumOption" value="day-one" id="day-one">
-                                        <label for="day-one">Regular Post</label>
-                                        <span>$20.00</span>
-                                    </li>
-                                    <li class="premium">
-                                        <input type="radio" name="premiumOption" value="day-two" id="day-two">
-                                        <label for="day-two">Regular Post</label>
-                                        <span>$30.00</span>
-                                    </li>
-                                    <li class="premium">
-                                        <input type="radio" name="premiumOption" value="day-three" id="day-three">
-                                        <label for="day-three">Top Post for 7 days</label>
-                                        <span>$50.00</span>
-                                    </li>
-                                    <li class="premium">
-                                        <input type="radio" name="premiumOption" value="day-four" id="day-four">
-                                        <label for="day-four">Daily Bump Up for 7 days</label>
-                                        <span>$100.00</span>
-                                    </li>
-                                </ul>
-                            </div><!-- section -->
-
-                            <div class="checkbox section agreement">
-                                <label for="send">
-                                    <input type="checkbox" name="send" id="send">
-                                    You agree to our <a href="post.html#">Terms of Use</a> and <a href="post.html#">Privacy Policy</a> and acknowledge that you are the rightful owner of this item and using Jobs to find a genuine buyer.
-                                </label>
-                                <button type="submit" class="btn btn-primary">Post Your Job</button>
-                            </div><!-- section -->
 
                         </fieldset>
                     </form><!-- form -->
