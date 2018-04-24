@@ -25,9 +25,6 @@ view_require('applyjob/nav');
                 </div>
 
                 <div class="favorites-user">
-                    <div class="my-ads">
-                        <a href="applied-job.php">29<small>Apply Job</small></a>
-                    </div>
                     <div class="favorites">
                         <a href="bookmark.php"><?=  $user->employer->post_count ?><small>Post Left</small></a>
                     </div>
