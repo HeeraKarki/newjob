@@ -72,6 +72,17 @@ class TableCreate
         });
     }
 
+    public function EmployerOrderTable()
+    {
+        Make:: schema()->create('employer_orders',function($table){
+            $table->increments('id');
+            $table->integer('amount');
+            $table->unsignedInteger('employer_id');
+            $table->foreign('employer_id')->references('id')->on('employers')->onDelete('CASCADE')->onUpdate('CASCADE');
+            $table->timestamps();
+
+        });
+    }
 
     public function locationtable()
     {

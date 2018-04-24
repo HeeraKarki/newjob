@@ -15,7 +15,8 @@ class JobController
     public function list(){
 
         $data['job_industries']=JobIndustry::all();
-        $data['job_posts']=JobPost::all();
+        $data['job_posts']=JobPost::paginate(15);
+        $data['job_posts']->withPath(baseurl('Job_list'));
         $data['locations']=Location::all();
 
         if (get_set('search')){

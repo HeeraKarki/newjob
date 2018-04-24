@@ -192,9 +192,13 @@ view_require('applyjob/nav');
                 <div class="col-md-4">
                     <div class="section quick-rules">
                         <h4>Quick rules</h4>
-                        <p class="lead">Posting an ad on <a href="post.html#">jobs.com</a> is free! However, all ads must follow our rules:</p>
+                        <p class="lead">Posting an ad on <a href="">phyuhninpwint.ml</a> is free! However, all ads must follow our rules:</p>
 
                         <ul>
+                            <?php if ($user->employer->post_count === 0): ?>
+                            <li><a href="<?= baseurl('Employer/Packages') ?>" class="btn btn-info">Package Buy</a> </li>
+                            <?php endif; ?>
+                            <li>You can post <?= $user->employer->post_count;  ?></li>
                             <li>Make sure you post in the correct category.</li>
                             <li>Do not post the same ad more than once or repost an ad within 48 hours.</li>
                             <li>Do not upload pictures with watermarks.</li>

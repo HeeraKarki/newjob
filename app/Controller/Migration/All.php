@@ -30,6 +30,7 @@ class All
         $this->table->JobApplicantTable();
         $this->table->JobBookMarkTable();
         $this->table->employerbanktable();
+        $this->table->EmployerOrderTable();
 
 
         

@@ -5,11 +5,12 @@ namespace App\Models\User;
 
 use Illuminate\Database\Eloquent\Model;
 
-class EmployerBank extends Model
+class EmployerOrder extends Model
 {
-    protected $fillable=['account_no','employer_id','amount'];
+    protected $fillable=['amount','employer_id'];
 
     public function employer(){
         return $this->belongsTo(Employer::class);
     }
+
 }

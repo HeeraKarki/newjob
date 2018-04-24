@@ -13,54 +13,30 @@ view_require('applyjob/nav');
             <h2 class="title">My Profile</h2>
         </div><!-- breadcrumb-section -->
 
-        <div class="job-profile section">
-            <div class="user-profile">
-                <div class="user-images">
-                    <img src="asset/images/user.jpg" alt="User Images" class="img-responsive">
-                </div>
-                <div class="user">
-                    <h2>Hello, <a href="profile-details.php#">Jhon Doe</a></h2>
-                </div>
-
-                <div class="favorites-user">
-                    <div class="my-ads">
-                        <a href="applied-job.php">29<small>Apply Job</small></a>
-                    </div>
-                    <div class="favorites">
-                        <a href="bookmark.php">18<small>Favorites</small></a>
-                    </div>
-                </div>
-            </div><!-- user-profile -->
-
-            <ul class="user-menu">
-                <li><a href="<?= baseurl('User/Job_Seeker') ?>">Account Info </a></li>
-                <li><a href="<?= baseurl('User/Resume') ?>" >View Resume</a></li>
-                <li><a href="<?= baseurl('User/Edit_Resume')?>">Edit Resume</a></li>
-                <li class="active"><a href="<?= baseurl('User/Profile_Detail') ?>">Profile Details</a></li>
-                <li><a href="<?= baseurl('User/Applied_Job') ?>">applied job</a></li>
-                <li><a href="<?= baseurl('User/Delete') ?>">Close account</a></li>
-            </ul>
-        </div><!-- ad-profile -->
+        <?php view_require('applyjob/employer_profile_head');?>
+        <?php view_require('applyjob/success');?>
+        <?php view_require('applyjob/error');?>
 
         <div class="profile job-profile">
             <div class="user-pro-section">
                 <!-- profile-details -->
                 <div class="profile-details section">
                     <h2>Profile Details</h2>
-                    <form action="profile-details.php#">
+                    <form action="<?= baseurl('Employer/Profile_update') ?>" method="post">
+                        <input type="hidden" value="<?= $user->id ?>" name="user_id">
                         <div class="form-group">
                             <label>Username</label>
-                            <input type="text" class="form-control" value="<?= $user->name ?>" placeholder="Jhon Doe">
+                            <input type="text" name="name" class="form-control" value="<?= $user->name ?>" placeholder="Jhon Doe">
                         </div>
 
                         <div class="form-group">
                             <label>Email ID</label>
-                            <input type="email" class="form-control" value="<?= $user->email ?>"  placeholder="jhondoe@mail.com">
+                            <input type="email" name="email" class="form-control" value="<?= $user->email ?>"  placeholder="jhondoe@mail.com">
                         </div>
 
                         <div class="form-group">
                             <label>Bank Account No.</label>
-                            <input type="text" class="form-control" value="<?= $user->name ?>"  placeholder="account_no">
+                            <input type="text" required name="account_no" class="form-control" value="<?= isset($user->employer->bank->account_no)?$user->employer->bank->account_no:'' ?>"  placeholder="account_no">
                         </div>
 
                         <div class="checkbox section agreement">

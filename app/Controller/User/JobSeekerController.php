@@ -39,7 +39,8 @@ class JobSeekerController
     }
 
     public function profile_detail(){
-        return view('user/profile_detail');
+        $data['user']=User::find(\auth()['id']);
+        return view('user/profile_detail',$data);
     }
 
 

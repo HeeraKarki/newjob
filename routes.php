@@ -136,9 +136,13 @@ $router->post('User/Seeker_Detail','User\\SeekerDetail@detail');
 $router->get('User/Employer','User\\EmployerController@index');
 $router->post('User/Employer_Add','User\\EmployerController@add');
 $router->get('Employer/Post_Job','User\\EmployerController@post_job');
+$router->get('Employer/Packages','User\\EmployerController@packages');
 $router->post('Employer/Job_a_post','User\\EmployerController@post_job_add');
+$router->post('Employer/Buy_post','User\\EmployerController@buy_post');
 $router->get('Employer/Job_List','User\\EmployerController@joblist');
 $router->get('Employer/Interview','User\\EmployerController@interview');
+$router->get('Employer/Profile_Detail','User\\EmployerController@profile_detail');
+$router->post('Employer/Profile_update','User\\EmployerController@profile_update');
 $router->get('Employer/Reject','User\\EmployerController@reject');
 
 //Job List

@@ -315,6 +315,7 @@ view_require('applyjob/nav');
 
 
 
+
                         <!-- pagination  -->
                         <div class="text-center">
                             <ul class="pagination ">

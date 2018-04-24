@@ -9,6 +9,7 @@ use App\Models\Setting\JobFunction;
 use App\Models\Setting\JobIndustry;
 use App\Models\Setting\Location;
 use App\Models\User\Employer;
+use App\Models\User\EmployerBank;
 use App\Models\User\User;
 use Core\Helper\Auth;
 use Core\Request;
@@ -87,15 +88,66 @@ class EmployerController
             'job_function_id'=>Request::post('job_function_id'),
             'job_industry_id'=>Request::post('job_industry_id')
         ];
-        JobPost::create($data);
-        return success('Add New Job','Successfully created a post.');
+        $employer=Employer::find(Request::post('employer_id'));
+        if ($employer->post_count !==0){
+            $employer->post_count=$employer->post_count-1;
+            $employer->save();
+            JobPost::create($data);
+            return success('Add New Job','Successfully created a post.');
+        }else{
+            return error('Sorry!','You can\'t post.please buy post pack');
+        }
     }
 
+    public function packages(){
+        $data['user']=User::find(\auth()['id']);
+        return view('user/empolyer/packages',$data);
+    }
+
+    public function buy_post(){
+        $employer=Employer::find(Request::post('employer_id'));
+
+        if($employer->bank === null){
+            error('Error!','Your can not purchase now.Fill your bank account in profile.' );
+        }
+
+        $employer->increment('post_count',Request::post('post_count'));
+
+        $bank=EmployerBank::where('employer_id',Request::post('employer_id'));
+        $bank_amount=$bank->first()->amount;
+
+        $price=[
+            "5"=>20,
+            "10"=>30,
+            "20"=>50,
+            "50"=>100,
+        ];
+
+        $b_price=$price[Request::post('post_count')];
+        $bank->update(['amount'=>$bank_amount-$b_price]);
+        $employer->order()->create(['amount'=>$b_price]);
+        return success('Thank you','Post Count was added. ');
+    }
     public function joblist(){
         $user=User::find(\auth()['id']);
         $employer_id=$user->employer->id;
         $data['job_posts']=JobPost::where('employer_id',$employer_id)->get();
         return view('user/empolyer/joblist',$data);
+    }
+
+    public function profile_detail(){
+        $data['user']=User::find(\auth()['id']);
+        return view('user/empolyer/profile',$data);
+    }
+
+    public function profile_update(){
+
+        $user= User::find(Request::post('user_id'));
+        $user->name=Request::post('name');
+        $user->email=Request::post('email');
+        $user->save();
+       EmployerBank::updateOrCreate(['employer_id'=>$user->employer->id],['account_no'=>Request::post('account_no')]);
+       return success('Success','Bank Account and Detail Updated.');
     }
 
     public function interview(){
