@@ -8,7 +8,7 @@ view_require('applyjob/nav');
         <div class="breadcrumb-section">
             <ol class="breadcrumb">
                 <li><a href="index.php">Home</a></li>
-                <li>Employee Profile</li>
+                <li>JobSeeker Profile</li>
             </ol>
             <h2 class="title">My Profile</h2>
         </div><!-- breadcrumb-section -->
