@@ -26,10 +26,10 @@ view_require('applyjob/nav');
 
                 <div class="favorites-user">
                     <div class="my-ads">
-                        <a href="applied-job.php"><?= $user->job_seeker->job_applicants->count() ?><small>Apply Job</small></a>
+                        <a href="applied-job.php"><?= isset($user->job_seeker->job_applicants)?$user->job_seeker->job_applicants->count():0   ?><small>Apply Job</small></a>
                     </div>
                     <div class="favorites">
-                        <a href="bookmark.php"><?= $user->job_seeker->job_bookmarks->count() ?><small>Favorites</small></a>
+                        <a href="bookmark.php"><?= isset($user->job_seeker->job_bookmarks)?$user->job_seeker->job_bookmarks->count():0 ?><small>Favorites</small></a>
                     </div>
                 </div>
             </div><!-- user-profile -->
@@ -60,10 +60,6 @@ view_require('applyjob/nav');
                             <input type="email" class="form-control" value="<?= $user->email ?>"  placeholder="jhondoe@mail.com">
                         </div>
 
-                        <div class="form-group">
-                            <label>Bank Account No.</label>
-                            <input type="text" class="form-control" value="<?= $user->name ?>"  placeholder="account_no">
-                        </div>
 
                         <div class="checkbox section agreement">
                             <button type="submit" class="btn btn-primary" style="display: block;margin: auto;">Detail Update</button>
