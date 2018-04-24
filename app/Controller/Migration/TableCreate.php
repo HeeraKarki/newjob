@@ -49,6 +49,7 @@ class TableCreate
             $table->string('twitter')->nullable();
             $table->string('googleplus')->nullable();
             $table->text('avatar')->nullable();
+            $table->integer('post_count')->default(3);
             $table->unsignedInteger('location_id');
             $table->unsignedInteger('user_id');
             $table->foreign('location_id')->references('id')->on('locations')->onDelete('CASCADE')->onUpdate('CASCADE');
