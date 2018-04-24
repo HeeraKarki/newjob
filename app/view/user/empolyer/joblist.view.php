@@ -36,11 +36,11 @@ view_require('applyjob/nav');
 
             <ul class="user-menu">
                 <li ><a href="<?= baseurl('User/Employer') ?>">Account Info </a></li>
-                <li><a href="<?= baseurl('Employer/Job_List')?>">My Job List</a></li>
+                <li class="active"><a href="<?= baseurl('Employer/Job_List')?>">My Job List</a></li>
                 <li><a href="<?= baseurl('User/Employer_Edit_Resume')?>">Interview</a></li>
                 <li><a href="<?= baseurl('Employer/Profile_Detail') ?>">Profile Details</a></li>
                 <li><a href="<?= asset('User/Applied_Job')?>">applied job</a></li>
-                <li class="active"><a href="<?= baseurl('Employer/Packages')?>">Buy Post Packages</a></li>
+                <li ><a href="<?= baseurl('Employer/Packages')?>">Buy Post Packages</a></li>
                 <li><a href="<?= baseurl('User/Delete') ?>">Close account</a></li>
             </ul>
         </div>
