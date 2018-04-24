@@ -20,4 +20,8 @@ class Employer extends Model{
     public function order(){
         return $this->hasMany(EmployerOrder::class);
     }
+
+    public function user(){
+        return $this->belongsTo(User::class);
+    }
 }

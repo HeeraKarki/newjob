@@ -28,7 +28,7 @@
         <div class="col-md-12">
             <div class="card-box">
                 <h2 class="btn btn-danger btn-block">JobIndustry Data</h2>
-                <table class="table table-bordered table-striped">
+                <table class="table table-bordered table-striped" id="datatable">
                     <thead class="thead-default">
                     <tr>
                         <th class="text-center">ID</th>

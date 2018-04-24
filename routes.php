@@ -98,6 +98,12 @@ $router->post('Admin/JobIndustry_update','Admin\\JobIndustryController@update');
 
 
 
+
+//Admin Job Pass
+$router->get('Admin/Job_Pending','Admin\\JobPostController@pending');
+
+
+
 //Job_Seeker
 
 $router->get('User/Job_Seeker','User\\JobSeekerController@index');

@@ -26,10 +26,19 @@
 <script src="<?= asset('admin/');?>assets/js/waves.js"></script>
 <script src="<?= asset('admin/');?>assets/js/jquery.slimscroll.js"></script>
 
+<script src="<?= asset('admin/');?>plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="<?= asset('admin/');?>plugins/datatables/dataTables.bootstrap4.min.js"></script>
+<script src="<?= asset('admin/');?>plugins/datatables/dataTables.responsive.min.js"></script>
 
 <!-- App js -->
 <script src="<?= asset('admin/');?>assets/js/jquery.core.js"></script>
 <script src="<?= asset('admin/');?>assets/js/jquery.app.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#datatable').dataTable();
+    });
+</script>
 
 </body>
 </html>

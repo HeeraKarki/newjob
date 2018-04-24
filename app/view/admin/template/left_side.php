@@ -38,6 +38,13 @@
                 </li>
 
                 <li>
+                    <a href="javascript: void(0);"><i class="fi-alt"></i> <span> Job </span> <span class="menu-arrow"></span></a>
+                    <ul class="nav-second-level" aria-expanded="false">
+                        <li><a href="<?= baseurl('Admin/Job_Pending'); ?>">Job Pending List</a></li>
+                    </ul>
+                </li>
+
+                <li>
                     <a href="javascript: void(0);"><i class="fi-server"></i> <span> Settings </span> <span class="menu-arrow"></span></a>
                     <ul class="nav-second-level" aria-expanded="false">
                         <li><a href="<?= baseurl('Admin/Location'); ?>">Location</a></li>
