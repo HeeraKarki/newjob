@@ -53,4 +53,9 @@ class JobSeekerController
         $data['job_seeker']=JobSeeker::where('fullname',$name)->first();
         return view('user/seekerprofile',$data);
     }
+
+    public function del(){
+        User::destroy(Request::post('id'));
+        return success('Successful','Your account has been deleted.','Logout');
+    }
 }

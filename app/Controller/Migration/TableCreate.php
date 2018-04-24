@@ -18,6 +18,7 @@ class TableCreate
             $table->string('token')->nullable();
             $table->unsignedInteger('role_id');
             $table->boolean('isactive')->default(false);
+            $table->softDeletes();
             $table->foreign('role_id')->references('id')->on('roles')->onDelete('CASCADE')->onUpdate('CASCADE');
             $table->timestamps();
 

@@ -50,8 +50,9 @@ view_require('applyjob/nav');
                 <div class="delete-account section">
                     <h2>Delete Your Account</h2>
                     <h4>Are you sure, you want to delete your account?</h4>
+                    <input type="hidden" value="<?= auth()['id'] ?>" name="id">
                     <button type="submit" class="btn">Delete Account</button>
-                    <a href="delete-account.php#" class="btn cancle">Cancle</a>
+                    <a href="" class="btn cancle">Cancle</a>
                 </div>
             </div>
         </form>
