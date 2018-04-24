@@ -10,8 +10,8 @@ view_require('applyjob/nav');
 					<div class="user-account job-user-account">
 						<h2>Create An Account</h2>
 							<ul class="nav nav-tabs text-center" role="tablist">
-								<li role="presentation" class="active"><a href="signup.php#find-job" aria-controls="find-job" role="tab" data-toggle="tab">Find A Job</a></li>
-								<li role="presentation"><a href="signup.php#post-job" aria-controls="post-job" role="tab" data-toggle="tab">Post A Job</a></li>
+								<li role="presentation" class="active"><a href="signup.php#find-job" aria-controls="find-job" role="tab" data-toggle="tab">Job Seeker</a></li>
+								<li role="presentation"><a href="signup.php#post-job" aria-controls="post-job" role="tab" data-toggle="tab">Employer</a></li>
 							</ul>
                         <?php view_require('applyjob/error') ?>
                         <?php view_require('applyjob/success') ?>
@@ -32,10 +32,7 @@ view_require('applyjob/nav');
 										<div class="form-group">
 											<input type="password" class="form-control" name="con_password" placeholder="Confirm Password">
 										</div>
-		
-										<div class="checkbox">
-											<label class="pull-left checked" for="signing"><input type="checkbox" name="signing" id="signing"> By signing up for an account you agree to our Terms and Conditions </label>
-										</div><!-- checkbox -->	
+
 										<button type="submit" class="btn">Registration</button>	
 									</form>
 								</div>
@@ -54,9 +51,6 @@ view_require('applyjob/nav');
 										<div class="form-group">
 											<input type="password" class="form-control" name="con_password" placeholder="Confirm Password">
 										</div>
-										<div class="checkbox">
-											<label class="pull-left checked" for="signing-2"><input type="checkbox" name="signing-2" id="signing-2">By signing up for an account you agree to our Terms and Conditions</label>
-										</div><!-- checkbox -->	
 										<button type="submit" class="btn">Registration</button>	
 									</form>
 								</div>

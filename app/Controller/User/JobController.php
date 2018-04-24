@@ -5,6 +5,7 @@ use App\Models\Job\JobApplicant;
 use App\Models\Job\JobBookmark;
 use
     App\Models\Job\JobPost;
+use App\Models\Setting\ContractType;
 use App\Models\Setting\JobIndustry;
 use App\Models\Setting\Location;
 use App\Models\User\User;
@@ -18,6 +19,7 @@ class JobController
         $data['job_posts']=JobPost::paginate(15);
         $data['job_posts']->withPath(baseurl('Job_list'));
         $data['locations']=Location::all();
+        $data['contract_types']=ContractType::all();
 
         if (get_set('search')){
             $job_industry=Request::get('job_industry');
@@ -39,6 +41,10 @@ class JobController
                 ->get();
         }
 
+        if (get_set('contract_search')){
+            $data['job_posts']=JobPost::where('contract_type_id',Request::get('id'))
+                ->get();
+        }
         return view('job/list/index',$data);
     }
 

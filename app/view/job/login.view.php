@@ -25,15 +25,12 @@ view_require('applyjob/nav');
 					
 						<!-- forgot-password -->
 						<div class="user-option">
-							<div class="checkbox pull-left">
-								<label for="logged"><input type="checkbox" name="logged" id="logged"> Keep me logged in </label>
-							</div>
 							<div class="pull-right forgot-password">
-								<a href="Login_Check">Forgot password</a>
+								<a href="<?= baseurl('Forgot_password') ?>">Forgot password</a>
 							</div>
 						</div><!-- forgot-password -->
 					</div>
-					<a href="signin.php#" class="btn-primary">Create a New Account</a>
+					<a href="<?= baseurl('Register') ?>" class="btn-primary">Create a New Account</a>
 				</div><!-- user-login -->			
 			</div><!-- row -->	
 		</div><!-- container -->
