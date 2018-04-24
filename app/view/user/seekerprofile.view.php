@@ -34,7 +34,7 @@ view_require('applyjob/nav');
 
             <ul class="user-menu">
                 <li><a href="<?= baseurl('User/Job_Seeker') ?>">Account Info </a></li>
-                <li class="active"><a href="<?= baseurl('Seeker_Profile?name='.str_slug($user_details->job_seeker->fullname)) ?>" >View Resume</a></li>
+                <li class="active"><a href="<?= baseurl('Seeker_Profile?name='.str_slug($job_seeker->user->job_seeker->fullname)) ?>" >View Resume</a></li>
                 <li><a href="<?= baseurl('User/Profile_Detail') ?>">Profile Details</a></li>
                 <li><a href="<?= baseurl('User/Applied_Job') ?>">applied job</a></li>
                 <li><a href="<?= baseurl('User/Delete') ?>">Close account</a></li>
