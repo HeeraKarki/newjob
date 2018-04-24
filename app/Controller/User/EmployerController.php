@@ -25,7 +25,7 @@ class EmployerController
 
     public function index(){
         $data['locations']=Location::all();
-        $data['user_details']=User::where('id',auth()['id'])->first();
+        $data['user_details']=User::find(auth()['id']);
         return view('user/empolyer/index',$data);
     }
 
@@ -101,6 +101,7 @@ class EmployerController
 
     public function packages(){
         $data['user']=User::find(\auth()['id']);
+
         return view('user/empolyer/packages',$data);
     }
 
@@ -130,6 +131,7 @@ class EmployerController
     }
     public function joblist(){
         $user=User::find(\auth()['id']);
+        $data['user']=$user;
         $employer_id=$user->employer->id;
         $data['job_posts']=JobPost::where('employer_id',$employer_id)->get();
         return view('user/empolyer/joblist',$data);

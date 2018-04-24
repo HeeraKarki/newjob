@@ -14,7 +14,7 @@
                 <a href="applied-job.php">29<small>Apply Job</small></a>
             </div>
             <div class="favorites">
-                <a href="bookmark.php">18<small>Favorites</small></a>
+                <a href="bookmark.php"><?=  $user_details->employer->phone_no ?><small>Post Left</small></a>
             </div>
         </div>
     </div><!-- user-profile -->
