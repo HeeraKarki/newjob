@@ -37,7 +37,6 @@ view_require('applyjob/nav');
             <ul class="user-menu">
                 <li><a href="<?= baseurl('User/Job_Seeker') ?>">Account Info </a></li>
                 <li><a href="resume.php">View Resume</a></li>
-                <li><a href="edit-resume.php">Edit Resume</a></li>
                 <li><a href="profile-details.php">Profile Details</a></li>
                 <li><a href="bookmark.php">Bookmark</a></li>
                 <li><a href="applied-job.php">applied job</a></li>

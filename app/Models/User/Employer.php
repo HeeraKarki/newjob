@@ -12,4 +12,8 @@ class Employer extends Model{
     public function job_posts(){
         return $this->hasMany(JobPost::class);
     }
+
+    public function bank(){
+        return $this->hasOne(EmployerBank::class);
+    }
 }

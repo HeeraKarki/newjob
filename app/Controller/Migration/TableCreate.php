@@ -58,6 +58,21 @@ class TableCreate
             $table->timestamps();
         });
     }
+
+    public function employerbanktable()
+    {
+        Make:: schema()->create('employer_banks',function($table){
+            $table->increments('id');
+            $table->string('account_no');
+            $table->integer('amount')->default(10000);
+            $table->unsignedInteger('employer_id');
+            $table->foreign('employer_id')->references('id')->on('employers')->onDelete('CASCADE')->onUpdate('CASCADE');
+            $table->timestamps();
+
+        });
+    }
+
+
     public function locationtable()
     {
         Make:: schema()->create('locations',function($table){
