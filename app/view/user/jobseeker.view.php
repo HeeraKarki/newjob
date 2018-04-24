@@ -26,10 +26,10 @@ view_require('applyjob/nav');
 
                 <div class="favorites-user">
                     <div class="my-ads">
-                        <a href="applied-job.php"><?= $user_details->job_seeker->job_applicants->count() ?><small>Apply Job</small></a>
+                        <a href="applied-job.php"><?= isset($user_details->job_seeker->job_applicants)?$user_details->job_seeker->job_applicants->count():0 ?><small>Apply Job</small></a>
                     </div>
                     <div class="favorites">
-                        <a href="bookmark.php"><?= $user_details->job_seeker->job_bookmarks->count() ?><small>Favorites</small></a>
+                        <a href="bookmark.php"><?= isset($user_details->job_seeker->job_bookmarks)?$user_details->job_seeker->job_bookmarks->count():0 ?><small>Favorites</small></a>
                     </div>
                 </div>
             </div><!-- user-profile -->
