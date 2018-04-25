@@ -80,7 +80,7 @@ class EmployerController
             'salary_min'=>Request::post('salary_min'),
             'salary_max'=>Request::post('salary_max'),
             'salary_type'=>Request::post('salary_type'),
-            'deathline'=>Request::post('deathline'),
+            'deathline'=>date('Y-m-d',strtotime(Request::post('deathline'))),
             'responsibilities'=>Request::post('responsibilities'),
             'requirement'=>Request::post('requirement'),
             'experience'=>Request::post('experience'),
@@ -242,8 +242,52 @@ class EmployerController
         }
     }
 
+    public function jobedit(){
+        if (\auth()['role_id']===3){
+            $id=Request::get('id');
+            $data['job']=JobPost::find($id);
+            $data['user']=User::find(\auth()['id']);
 
+            if ( $data['user']->employer->id === null ){
+                return error('Job Post Error!','Your account profile is not completed.First Fill requirement.','User/Employer');
+            };
 
+            if ($data['user']->employer->id!== $data['job']->employer_id){
+                return error('Job Edit Error!','Your account do not have permission.');
+            }
+
+            $data['job_functions']=JobFunction::all();
+            $data['job_industries']=JobIndustry::all();
+            $data['locations']=Location::all();
+            $data['contract_types']=ContractType::all();
+
+            return view('job/list/edit',$data);
+        }else{
+            return error('Error','You do not have permission');
+        }
+    }
+
+    public function postjobedit(){
+        $data=[
+            'title'=>Request::post('title'),
+            'salary_min'=>Request::post('salary_min'),
+            'salary_max'=>Request::post('salary_max'),
+            'salary_type'=>Request::post('salary_type'),
+            'deathline'=>date('Y-m-d',strtotime(Request::post('deathline'))),
+            'responsibilities'=>Request::post('responsibilities'),
+            'requirement'=>Request::post('requirement'),
+            'experience'=>Request::post('experience'),
+            'description'=>Request::post('description'),
+            'location_id'=>Request::post('location_id'),
+            'contract_type_id'=>Request::post('contract_type_id'),
+            'employer_id'=>Request::post('employer_id'),
+            'job_function_id'=>Request::post('job_function_id'),
+            'job_industry_id'=>Request::post('job_industry_id')
+        ];
+       $post=JobPost::find(Request::post('job_id'));
+       $post->update($data);
+       return success('Success','Update Completed');
+    }
     public function reject(){
         $id=Request::get('applicant_id');
         $applicant=JobApplicant::find($id);

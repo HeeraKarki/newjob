@@ -159,6 +159,10 @@ $router->post('Employer/Job_a_post','User\\EmployerController@post_job_add');
 $router->post('Employer/Buy_post','User\\EmployerController@buy_post');
 $router->get('Employer/Job_List','User\\EmployerController@joblist');
 $router->post('Employer/Interview','User\\EmployerController@interview');
+$router->get('Employer/Job_Edit','User\\EmployerController@jobedit');
+$router->post('Employer/PostJob_edit','User\\EmployerController@postjobedit');
+
+
 
 $router->get('Employer/Interview_pass','User\\EmployerController@interview_pass');
 $router->get('Employer/Interview_fail','User\\EmployerController@interview_fail');

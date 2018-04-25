@@ -93,17 +93,24 @@ view_require('applyjob/nav');
                 </div><!-- item-info -->
                 <div class="social-media">
                     <div class="jargyi" >
-                        <form action="<?= baseurl('Apply_Job')?>" method="post">
-                            <input name="job_seeker_id" type="hidden" value="<?=  isset($user->job_seeker->id)?$user->job_seeker->id:null ?>">
-                            <input name="job_post_id" type="hidden" value="<?=  isset($detail->id)?$detail->id:null ?>">
-                            <button class="btn btn-primary"><i class="fa fa-briefcase" aria-hidden="true"></i>Apply For This Job</button>
-                        </form>
-
-                        <form action="<?= baseurl('Bookmark')?>" method="post" id="bookm">
-                            <input name="job_seeker_id" type="hidden" value="<?=  isset($user->job_seeker->id)?$user->job_seeker->id:null ?>">
-                            <input name="job_post_id" type="hidden" value="<?=  isset($detail->id)?$detail->id:null ?>">
-                            <button class="btn btn-primary bookmark"><i class="fa fa-bookmark-o" aria-hidden="true"></i>Bookmark</button>
-                        </form>
+                        <?php if (auth()['role_id']!=3): ?>
+                            <form action="<?= baseurl('Apply_Job')?>" method="post">
+                                <input name="job_seeker_id" type="hidden" value="<?=  isset($user->job_seeker->id)?$user->job_seeker->id:null ?>">
+                                <input name="job_post_id" type="hidden" value="<?=  isset($detail->id)?$detail->id:null ?>">
+                                <button class="btn btn-primary"><i class="fa fa-briefcase" aria-hidden="true"></i>Apply For This Job</button>
+                            </form>
+                        <?php endif; ?>
+                        <?php if (auth()['role_id']!=3): ?>
+                            <form action="<?= baseurl('Bookmark')?>" method="post" id="bookm">
+                                <input name="job_seeker_id" type="hidden" value="<?=  isset($user->job_seeker->id)?$user->job_seeker->id:null ?>">
+                                <input name="job_post_id" type="hidden" value="<?=  isset($detail->id)?$detail->id:null ?>">
+                                <button class="btn btn-primary bookmark"><i class="fa fa-bookmark-o" aria-hidden="true"></i>Bookmark</button>
+                            </form>
+                        <?php endif; ?>
+                        <?php if (auth()['role_id']===3): ?>
+                            <a href="<?= baseurl('Employer/Job_Edit?id='.$detail->id) ?>" class="btn btn-primary bookmark"><i class="fa fa-pencil" aria-hidden="true"></i>Edit</a>
+                            <a href="<?= baseurl('Employer/Job_delete?id='.$detail->id) ?>" class="btn btn-primary bookmark" style="background-color: rgba(255,90,55,0.95);"><i class="fa fa-trash" aria-hidden="true"></i>Delete</a>
+                        <?php endif; ?>
                         <ul class="share-social">
                             <li>Share this ad</li>
                             <li><a href="<?= $detail->employer->facebook ?>"><i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
