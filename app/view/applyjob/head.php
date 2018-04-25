@@ -39,4 +39,10 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <!-- Template Developed By ThemeRegion -->
+    <style>
+        .job-ad-item{
+            border: 1px solid aquamarine;
+            box-shadow: 10px 10px 10px gray;
+        }
+    </style>
 </head>

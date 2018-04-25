@@ -69,7 +69,20 @@ view_require('applyjob/nav');
                                 <ul>
                                     <li><a href="<?= baseurl('Job_Detail')."?job_id=".$job_post->id ?>"><i class="fa fa-map-marker" aria-hidden="true"></i><?= $job_post->job_post->location->name ?> </a></li>
                                     <li><a href="<?= baseurl('Job_Detail')."?job_id=".$job_post->id ?>" class="text-capitalize"><i class="fa fa-clock-o" aria-hidden="true"></i><?= $job_post->job_post->salary_type ?></a></li>
-                                    <li><a href="<?= baseurl('Job_Detail')."?job_id=".$job_post->id ?>"><i class="fa fa-money" aria-hidden="true"></i>$<?= number_format($job_post->job_post->salary_min) ?>- $<?= number_format($job_post->job_post->salary_max) ?></a></li>
+                                    <li><a href="<?= baseurl('Job_Detail')."?job_id=".$job_post->id ?>"><i class="fa fa-money" aria-hidden="true"></i>$
+                                    <?php if($job_post->job_post->salary_min !== 0.00):?>
+                                            <?= number_format($job_post->job_post->salary_min) ?>- $<?= number_format($job_post->job_post->salary_max) ?>
+                                    <?php else: ?>
+                                        Negotiable
+                                    <?php endif;?>
+                                        </a>
+                                    </li>
+                                    <li >
+                                        <a href="<?= baseurl('Job_Detail')."?job_id=".$job_post->id ?>" style="background-color: RGB(237, 82, 73);padding: 12px;border-radius: 31px;color: white;">
+                                            <i class="fa fa-stack-exchange" aria-hidden="true"></i>
+                                            <?= $job_post->status ?>
+                                        </a>
+                                    </li>
                                 </ul>
                             </div><!-- ad-meta -->
                         </div><!-- ad-info -->
