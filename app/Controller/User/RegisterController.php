@@ -29,7 +29,9 @@ class RegisterController
         if (checkpost('password')){
             return error('Invalid Password','Fill the Password');
         }
-
+        if (Request::post('password') !== Request::post('con_password')){
+            return error('Invaild','Password is not match');
+        }
 
         $token=Str::random(60);
         $role_id=Request::post('role_id');
