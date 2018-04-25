@@ -82,6 +82,7 @@ view_require('applyjob/nav');
                         <tr>
                             <th class="text-center text-success">User</th>
                             <th class="text-center text-success">Apply Date</th>
+                            <th class="text-center text-success">Interview Date</th>
                             <th class="text-center text-success">Response</th>
                         </tr>
                         </thead>
@@ -91,17 +92,25 @@ view_require('applyjob/nav');
                                 <tr>
                                     <td class="text-center"><a href="<?= baseurl('Seeker_Profile')."?name=". str_slug($applicant->job_seeker->fullname) ?>" class="text-capitalize"><?= $applicant->job_seeker->fullname ?></a> </td>
                                     <td class="text-center"><?= date('d M Y',strtotime($applicant->created_at)) ?></td>
-                                    <td class="text-center">
-                                        <a title="Reject the applicant" href="<?= baseurl('Seeker_Profile')."?name=". str_slug($applicant->job_seeker->fullname) ?>" class="btn btn-info">
-                                            <i class="fa fa-eye"></i> View
-                                        </a>
-                                        <a href="<?= baseurl('Employer/Interview').'?applicant_id='.$applicant->id  ?>" class="btn btn-success">
-                                            <i class="fa fa-vcard"></i> Interview
-                                        </a>
-                                        <a href="<?= baseurl('Employer/Reject').'?applicant_id='.$applicant->id  ?>" class="btn btn-danger">
-                                            <i class="fa fa-user-times"></i> Reject
-                                        </a>
-                                    </td>
+                                    <form action="<?= baseurl('Employer/Interview') ?>" method="post">
+
+                                        <td>
+                                            <input type="date" name="interview_date">
+                                            <input type="hidden" name="applicant_id" value="<?= $applicant->id; ?>">
+                                        </td>
+                                        <td class="text-center">
+                                            <a title="Reject the applicant" href="<?= baseurl('Seeker_Profile')."?name=". str_slug($applicant->job_seeker->fullname) ?>" class="btn btn-info">
+                                                <i class="fa fa-eye"></i> View
+                                            </a>
+                                            <button type="submit" class="btn btn-success">
+                                                <i class="fa fa-vcard"></i> Interview
+                                            </button>
+                                            <a href="<?= baseurl('Employer/Reject').'?applicant_id='.$applicant->id  ?>" class="btn btn-danger">
+                                                <i class="fa fa-user-times"></i> Reject
+                                            </a>
+                                        </td>
+                                    </form>
+
                                 </tr>
                             <?php endif; ?>
 

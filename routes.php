@@ -157,7 +157,7 @@ $router->get('Employer/Packages','User\\EmployerController@packages');
 $router->post('Employer/Job_a_post','User\\EmployerController@post_job_add');
 $router->post('Employer/Buy_post','User\\EmployerController@buy_post');
 $router->get('Employer/Job_List','User\\EmployerController@joblist');
-$router->get('Employer/Interview','User\\EmployerController@interview');
+$router->post('Employer/Interview','User\\EmployerController@interview');
 $router->get('Employer/Profile_Detail','User\\EmployerController@profile_detail');
 $router->post('Employer/Profile_update','User\\EmployerController@profile_update');
 $router->post('Employer/Password_Update','User\\EmployerController@password_update');

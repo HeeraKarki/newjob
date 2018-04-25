@@ -76,5 +76,10 @@
 <script src="<?= asset('applyjob/js/price-range.js');?>"></script>
 <script src="<?= asset('applyjob/js/main.js');?>"></script>
 <script src="<?= asset('applyjob/js/switcher.js');?>"></script>
+<script src="<?= asset('assets/date/datedropper.min.js');?>"></script>
+<script src="<?= asset('assets/date/timedropper.min.js');?>"></script>
+<script>
+    $( '[type=date], .datepicker' ).dateDropper()
+</script>
 </body>
 </html>

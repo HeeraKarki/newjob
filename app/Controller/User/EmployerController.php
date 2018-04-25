@@ -154,6 +154,8 @@ class EmployerController
     }
 
     public function interview(){
+
+        dd(Request::post());
         $id=Request::get('applicant_id');
         $applicant=JobApplicant::find($id);
         $applicant->status='interview';
