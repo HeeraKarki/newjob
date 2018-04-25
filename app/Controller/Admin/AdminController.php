@@ -3,6 +3,7 @@ namespace App\Controller\Admin;
 
 use App\Models\Setting\JobIndustry;
 use App\Models\User\Employer;
+use App\Models\User\EmployerOrder;
 use App\Models\User\JobSeeker;
 use App\Models\User\User;
 use App\Models\Setting\Location;
@@ -14,7 +15,14 @@ class AdminController
 {
     use HelperTrait;
     public function index(){
-        return view('admin/dashboard');
+        $data['users']=User::all();
+        $data['employers']=User::where('role_id',3);
+        $data['job_seekers']=User::where('role_id',2);
+        $data['orders']=EmployerOrder::sum('amount');
+        $data['order_details']=EmployerOrder::all();
+        $data['user']=User::find(auth()['id']);
+
+        return view('admin/dashboard',$data);
     }
 
     public function createSeedFile(){

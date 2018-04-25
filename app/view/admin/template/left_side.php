@@ -20,8 +20,8 @@
             <div class="user-img">
                 <img src="<?= asset('admin/assets/images/users/avatar-1.jpg');?>" alt="user-img" title="Mat Helme" class="rounded-circle img-fluid">
             </div>
-            <h5><a href="#">Maxine Kennedy</a> </h5>
-            <p class="text-muted">Admin Head</p>
+            <h5><a href="" class="text-capitalize"><?= auth()['name'] ?></a> </h5>
+            <p class="text-muted">Admin</p>
         </div>
 
         <!--- Sidemenu -->
