@@ -112,7 +112,7 @@ class EmployerController
         $employer=Employer::find(Request::post('employer_id'));
 
         if($employer->bank === null){
-            error('Error!','Your can not purchase now.Fill your bank account in profile.' );
+            return error('Error!','Your can not purchase now.Fill your bank account in profile.' );
         }
 
         $employer->increment('post_count',Request::post('post_count'));
