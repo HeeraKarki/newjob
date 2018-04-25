@@ -234,6 +234,7 @@ class TableCreate
             $table->increments('id');
             $table->unsignedInteger('job_seeker_id');
             $table->unsignedInteger('job_post_id');
+            $table->date('interview_date')->nullable();
             $table->enum('status',['pending','interview','pass','fail','reject']);
             $table->foreign('job_seeker_id')->references('id')->on('job_seekers')->onDelete('CASCADE')->onUpdate('CASCADE');
             $table->foreign('job_post_id')->references('id')->on('job_posts')->onDelete('CASCADE')->onUpdate('CASCADE');

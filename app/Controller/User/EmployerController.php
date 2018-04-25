@@ -13,7 +13,9 @@ use App\Models\User\EmployerBank;
 use App\Models\User\User;
 use Core\Helper\Auth;
 use Core\Helper\Hash;
+use Core\Helper\Mail;
 use Core\Request;
+use Illuminate\Support\Carbon;
 
 class EmployerController
 {
@@ -154,14 +156,48 @@ class EmployerController
     }
 
     public function interview(){
-
-        dd(Request::post());
-        $id=Request::get('applicant_id');
+        $id=Request::post('applicant_id');
         $applicant=JobApplicant::find($id);
+        $applicant->interview_date=date('Y-m-d',strtotime(Request::post('interview_date')));
         $applicant->status='interview';
         $applicant->save();
+        $mail= new Mail();
+
+        $mail::send([
+            "to"=>$applicant->job_seeker->user->email,
+            "subject"=>"Interview request",
+            "body"=>"Your have to attend the interview from employer",
+            'sender'=>'admin'
+        ]);
         return success('Make Interview','Accept to interview');
     }
+
+
+    public function interview_pass(){
+        $id=Request::get('applicant_id');
+        $applicant=JobApplicant::find($id);
+        $applicant->status='pass';
+        $applicant->save();
+        $mail= new Mail();
+
+        $mail::send([
+            "to"=>$applicant->job_seeker->user->email,
+            "subject"=>"Interview Pass",
+            "body"=>"Your are pass the interview from employer",
+            'sender'=>'admin'
+        ]);
+
+        return success('Inteview Pass','Interview Pass.');
+    }
+
+    public function interview_fail(){
+        $id=Request::get('applicant_id');
+        $applicant=JobApplicant::find($id);
+        $applicant->status='fail';
+        $applicant->save();
+        return success('Inteview Fail','Interview Fail.');
+    }
+
 
     public function password_update(){
         if (checkpost('old_password')){
@@ -191,6 +227,9 @@ class EmployerController
             return error('Error','Old Password is not Match');
         }
     }
+
+
+
     public function reject(){
         $id=Request::get('applicant_id');
         $applicant=JobApplicant::find($id);
