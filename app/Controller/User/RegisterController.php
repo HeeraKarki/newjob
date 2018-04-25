@@ -121,7 +121,7 @@ class RegisterController
 
             return view('user/forgot/reset',$data);
         } else {
-            \error('Error','Your account is already activated','Login');
+            \error('Error','Sorry! Invaild Token','Login');
         }
     }
 

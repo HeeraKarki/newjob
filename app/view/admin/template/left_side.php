@@ -67,6 +67,18 @@
                     </ul>
                 </li>
 
+                <li>
+                    <a href="javascript: void(0);">
+                        <i class="fi-server"></i> <span> Report </span> <span class="menu-arrow"></span></a>
+                    <ul class="nav-second-level" aria-expanded="false">
+                        <li><a href="<?= baseurl('Admin/Location'); ?>">Annual Income Report</a></li>
+                        <li><a href="<?= baseurl('Admin/Contract_type') ?>">Monthly Income Report</a></li>
+                        <li><a href="<?= baseurl('Admin/JobFunction') ?>">Job Post Report</a></li>
+                        <li><a href="<?= baseurl('Admin/JobIndustry') ?>">InActive User Report</a></li>
+                        <li><a href="<?= baseurl('Admin/JobIndustry') ?>">Deleted User Report</a></li>
+
+                    </ul>
+                </li>
             </ul>
 
         </div>
