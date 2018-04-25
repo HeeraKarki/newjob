@@ -28,7 +28,7 @@ view_require('applyjob/nav');
 
                 <div class="favorites-user">
                     <div class="favorites">
-                        <a href="bookmark.php"><?=  $user_details->employer->post_count ?><small>Post Left</small></a>
+                        <a href="bookmark.php"><?= isset( $user_details->employer->post_count)? $user_details->employer->post_count:0 ?><small>Post Left</small></a>
                     </div>
                 </div>
             </div><!-- user-profile -->

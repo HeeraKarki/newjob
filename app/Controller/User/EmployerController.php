@@ -104,8 +104,13 @@ class EmployerController
 
     public function packages(){
         $data['user']=User::find(\auth()['id']);
+        if (isset($data['user']->employer)){
+            return view('user/empolyer/packages',$data);
+        }else{
+            return error('Error!','Fill the Employer First Data');
+        }
 
-        return view('user/empolyer/packages',$data);
+
     }
 
     public function buy_post(){
@@ -135,14 +140,23 @@ class EmployerController
     public function joblist(){
         $user=User::find(\auth()['id']);
         $data['user']=$user;
-        $employer_id=$user->employer->id;
-        $data['job_posts']=JobPost::where('employer_id',$employer_id)->get();
-        return view('user/empolyer/joblist',$data);
+        if (isset($user->employer->id)){
+            $employer_id=$user->employer->id;
+            $data['job_posts']=JobPost::where('employer_id',$employer_id)->get();
+            return view('user/empolyer/joblist',$data);
+        }else{
+            return error('Error!','Fill the Employer First Data');
+        }
+
     }
 
     public function profile_detail(){
         $data['user']=User::find(\auth()['id']);
-        return view('user/empolyer/profile',$data);
+        if (isset($data['user']->employer)){
+            return view('user/empolyer/profile',$data);
+        }else{
+            return error('Error!','Fill the Employer First Data');
+        }
     }
 
     public function profile_update(){
