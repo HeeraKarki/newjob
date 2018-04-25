@@ -15,7 +15,7 @@
                             <div class="">
                                 <form>
                                     <div class="form-group">
-                                        <label>Auto Close</label>
+                                        <label>Select Month and Year</label>
                                         <div>
                                             <div class="input-group">
                                                 <input type="text" name="date" class="form-control mon_cal" placeholder="Select Year">
@@ -75,7 +75,7 @@
                                     </tr>
                                 <?php endforeach; ?>
                                 <tr>
-                                    <td colspan="3" class="text-center font-18 font-600">Total</td>
+                                    <td colspan="4" class="text-center font-18 font-600">Total</td>
                                     <td class="text-center"><?= $test->sum(); ?></td>
                                     <td class="text-center">$ <?= number_format($totals) ?></td>
                                 </tr>

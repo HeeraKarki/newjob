@@ -23,7 +23,7 @@ class ReportController
           20=>5,
           30=>10,
           50=>20,
-          50=>100,
+          100=>50,
         ];
         if (get_set('date')){
             $data['datas']=EmployerOrder::whereYear('created_at', Request::get('date'))->get();
@@ -39,7 +39,7 @@ class ReportController
             20=>5,
             30=>10,
             50=>20,
-            50=>100,
+            100=>50,
         ];
         if (get_set('date')){
             $data['datas']=EmployerOrder::whereMonth('created_at', Request::get('date'))->get();
