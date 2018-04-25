@@ -30,6 +30,15 @@
 <script src="<?= asset('admin/');?>plugins/datatables/dataTables.bootstrap4.min.js"></script>
 <script src="<?= asset('admin/');?>plugins/datatables/dataTables.responsive.min.js"></script>
 
+<script src="<?= asset('admin/');?>plugins/bootstrap-timepicker/bootstrap-timepicker.js"></script>
+<script src="<?= asset('admin/');?>plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+
+<script src="<?= asset('admin/');?>assets/js/tableexport/tableExport.js"></script>
+<script src="<?= asset('admin/');?>assets/js/tableexport/jquery.base64.js"></script>
+<script src="<?= asset('admin/');?>assets/js/tableexport/jspdf/libs/sprintf.js"></script>
+<script src="<?= asset('admin/');?>assets/js/tableexport/jspdf/jspdf.js"></script>
+<script src="<?= asset('admin/');?>assets/js/tableexport/jspdf/libs/base64.js"></script>
+<script src="<?= asset('admin/');?>assets/js/custom.js"></script>
 <!-- App js -->
 <script src="<?= asset('admin/');?>assets/js/jquery.core.js"></script>
 <script src="<?= asset('admin/');?>assets/js/jquery.app.js"></script>

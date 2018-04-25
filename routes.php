@@ -175,3 +175,8 @@ $router->get('Job_Detail','User\\JobController@detail');
 
 $router->post('Apply_Job','User\\JobController@apply');
 $router->post('Bookmark','User\\JobController@bookmark');
+
+
+//Report
+$router->get('Admin/Annual_Report','Admin\\ReportController@annual');
+$router->get('Admin/Monthly_Report','Admin\\ReportController@monthly');

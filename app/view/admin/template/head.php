@@ -11,11 +11,16 @@
     <!-- App favicon -->
     <link rel="shortcut icon" href="<?= asset('admin/assets/images/favicon.ico'); ?>">
 
+    <link href="<?= asset("admin/") ?>plugins/moment/moment.js" rel="stylesheet">
+    <link href="<?= asset("admin/") ?>plugins/bootstrap-timepicker/bootstrap-timepicker.min.css" rel="stylesheet">
+    <link href="<?= asset("admin/") ?>plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
     <!-- App css -->
     <link href="<?= asset('admin/assets/css/bootstrap.min.css'); ?>" rel="stylesheet" type="text/css" />
     <link href="<?= asset('admin/assets/css/icons.css'); ?>" rel="stylesheet" type="text/css" />
     <link href="<?= asset('admin/assets/css/metismenu.min.css'); ?>" rel="stylesheet" type="text/css" />
     <link href="<?= asset('admin/assets/css/style.css'); ?>" rel="stylesheet" type="text/css" />
+
+
 
     <script src="<?= asset('admin/assets/js/modernizr.min.js'); ?>"></script>
 
