@@ -123,6 +123,8 @@ $router->get('User/Edit_Resume','User\\JobSeekerController@edit_resume');
 $router->get('User/Profile_Detail','User\\JobSeekerController@profile_detail');
 $router->get('User/Applied_Job','User\\JobSeekerController@applied_job');
 $router->post('User/Del','User\\JobSeekerController@del');
+$router->post('User/Profile_update','User\\JobSeekerController@profile_update');
+$router->post('User/Password_Update','User\\JobSeekerController@password_update');
 $router->get('Seeker_Profile','User\\JobSeekerController@profile');
 
 

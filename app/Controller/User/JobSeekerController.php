@@ -7,6 +7,7 @@ use App\Models\User\CareerObjective;
 use App\Models\User\JobSeeker;
 use App\Models\User\User;
 use Core\Helper\Auth;
+use Core\Helper\Hash;
 use Core\Request;
 
 class JobSeekerController
@@ -59,6 +60,46 @@ class JobSeekerController
         return view('user/seekerprofile',$data);
     }
 
+
+    public function profile_update(){
+        $user=User::find(Request::post('id'));
+        $user->update([
+           'name'=>Request::post('name'),
+           'email'=>Request::post('email')
+        ]);
+
+        return success('Update Successfully',"User Profile Update");
+    }
+
+    public function password_update(){
+
+        if (checkpost('old_password')){
+            return error('Invalid Old Password','Fill the Password');
+        }
+
+        if (checkpost('password')){
+            return error('Invalid Password','Fill the Password');
+        }
+
+        if (checkpost('com_password')){
+            return error('Invalid Comfirm Password','Fill the Comfirm Password');
+        }
+
+
+        if (Request::post('password') !== Request::post('com_password')){
+            return error('Invaild','Password is not match');
+        }
+
+        $user=User::find(Request::post('id'));
+
+        if (Hash::verify(Request::post('old_password'), $user->password)) {
+            $user->password=Hash::make(Request::post('password'));
+            $user->save();
+            return success('Successful','Update your password');
+        }else{
+            return error('Error','Old Password is not Match');
+        }
+    }
     public function del(){
         User::destroy(Request::post('id'));
         return success('Successful','Your account has been deleted.','Logout');

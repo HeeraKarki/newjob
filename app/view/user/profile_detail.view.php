@@ -13,6 +13,9 @@ view_require('applyjob/nav');
             <h2 class="title">My Profile</h2>
         </div><!-- breadcrumb-section -->
 
+        <?php view_require('applyjob/success');?>
+        <?php view_require('applyjob/error');?>
+
         <div class="job-profile section">
             <div class="user-profile">
                 <div class="user-images">
@@ -49,15 +52,16 @@ view_require('applyjob/nav');
                 <!-- profile-details -->
                 <div class="profile-details section">
                     <h2>Profile Details</h2>
-                    <form action="profile-details.php#">
+                    <form action="<?= baseurl('User/Profile_update') ?>" method="post">
+                        <input type="hidden" name="id" value="<?= $user->id  ?>">
                         <div class="form-group">
                             <label>Username</label>
-                            <input type="text" class="form-control" value="<?= $user->name ?>" placeholder="Jhon Doe">
+                            <input type="text" class="form-control" name="name" value="<?= $user->name ?>" placeholder="Jhon Doe">
                         </div>
 
                         <div class="form-group">
                             <label>Email ID</label>
-                            <input type="email" class="form-control" value="<?= $user->email ?>"  placeholder="jhondoe@mail.com">
+                            <input type="email" class="form-control" name="email" value="<?= $user->email ?>"  placeholder="jhondoe@mail.com">
                         </div>
 
 
@@ -67,28 +71,32 @@ view_require('applyjob/nav');
                     </form>
                 </div><!-- profile-details -->
 
+                <form action="<?= baseurl('User/Password_Update') ?>" method="post">
+                    <input type="hidden" name="id" value="<?= $user->id  ?>">
+                    <div class="change-password section">
+                        <h2>Change password</h2>
+                        <!-- form -->
+                        <div class="form-group">
+                            <label>Old Password</label>
+                            <input type="password" name="old_password" class="form-control" >
+                        </div>
+
+                        <div class="form-group">
+                            <label>New password</label>
+                            <input type="password" name="password" class="form-control">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Confirm password</label>
+                            <input type="password" name="com_password" class="form-control">
+                        </div>
+                    </div><!-- change-password -->
+                    <div class="checkbox section agreement">
+                        <button type="submit" class="btn btn-primary" style="display: block;margin: auto;">Change Password</button>
+                    </div>
+                </form>
                 <!-- change-password -->
-                <div class="change-password section">
-                    <h2>Change password</h2>
-                    <!-- form -->
-                    <div class="form-group">
-                        <label>Old Password</label>
-                        <input type="password" class="form-control" >
-                    </div>
 
-                    <div class="form-group">
-                        <label>New password</label>
-                        <input type="password" class="form-control">
-                    </div>
-
-                    <div class="form-group">
-                        <label>Confirm password</label>
-                        <input type="password" class="form-control">
-                    </div>
-                </div><!-- change-password -->
-                <div class="checkbox section agreement">
-                    <button type="submit" class="btn btn-primary" style="display: block;margin: auto;">Change Password</button>
-                </div>
             </div><!-- user-pro-edit -->
         </div>
     </div><!-- container -->
