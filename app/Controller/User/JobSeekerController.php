@@ -3,6 +3,7 @@ namespace App\Controller\User;
 
 
 use App\Models\Job\JobApplicant;
+use App\Models\Job\JobBookmark;
 use App\Models\User\CareerObjective;
 use App\Models\User\JobSeeker;
 use App\Models\User\User;
@@ -52,6 +53,17 @@ class JobSeekerController
             $employer_id=$data['user']->job_seeker->id;
             $data['job_posts']=JobApplicant::where('job_seeker_id',$employer_id)->get();
             return view('user/applied_job',$data);
+        }else{
+            return error('Error!','Fill the Job Seeker Data');
+        }
+
+    }
+    public function viewbookmark(){
+        $data['user']=User::find(\auth()['id']);
+        if (isset($data['user']->job_seeker->id)){
+            $employer_id=$data['user']->job_seeker->id;
+            $data['job_posts']=JobBookmark::where('job_seeker_id',$employer_id)->get();
+            return view('user/bookmark',$data);
         }else{
             return error('Error!','Fill the Job Seeker Data');
         }

@@ -39,7 +39,7 @@ view_require('applyjob/nav');
                 <li ><a href="<?= baseurl('User/Job_Seeker') ?>">Account Info </a></li>
                 <li><a href="<?= baseurl('Seeker_Profile?name='.str_slug($user->job_seeker->fullname)) ?>" >View Resume</a></li>
                 <li ><a href="<?= baseurl('User/Profile_Detail') ?>">Profile Details</a></li>
-                <li class="active"><a href="<?= baseurl('User/Applied_Job')?>">applied job</a></li>
+                <li><a href="<?= baseurl('User/Applied_Job')?>">applied job</a></li>
                 <li><a href="<?= baseurl('User/Delete') ?>">Close account</a></li>
             </ul>
         </div><!-- ad-profile -->
@@ -80,8 +80,9 @@ view_require('applyjob/nav');
                                     <li >
                                         <a href="<?= baseurl('Job_Detail')."?job_id=".$job_post->id ?>" style="background-color: RGB(237, 82, 73);padding: 12px;border-radius: 31px;color: white;">
                                             <i class="fa fa-stack-exchange" aria-hidden="true"></i>
-                                            <?= $job_post->status ?>
+                                            <?= $job_post->job_post->job_applicant[0]->status ?>
                                         </a>
+
                                     </li>
                                 </ul>
                             </div><!-- ad-meta -->

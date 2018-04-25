@@ -14,4 +14,8 @@ class JobBookmark extends Model
         return $this->belongsTo(JobSeeker::class);
     }
 
+    public function job_post(){
+        return $this->belongsTo(JobPost::class);
+    }
+
 }
