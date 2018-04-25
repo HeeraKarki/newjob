@@ -76,10 +76,7 @@ class JobController
             return error('Error! Fill the Job Seeker Requirement','Your Account Need to be Complete Setup.','User/Job_Seeker');
         }
         $data=JobBookmark::firstOrCreate(
-            [
-                'job_post_id'=>Request::post('job_post_id'),
-                'job_seeker_id'=>Request::post('job_seeker_id')
-            ]
+            ['job_post_id'=>Request::post('job_post_id'),'job_seeker_id'=>Request::post('job_seeker_id')]
         );
         if (!$data->wasRecentlyCreated){
             return error('Already add to bookmark','This job is already in bookmark list.');

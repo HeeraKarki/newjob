@@ -101,7 +101,7 @@ view_require('applyjob/nav');
 
                         <form action="<?= baseurl('Bookmark')?>" method="post" id="bookm">
                             <input name="job_seeker_id" type="hidden" value="<?=  isset($user->job_seeker->id)?$user->job_seeker->id:null ?>">
-                            <input name="job_post_id" type="hidden" value="<?=  isset($detail->id)?$detail->employer->id:null ?>">
+                            <input name="job_post_id" type="hidden" value="<?=  isset($detail->id)?$detail->id:null ?>">
                             <button class="btn btn-primary bookmark"><i class="fa fa-bookmark-o" aria-hidden="true"></i>Bookmark</button>
                         </form>
                         <ul class="share-social">
