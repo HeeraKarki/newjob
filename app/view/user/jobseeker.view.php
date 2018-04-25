@@ -92,7 +92,7 @@ view_require('applyjob/nav');
                                 <div class="row form-group">
                                     <label class="col-sm-3 label-title">Date of Birth</label>
                                     <div class="col-sm-9">
-                                        <input type="date" name="date_of_birth" class="form-control" placeholder="26/01/1982" value="<?= isset($user_details->job_seeker->date_of_birth)?$user_details->job_seeker->date_of_birth:'' ?>">
+                                        <input type="date" name="date_of_birth" class="form-control" data-format="d-m-Y" placeholder="26/01/1982" value="<?= isset($user_details->job_seeker->date_of_birth)?$user_details->job_seeker->date_of_birth:'' ?>">
                                     </div>
                                 </div>
                                 <div class="row form-group">
@@ -164,7 +164,7 @@ view_require('applyjob/nav');
                         <li><h5>Full Name </h5> <span>:</span><?= isset($user_details->job_seeker->fullname)?$user_details->job_seeker->fullname:'' ?></li>
                         <li><h5>Father's Name </h5> <span>:</span><?= isset($user_details->job_seeker->father_name)? $user_details->job_seeker->father_name:'' ?></li>
                         <li><h5>Mother's Name </h5> <span>:</span><?= isset($user_details->job_seeker->mother_name)? $user_details->job_seeker->mother_name:'' ?></li>
-                        <li><h5>Date of Birth </h5> <span>:</span><?= isset($user_details->job_seeker->date_of_birth)? $user_details->job_seeker->date_of_birth:'' ?></li>
+                        <li><h5>Date of Birth </h5> <span>:</span><?= isset($user_details->job_seeker->date_of_birth)? date('dS F, Y',strtotime($user_details->job_seeker->date_of_birth)):'' ?></li>
                         <li><h5>Birth Place </h5> <span>:</span><?= isset($user_details->job_seeker->birth_place)? $user_details->job_seeker->birth_place:'' ?></li>
                         <li><h5>Nationality </h5> <span>:</span><?= isset($user_details->job_seeker->nationality)? $user_details->job_seeker->nationality:'' ?></li>
                         <li><h5>Sex </h5> <span>:</span><?= isset($user_details->job_seeker->gender )?$user_details->job_seeker->gender === "1" ? "Male": "Female":''?></li>

@@ -11,7 +11,6 @@ use App\Models\User\SeekerLanguage;
 use App\Models\User\SeekerQualification;
 use Core\Helper\Auth;
 use Core\Request;
-use Illuminate\Filesystem\Filesystem;
 
 class SeekerDetail
 {
@@ -100,7 +99,7 @@ class SeekerDetail
             'fullname' => Request::post('fullname'),
             'father_name' => Request::post('father_name'),
             'mother_name' => Request::post('mother_name'),
-            'date_of_birth' => Request::post('date_of_birth'),
+            'date_of_birth' => date('Y-m-d',strtotime(Request::post('date_of_birth'))),
             'birth_place' => Request::post('birth_place'),
             'nationality' => Request::post('nationality'),
             'nrc_no' => Request::post('nrc_no'),
