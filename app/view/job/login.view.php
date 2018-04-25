@@ -26,7 +26,7 @@ view_require('applyjob/nav');
 						<!-- forgot-password -->
 						<div class="user-option">
 							<div class="pull-right forgot-password">
-								<a href="<?= baseurl('Forgot_password') ?>">Forgot password</a>
+								<a href="<?= baseurl('Forgot') ?>">Forgot password</a>
 							</div>
 						</div><!-- forgot-password -->
 					</div>
