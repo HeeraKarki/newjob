@@ -12,6 +12,7 @@ use App\Models\User\Employer;
 use App\Models\User\EmployerBank;
 use App\Models\User\User;
 use Core\Helper\Auth;
+use Core\Helper\Hash;
 use Core\Request;
 
 class EmployerController
@@ -160,6 +161,34 @@ class EmployerController
         return success('Make Interview','Accept to interview');
     }
 
+    public function password_update(){
+        if (checkpost('old_password')){
+            return error('Invalid Old Password','Fill the Password');
+        }
+
+        if (checkpost('password')){
+            return error('Invalid Password','Fill the Password');
+        }
+
+        if (checkpost('com_password')){
+            return error('Invalid Comfirm Password','Fill the Comfirm Password');
+        }
+
+
+        if (Request::post('password') !== Request::post('com_password')){
+            return error('Invaild','Password is not match');
+        }
+
+        $user=User::find(Request::post('id'));
+
+        if (Hash::verify(Request::post('old_password'), $user->password)) {
+            $user->password=Hash::make(Request::post('password'));
+            $user->save();
+            return success('Successful','Update your password');
+        }else{
+            return error('Error','Old Password is not Match');
+        }
+    }
     public function reject(){
         $id=Request::get('applicant_id');
         $applicant=JobApplicant::find($id);

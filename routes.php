@@ -160,6 +160,7 @@ $router->get('Employer/Job_List','User\\EmployerController@joblist');
 $router->get('Employer/Interview','User\\EmployerController@interview');
 $router->get('Employer/Profile_Detail','User\\EmployerController@profile_detail');
 $router->post('Employer/Profile_update','User\\EmployerController@profile_update');
+$router->post('Employer/Password_Update','User\\EmployerController@password_update');
 $router->get('Employer/Reject','User\\EmployerController@reject');
 
 //Job List

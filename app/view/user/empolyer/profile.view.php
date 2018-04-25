@@ -73,28 +73,32 @@ view_require('applyjob/nav');
                 </div><!-- profile-details -->
 
                 <!-- change-password -->
-                <div class="change-password section">
-                    <h2>Change password</h2>
-                    <!-- form -->
-                    <div class="form-group">
-                        <label>Old Password</label>
-                        <input type="password" class="form-control" >
-                    </div>
+                <form action="<?= baseurl('Employer/Password_Update') ?>" method="post">
+                    <input type="hidden" name="id" value="<?= $user->id  ?>">
+                    <div class="change-password section">
+                        <h2>Change password</h2>
+                        <!-- form -->
+                        <div class="form-group">
+                            <label>Old Password</label>
+                            <input type="password" name="old_password" class="form-control" >
+                        </div>
 
-                    <div class="form-group">
-                        <label>New password</label>
-                        <input type="password" class="form-control">
-                    </div>
+                        <div class="form-group">
+                            <label>New password</label>
+                            <input type="password" name="password" class="form-control">
+                        </div>
 
-                    <div class="form-group">
-                        <label>Confirm password</label>
-                        <input type="password" class="form-control">
+                        <div class="form-group">
+                            <label>Confirm password</label>
+                            <input type="password" name="com_password" class="form-control">
+                        </div>
+                    </div><!-- change-password -->
+                    <div class="checkbox section agreement">
+                        <button type="submit" class="btn btn-primary" style="display: block;margin: auto;">Change Password</button>
                     </div>
-                </div><!-- change-password -->
-                <div class="checkbox section agreement">
-                    <button type="submit" class="btn btn-primary" style="display: block;margin: auto;">Change Password</button>
-                </div>
-            </div><!-- user-pro-edit -->
+                </form>
+
+               <!-- user-pro-edit -->
         </div>
     </div><!-- container -->
 </section>
