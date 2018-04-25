@@ -112,16 +112,17 @@ view_require('applyjob/nav');
                 <div class="col-sm-8 col-md-7">
                     <div class="section job-list-item">
 
-                        <?php foreach ($job_posts as $job_post): ?>
-                            <div class="job-ad-item">
-                                <div class="item-info">
-                                    <div class="item-image-box">
-                                        <div class="item-image">
-                                            <a href="<?= baseurl('Job_Detail')."?job_id=".$job_post->id ?>"><img src="<?= asset($job_post->employer->logo) ?>" alt="Image" class="img-responsive"></a>
-                                        </div><!-- item-image -->
-                                    </div>
+                        <?php if (count($job_posts)>0): ?>
+                            <?php foreach ($job_posts as $job_post): ?>
+                                <div class="job-ad-item">
+                                    <div class="item-info">
+                                        <div class="item-image-box">
+                                            <div class="item-image">
+                                                <a href="<?= baseurl('Job_Detail')."?job_id=".$job_post->id ?>"><img src="<?= asset($job_post->employer->logo) ?>" alt="Image" class="img-responsive"></a>
+                                            </div><!-- item-image -->
+                                        </div>
 
-                                    <div class="ad-info">
+                                        <div class="ad-info">
                                         <span>
                                             <a href="<?= baseurl('Job_Detail')."?job_id=".$job_post->id ?>" class="title">
                                                 <?= $job_post->title ?>
@@ -131,18 +132,22 @@ view_require('applyjob/nav');
                                                 <?= $job_post->employer->company_name ?>
                                             </a>
                                         </span>
-                                        <div class="ad-meta">
-                                            <ul>
-                                                <li><a href="<?= baseurl('Job_Detail')."?job_id=".$job_post->id ?>"><i class="fa fa-map-marker" aria-hidden="true"></i><?= $job_post->location->name ?> </a></li>
-                                                <li><a href="<?= baseurl('Job_Detail')."?job_id=".$job_post->id ?>" class="text-capitalize"><i class="fa fa-clock-o" aria-hidden="true"></i><?= $job_post->salary_type ?></a></li>
-                                                <li><a href="<?= baseurl('Job_Detail')."?job_id=".$job_post->id ?>"><i class="fa fa-money" aria-hidden="true"></i>$<?= number_format($job_post->salary_min) ?>- $<?= number_format($job_post->salary_max) ?></a></li>
-                                            </ul>
-                                        </div><!-- ad-meta -->
-                                    </div><!-- ad-info -->
-                                </div><!-- item-info -->
-                            </div><!-- job-ad-item -->
+                                            <div class="ad-meta">
+                                                <ul>
+                                                    <li><a href="<?= baseurl('Job_Detail')."?job_id=".$job_post->id ?>"><i class="fa fa-map-marker" aria-hidden="true"></i><?= $job_post->location->name ?> </a></li>
+                                                    <li><a href="<?= baseurl('Job_Detail')."?job_id=".$job_post->id ?>" class="text-capitalize"><i class="fa fa-clock-o" aria-hidden="true"></i><?= $job_post->salary_type ?></a></li>
+                                                    <li><a href="<?= baseurl('Job_Detail')."?job_id=".$job_post->id ?>"><i class="fa fa-money" aria-hidden="true"></i>$<?= number_format($job_post->salary_min) ?>- $<?= number_format($job_post->salary_max) ?></a></li>
+                                                </ul>
+                                            </div><!-- ad-meta -->
+                                        </div><!-- ad-info -->
+                                    </div><!-- item-info -->
+                                </div><!-- job-ad-item -->
+                            <?php endforeach; ?>
+                        <?php else: ?>
+                            <h1 class="text-center">No Data is Found</h1>
+                        <?php endif; ?>
 
-                        <?php endforeach; ?>
+
 
                     </div>
                 </div><!-- recommended-ads -->
