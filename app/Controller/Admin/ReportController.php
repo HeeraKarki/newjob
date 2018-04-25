@@ -10,6 +10,7 @@ namespace App\Controller\Admin;
 
 
 use App\Models\User\EmployerOrder;
+use App\Models\User\User;
 use Core\Request;
 
 class ReportController
@@ -46,4 +47,15 @@ class ReportController
         }
         return view('admin/report/monthly',$data);
     }
+
+    public function inactive(){
+        $data['datas']=User::where('isactive',false)->get();
+        return view('admin/report/isactive',$data);
+    }
+
+    public function del_user_report(){
+        $data['datas']=User::onlyTrashed()->get();
+        return view('admin/report/deleted_report',$data);
+    }
+
 }

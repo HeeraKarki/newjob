@@ -5,9 +5,9 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="card-box">
-                    <h4 class="header-title m-t-0">Annual Report</h4>
+                    <h4 class="header-title m-t-0">Monthly Report</h4>
                     <p class="text-muted font-14 m-b-25">
-                        Order Annual Report
+                        Order Monthly Report
                     </p>
 
                     <div class="row">

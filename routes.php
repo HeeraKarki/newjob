@@ -185,3 +185,5 @@ $router->post('Bookmark','User\\JobController@bookmark');
 //Report
 $router->get('Admin/Annual_Report','Admin\\ReportController@annual');
 $router->get('Admin/Monthly_Report','Admin\\ReportController@monthly');
+$router->get('Admin/InActive_Report','Admin\\ReportController@inactive');
+$router->get('Admin/DeleteUser_Report','Admin\\ReportController@del_user_report');
