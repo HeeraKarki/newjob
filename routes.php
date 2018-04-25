@@ -20,6 +20,15 @@ $router->get('Register','User\\HomeController@Register');
 //Register or Signup Check with Post Method
 $router->post('Signup','User\\RegisterController@Signup');
 
+
+//Forgot Password
+$router->get('Forgot','User\\RegisterController@forgot');
+$router->get('Reset_Password','User\\RegisterController@reset_password');
+$router->post('Forgot_send','User\\RegisterController@forgotsend');
+$router->post('Reset_pass','User\\RegisterController@reset_pass');
+
+
+
 //User Activation Link
 $router->get('Activation','User\\RegisterController@activation');
 
