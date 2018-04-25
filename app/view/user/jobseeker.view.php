@@ -36,7 +36,7 @@ view_require('applyjob/nav');
 
             <ul class="user-menu">
                 <li class="active"><a href="<?= baseurl('User/Job_Seeker') ?>">Account Info </a></li>
-                <li><a href="<?= baseurl('Seeker_Profile?name='.str_slug($user_details->job_seeker->fullname)) ?>" >View Resume</a></li>
+                <li><a href="<?= baseurl('Seeker_Profile?name=') ?><?php echo isset($user_details->job_seeker->fullname)?str_slug($user_details->job_seeker->fullname):'' ?>" >View Resume</a></li>
                 <li><a href="<?= baseurl('User/Profile_Detail') ?>">Profile Details</a></li>
                 <li><a href="<?= baseurl('User/Applied_Job')?>">applied job</a></li>
                 <li><a href="<?= baseurl('User/Delete') ?>">Close account</a></li>
@@ -256,21 +256,24 @@ view_require('applyjob/nav');
                 <div class="work-info">
                     <h3>Work History</h3>
                     <ul>
-                        <?php foreach ($user_details->job_seeker->experiences as $experience): ?>
-                            <li>
-                                <form action="<?= baseurl('User/Work_experience_Delete')?>" method="post">
-                                    <input type="hidden" name="id" value="<?= $experience->id ?>">
-                                    <button type="submit"  style="float: right;border: navajowhite;background: white;"><i class="fa fa-trash" style="font-size: 25px;color: red;"></i></button>
-                                </form>
-<!--                                <a href="--><?//= baseurl('User') ?><!--" style="float: right;"><i class="fa fa-trash" style="font-size: 25px;color: red;"></i> </a>-->
-                                <h4>
-                                    <?= $experience->designation ?> @ <?= $experience->company_name ?>
-                                    <span>
+                        <?php if (isset($user_details->job_seeker->experiences)): ?>
+                            <?php foreach ($user_details->job_seeker->experiences as $experience): ?>
+                                <li>
+                                    <form action="<?= baseurl('User/Work_experience_Delete')?>" method="post">
+                                        <input type="hidden" name="id" value="<?= $experience->id ?>">
+                                        <button type="submit"  style="float: right;border: navajowhite;background: white;"><i class="fa fa-trash" style="font-size: 25px;color: red;"></i></button>
+                                    </form>
+                                    <!--                                <a href="--><?//= baseurl('User') ?><!--" style="float: right;"><i class="fa fa-trash" style="font-size: 25px;color: red;"></i> </a>-->
+                                    <h4>
+                                        <?= $experience->designation ?> @ <?= $experience->company_name ?>
+                                        <span>
                                         <?= date('d-M-Y',strtotime($experience->post_from_date)) ?>  To  <?= date('d-M-Y',strtotime($experience->post_to_date))  ?>
                                     </span></h4>
-                                <p><?= $experience->description ?></p>
-                            </li>
-                        <?php endforeach; ?>
+                                    <p><?= $experience->description ?></p>
+                                </li>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
+
 
                     </ul>
                 </div>
@@ -327,22 +330,25 @@ view_require('applyjob/nav');
                 <div class="educational-info">
                     <h3>Education Background</h3>
                     <ul>
-                        <?php foreach ($user_details->job_seeker->educations as $education): ?>
-                            <li>
-                                <form action="<?= baseurl('User/Education_Delete')?>" method="post">
-                                    <input type="hidden" name="id" value="<?= $education->id ?>">
-                                    <button type="submit"  style="float: right;border: navajowhite;background: white;"><i class="fa fa-trash" style="font-size: 25px;color: red;"></i></button>
-                                </form>
-                                <h4>
-                                    <?= $education->degree ?> @ <?= $education->institute_name ?>
-                                </h4>
+                        <?php if (isset($user_details->job_seeker->educations)): ?>
+                            <?php foreach ($user_details->job_seeker->educations as $education): ?>
+                                <li>
+                                    <form action="<?= baseurl('User/Education_Delete')?>" method="post">
+                                        <input type="hidden" name="id" value="<?= $education->id ?>">
+                                        <button type="submit"  style="float: right;border: navajowhite;background: white;"><i class="fa fa-trash" style="font-size: 25px;color: red;"></i></button>
+                                    </form>
+                                    <h4>
+                                        <?= $education->degree ?> @ <?= $education->institute_name ?>
+                                    </h4>
                                     <ul>
                                         <li>Year: <span><?= date('Y',strtotime($education->from)) ?> - <?= date('Y',strtotime($education->to)) ?></span> </li>
                                         <li>Concentration/Major: <span><?= $education->degree ?></span></li>
                                     </ul>
-                                <p><?= $education->description ?></p>
-                            </li>
-                        <?php endforeach; ?>
+                                    <p><?= $education->description ?></p>
+                                </li>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
+
 
                     </ul>
                 </div>
@@ -378,7 +384,7 @@ view_require('applyjob/nav');
                 <div class="qualification">
                     <h3>Special Qualification:</h3>
                     <ul>
-                        <?php if ($user_details->job_seeker->qualifications !== null): ?>
+                        <?php if (isset($user_details->job_seeker->qualifications)): ?>
                             <?php foreach ($user_details->job_seeker->qualifications as $k=>$qualification): ?>
                                 <li>
                                     <form action="<?= baseurl('User/Qualification_Delete')?>" method="post">
@@ -456,26 +462,28 @@ view_require('applyjob/nav');
                 <div class="proficiency">
                     <h3>Language Proficiency</h3>
                     <ul class="list-inline">
+                        <?php if (isset($user_details->job_seeker->languages)): ?>
+                            <?php foreach ($user_details->job_seeker->languages as $k=>$language): ?>
+                                <li>
+                                    <h5><?= $language->name ?></h5>
+                                    <form action="<?= baseurl('User/Language_Delete')?>" method="post">
+                                        <input type="hidden" name="id" value="<?= $language->id ?>">
+                                        <button type="submit"  style="float: right;border: navajowhite;background: white;"><i class="fa fa-trash" style="font-size: 25px;color: red;"></i></button>
+                                    </form>
+                                    <ul>
 
-                        <?php foreach ($user_details->job_seeker->languages as $k=>$language): ?>
-                            <li>
-                                <h5><?= $language->name ?></h5>
-                                <form action="<?= baseurl('User/Language_Delete')?>" method="post">
-                                    <input type="hidden" name="id" value="<?= $language->id ?>">
-                                    <button type="submit"  style="float: right;border: navajowhite;background: white;"><i class="fa fa-trash" style="font-size: 25px;color: red;"></i></button>
-                                </form>
-                                <ul>
-
-                                    <li><i class="fa <?= $language->rating >1 ? 'fa-star' : 'fa-star-o' ?> <?= $language->rating ===0.50?'fa-star-half-empty':''?>" aria-hidden="true"></i></li>
-                                    <li><i class="fa <?= $language->rating >2 ? 'fa-star' : 'fa-star-o'?> <?= $language->rating ===1.50?'fa-star-half-empty':''?>" aria-hidden="true"></i></li>
-                                    <li><i class="fa <?= $language->rating >3 ? 'fa-star' : 'fa-star-o'?> <?= $language->rating ===2.50?'fa-star-half-empty':''?>" aria-hidden="true"></i></li>
-                                    <li><i class="fa <?= $language->rating >4 ? 'fa-star' : 'fa-star-o'?> <?= $language->rating ===3.50?'fa-star-half-empty':''?>" aria-hidden="true"></i></li>
-                                    <li><i class="fa <?= $language->rating >=5 ? 'fa-star' : 'fa-star-o'?> <?= $language->rating ===4.50?'fa-star-half-empty':''?>" aria-hidden="true"></i></li>
+                                        <li><i class="fa <?= $language->rating >1 ? 'fa-star' : 'fa-star-o' ?> <?= $language->rating ===0.50?'fa-star-half-empty':''?>" aria-hidden="true"></i></li>
+                                        <li><i class="fa <?= $language->rating >2 ? 'fa-star' : 'fa-star-o'?> <?= $language->rating ===1.50?'fa-star-half-empty':''?>" aria-hidden="true"></i></li>
+                                        <li><i class="fa <?= $language->rating >3 ? 'fa-star' : 'fa-star-o'?> <?= $language->rating ===2.50?'fa-star-half-empty':''?>" aria-hidden="true"></i></li>
+                                        <li><i class="fa <?= $language->rating >4 ? 'fa-star' : 'fa-star-o'?> <?= $language->rating ===3.50?'fa-star-half-empty':''?>" aria-hidden="true"></i></li>
+                                        <li><i class="fa <?= $language->rating >=5 ? 'fa-star' : 'fa-star-o'?> <?= $language->rating ===4.50?'fa-star-half-empty':''?>" aria-hidden="true"></i></li>
 
 
-                                </ul>
-                            </li>
-                        <?php endforeach; ?>
+                                    </ul>
+                                </li>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
+
 
                     </ul>
                 </div>
