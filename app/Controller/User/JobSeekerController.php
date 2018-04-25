@@ -54,10 +54,15 @@ class JobSeekerController
     }
 
     public function profile(){
-        $name=Request::get('name');
-        $name=str_replace('-',' ',$name);
-        $data['job_seeker']=JobSeeker::where('fullname',$name)->first();
-        return view('user/seekerprofile',$data);
+        if (get_set('name') && Request::get('name')!==''){
+            $name=Request::get('name');
+            $name=str_replace('-',' ',$name);
+            $data['job_seeker']=JobSeeker::where('fullname',$name)->first();
+            return view('user/seekerprofile',$data);
+        }else{
+            return error('Error!','Fill the Job Seeker Data');
+        }
+
     }
 
 

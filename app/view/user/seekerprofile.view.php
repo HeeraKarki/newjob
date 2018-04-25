@@ -9,7 +9,7 @@ view_require('applyjob/nav');
                 <li><a href="index.php">Home</a></li>
                 <li>Candidate Profile</li>
             </ol>
-            <h2 class="title"><?= $job_seeker->fullname ?></h2>
+            <h2 class="title"><?= isset($job_seeker->fullname)?$job_seeker->fullname:'' ?></h2>
         </div><!-- breadcrumb-section -->
 
         <div class="job-profile section">
@@ -19,8 +19,8 @@ view_require('applyjob/nav');
                     <img width="100" src="<?= isset($job_seeker->photo)?$job_seeker->photo!==NULL?asset($job_seeker->photo):'':asset('applyjob/images/user.jpg') ?>" alt="User Images" class="img-responsive">
                 </div>
                 <div class="user">
-                    <h2 class="text-capitalize"><a href=""><?= $job_seeker->fullname ?></a></h2>
-                    <h5><?= $job_seeker->user->email ?></h5>
+                    <h2 class="text-capitalize"><a href=""><?= isset($job_seeker->fullname)?$job_seeker->fullname:'' ?></a></h2>
+                    <h5><?= isset($job_seeker->user->email)?$job_seeker->user->email:'' ?></h5>
                 </div>
                 <div class="favorites-user">
                     <div class="my-ads">
