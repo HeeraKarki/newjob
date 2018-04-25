@@ -48,9 +48,14 @@ class JobSeekerController
 
     public function applied_job(){
         $data['user']=User::find(\auth()['id']);
-        $employer_id=$data['user']->job_seeker->id;
-        $data['job_posts']=JobApplicant::where('job_seeker_id',$employer_id)->get();
-        return view('user/applied_job',$data);
+        if (isset($data['user']->job_seeker->id)){
+            $employer_id=$data['user']->job_seeker->id;
+            $data['job_posts']=JobApplicant::where('job_seeker_id',$employer_id)->get();
+            return view('user/applied_job',$data);
+        }else{
+            return error('Error!','Fill the Job Seeker Data');
+        }
+
     }
 
     public function profile(){
