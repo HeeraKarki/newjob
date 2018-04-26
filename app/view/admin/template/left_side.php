@@ -5,7 +5,7 @@
 
         <!-- LOGO -->
         <div class="topbar-left">
-            <a href="index.html" class="logo">
+            <a href="<?= baseurl('Admin/Dashboard') ?>" class="logo">
                             <span>
                                 <img src="<?= asset('admin/assets/images/logo.png');?>" alt="" height="22">
                             </span>
@@ -32,7 +32,7 @@
                 <!--<li class="menu-title">Navigation</li>-->
 
                 <li>
-                    <a href="index.html">
+                    <a href="<?= baseurl('Admin/Dashboard')?>">
                         <i class="fi-air-play"></i><span class="badge badge-danger badge-pill pull-right">7</span> <span> Dashboard </span>
                     </a>
                 </li>
