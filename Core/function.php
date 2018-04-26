@@ -86,6 +86,18 @@ function auth_check(){
     return \Core\Helper\Auth::check();
 }
 
+function is_admin(){
+    if (\Core\Helper\Auth::check()){
+        if(\Core\Helper\Session::get('isAdmin')){
+            return true;
+        }else{
+            return false;
+
+        }
+    }else{
+        return false;
+    }
+}
 function get_set($key){
     if (isset($_GET[$key])){
         return true;

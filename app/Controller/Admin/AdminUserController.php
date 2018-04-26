@@ -15,6 +15,13 @@ use Core\Request;
 
 class AdminUserController
 {
+    public function __construct()
+    {
+        if (!is_admin()){
+            return error('Error!',"You don't have permission to access this page",'Logout');
+        }
+    }
+
     public function index(){
         $data['admins']=User::where('role_id',1)->get();
         return view('admin/admin_user/index',$data);

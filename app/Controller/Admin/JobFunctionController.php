@@ -7,6 +7,13 @@ use Core\Request;
 
 class JobFunctionController
 {
+    public function __construct()
+    {
+        if (!is_admin()){
+            return error('Error!',"You don't have permission to access this page",'Logout');
+        }
+    }
+
     public function index(){
         $data['jobfunctions']=Jobfunction::all();
         return view('admin/jobfunction/index',$data);

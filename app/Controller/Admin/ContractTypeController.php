@@ -8,6 +8,13 @@ use Core\Request;
 class ContractTypeController
 {
 
+    public function __construct()
+    {
+        if (!is_admin()){
+            return error('Error!',"You don't have permission to access this page",'Logout');
+        }
+    }
+
     public function index(){
         $data['con_types']=ContractType::all();
         return view('admin/ContactType/index',$data);

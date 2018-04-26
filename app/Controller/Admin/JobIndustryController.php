@@ -7,6 +7,13 @@ use Core\Request;
 
 class JobIndustryController
 {
+    public function __construct()
+    {
+        if (!is_admin()){
+            return error('Error!',"You don't have permission to access this page",'Logout');
+        }
+    }
+
     public function index(){
         $data['jobindustries']=Jobindustry::all();
         return view('admin/JobIndustry/index',$data);

@@ -9,6 +9,13 @@ use Illuminate\Filesystem\Filesystem;
 
 class LocationController
 {
+    public function __construct()
+    {
+        if (!is_admin()){
+            return error('Error!',"You don't have permission to access this page",'Logout');
+        }
+    }
+
     public function index(){
         $data['locations']=Location::all();
         return view('admin/location/index',$data);

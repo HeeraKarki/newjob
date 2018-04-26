@@ -17,6 +17,13 @@ use Core\Request;
 
 class ReportController
 {
+    public function __construct()
+    {
+        if (!is_admin()){
+            return error('Error!',"You don't have permission to access this page",'Logout');
+        }
+    }
+
 
     public function annual(){
         $data['datas']=null;

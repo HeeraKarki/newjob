@@ -13,6 +13,13 @@ use Illuminate\Filesystem\Filesystem;
 
 class AdminController
 {
+    public function __construct()
+    {
+        if (!is_admin()){
+            return error('Error!',"You don't have permission to access this page",'Logout');
+        }
+    }
+
     use HelperTrait;
     public function index(){
         $data['users']=User::all();
@@ -82,7 +89,5 @@ class AdminController
         $fds=$file->put('public/upload/1.php',$php);
 //        $fds=$file->append($da);
     }
-
-
 
 }
