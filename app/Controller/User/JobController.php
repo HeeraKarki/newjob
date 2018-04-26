@@ -9,10 +9,12 @@ use App\Models\Setting\ContractType;
 use App\Models\Setting\JobIndustry;
 use App\Models\Setting\Location;
 use App\Models\User\User;
+use Core\Helper\Session;
 use Core\Request;
 
 class JobController
 {
+
     public function list(){
 
         $data['job_industries']=JobIndustry::all();
@@ -58,6 +60,9 @@ class JobController
     }
 
     public function apply(){
+        if (auth()['role_id']!==2){
+            return error('Error!',"You don't to permission to access this page");
+        }
         if (Request::post('job_seeker_id')===''){
             return error('Error! Fill the Job Seeker Requirement','Your Account Need to be Complete Setup.','User/Job_Seeker');
         }
@@ -72,6 +77,10 @@ class JobController
     }
 
     public function bookmark(){
+        if (auth()['role_id']!==2){
+            return error('Error!',"You don't to permission to access this page");
+        }
+
         if (Request::post('job_seeker_id')===''){
             return error('Error! Fill the Job Seeker Requirement','Your Account Need to be Complete Setup.','User/Job_Seeker');
         }
