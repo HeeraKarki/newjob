@@ -187,3 +187,4 @@ $router->get('Admin/Annual_Report','Admin\\ReportController@annual');
 $router->get('Admin/Monthly_Report','Admin\\ReportController@monthly');
 $router->get('Admin/InActive_Report','Admin\\ReportController@inactive');
 $router->get('Admin/DeleteUser_Report','Admin\\ReportController@del_user_report');
+$router->get('Admin/Job_post_Report','Admin\\ReportController@job_post_report');

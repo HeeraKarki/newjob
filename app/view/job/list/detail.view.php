@@ -109,7 +109,9 @@ view_require('applyjob/nav');
                         <?php endif; ?>
                         <?php if (auth()['role_id']===3): ?>
                             <a href="<?= baseurl('Employer/Job_Edit?id='.$detail->id) ?>" class="btn btn-primary bookmark"><i class="fa fa-pencil" aria-hidden="true"></i>Edit</a>
-                            <a href="<?= baseurl('Employer/Job_delete?id='.$detail->id) ?>" class="btn btn-primary bookmark" style="background-color: rgba(255,90,55,0.95);"><i class="fa fa-trash" aria-hidden="true"></i>Delete</a>
+                        <?php endif; ?>
+                        <?php if (auth()['role_id']===1): ?>
+                            <a href="<?= baseurl('Admin/Job_delete?id='.$detail->id) ?>" class="btn btn-primary bookmark" style="background-color: rgba(255,90,55,0.95);"><i class="fa fa-trash" aria-hidden="true"></i>Delete</a>
                         <?php endif; ?>
                         <ul class="share-social">
                             <li>Share this ad</li>
@@ -145,9 +147,9 @@ view_require('applyjob/nav');
                             <h1>Short Info</h1>
                             <ul>
                                 <li><span class="icon"><i class="fa fa-bolt" aria-hidden="true"></i></span>Posted: <?= date('F jS, Y', strtotime($detail->created_at)) ?></li>
-                                <li class="text-capitalize"><span class="icon"><i class="fa fa-user-plus" aria-hidden="true"></i></span> Job poster: <a href="job-details.html#"><?= $detail->name ?></a></li>
-                                <li><span class="icon"><i class="fa fa-industry" aria-hidden="true"></i></span>Industry: <a href="job-details.html#"><?= $detail->job_industry->name ?></a></li>
-                                <li class="text-capitalize"><span class="icon"><i class="fa fa-line-chart" aria-hidden="true"></i></span>Experience: <a href="job-details.html#"><?= $detail->experience ?></a></li>
+                                <li class="text-capitalize"><span class="icon"><i class="fa fa-user-plus" aria-hidden="true"></i></span> Job poster: <a href=""><?= $detail->employer->user->name ?></a></li>
+                                <li><span class="icon"><i class="fa fa-industry" aria-hidden="true"></i></span>Industry: <a href="#"><?= $detail->job_industry->name ?></a></li>
+                                <li class="text-capitalize"><span class="icon"><i class="fa fa-line-chart" aria-hidden="true"></i></span>Experience: <a href="#"><?= $detail->experience ?></a></li>
                                 <li><span class="icon"><i class="fa fa-key" aria-hidden="true"></i></span>Job function: <?= $detail->job_function->name ?></li>
                             </ul>
                         </div>
@@ -159,7 +161,7 @@ view_require('applyjob/nav');
                                 <li>Compnay SIze:  <?= $detail->employer->no_of_employee ?></li>
                                 <li>Industry: <a href="job-details.html#">Technology</a></li>
                                 <li>Phone: <?= $detail->employer->phone_no ?></li>
-                                <li>Email: <a href="job-details.html#"><?= $detail->email ?></a></li>
+                                <li>Email: <a href="job-details.html#"><?= $detail->employer->user->email ?></a></li>
                                 <li>Website: <a href="job-details.html#"><?= $detail->employer->website ?></a></li>
                             </ul>
                             <ul class="share-social">

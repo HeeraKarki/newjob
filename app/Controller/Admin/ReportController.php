@@ -9,6 +9,8 @@
 namespace App\Controller\Admin;
 
 
+use App\Models\Job\JobApplicant;
+use App\Models\Job\JobPost;
 use App\Models\User\EmployerOrder;
 use App\Models\User\User;
 use Core\Request;
@@ -56,6 +58,15 @@ class ReportController
     public function del_user_report(){
         $data['datas']=User::onlyTrashed()->get();
         return view('admin/report/deleted_report',$data);
+    }
+
+    public function job_post_report(){
+        $data['datas']=null;
+
+        if (get_set('status')){
+            $data['datas']=JobApplicant::where('status', Request::get('status'))->get();
+        }
+        return view('admin/report/post_report',$data);
     }
 
 }

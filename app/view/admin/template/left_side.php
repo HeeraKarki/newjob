@@ -73,7 +73,7 @@
                     <ul class="nav-second-level" aria-expanded="false">
                         <li><a href="<?= baseurl('Admin/Annual_Report'); ?>">Annual Income Report</a></li>
                         <li><a href="<?= baseurl('Admin/Monthly_Report') ?>">Monthly Income Report</a></li>
-                        <li><a href="<?= baseurl('Admin/JobFunction') ?>">Job Post Report</a></li>
+                        <li><a href="<?= baseurl('Admin/Job_post_Report') ?>">Job Applicant Report</a></li>
                         <li><a href="<?= baseurl('Admin/InActive_Report') ?>">InActive User Report</a></li>
                         <li><a href="<?= baseurl('Admin/DeleteUser_Report') ?>">Deleted User Report</a></li>
 
