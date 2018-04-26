@@ -40,7 +40,7 @@
                 <li>
                     <a href="javascript: void(0);"><i class="fi-alt"></i> <span> Job </span> <span class="menu-arrow"></span></a>
                     <ul class="nav-second-level" aria-expanded="false">
-                        <li><a href="<?= baseurl('Admin/Job_Pending'); ?>">Job Pending List</a></li>
+                        <li><a href="<?= baseurl('Admin/Job_Pending'); ?>">Job List</a></li>
                     </ul>
                 </li>
 
