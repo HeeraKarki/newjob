@@ -118,7 +118,7 @@ view_require('applyjob/nav');
                                 <div class="row form-group">
                                     <label class="col-sm-3 label-title">DeadLine Date</label>
                                     <div class="col-sm-9">
-                                        <input type="date" name="deathline"  data-format="d-m-Y"  required class="form-control" placeholder="01/Jan/2018">
+                                        <input type="date" name="deathline"  data-format="d-m-Y"  data-min-year="2018"   required class="form-control" placeholder="01/Jan/2018">
                                     </div>
                                 </div>
                                 <div class="row form-group item-description">
